@@ -1,70 +1,31 @@
 <body>
     <div id="main">
         <!--All the code must be here-->
+        {{#if currentUser}} 
         {{> menu}} 
+        {{/if}} 
         
-        <br>
-        <h1 style="text-align: center">La Monada </h1>
-        <!--{{> loginButtons}}-->
+        {{> text}} 
         
-        {{> header}}
+        {{> user_login}}
 
-        {{> text}}
 
         {{> footer}}
     </div>
 </body>
 
-<template name="header">
-    {{> user_info}}
-</template>
-
-<template name="user_info">
-    {{#if currentUser}}
-    {{> user_loggedin}}
-    {{else}}
-    {{> user_loggedout}}
-    {{/if}}
-</template>
-
-<template name="user_loggedin">
-    {{#if loggingIn}}
-    <li><a>Logging in...</a></li>
-    {{else}}
-    <li>
-        <img class="img-rounded" style="height: 32px; margin-top: 4px;" src={{currentUser.services.google.picture}} />
-    </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            {{currentUser.services.google.name}}
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a>Account Settings</a></li>
-            <li class="divider"></li>
-            <li><a id="logout">Logout</a></li>
-        </ul>
-    </li>
-    {{/if}}
-</template>
-
-<template name="user_loggedout">
-     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-
-    <div id="loginWithGoogle">
-        <a>Login with Google </a>
-    </div> 
-</template>
-
-
 <template name="text">
     <!--<div style="margin-left:25%;padding:1px 16px;height:1000px;">-->
-    <div style="text-align: center">
+    <div>
+        <br>
+        <h1 style="text-align: center">La Monada </h1>
         <h2>Para jugar a este juego es necesario conectarse a su cuenta de Google</h2>
         <h3>Simplemente se utilizará:</h3>
-        <p>Información básica de su perfil: Email, Nombre, Foto</p>
-        <p>Consulta y administra tus hojas de cálculo en Google Drive, como:</p>
-        <p>Crea hojas de cálculo nuevas.</p>
-        <p>Consulta y modifica las hojas de cálculo existentes.</p>
+        <div>
+            <li>Información básica de su perfil: Email, Nombre, Foto</li>
+            <li>Consulta y administra tus hojas de cálculo en Google Drive, como:</li>
+            <li>Crea hojas de cálculo nuevas.</li>
+            <li>Consulta y modifica las hojas de cálculo existentes.</li>
+        </div>
     </div>
 </template>

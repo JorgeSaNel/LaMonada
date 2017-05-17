@@ -1,0 +1,37 @@
+<template name="userLogIn">
+    {{> user_login}}
+</template>
+
+<template name="user_login">
+    {{#if currentUser}} {{> user_loggedin}} {{else}} {{> loginButtons}} {{/if}}
+</template>
+
+<!--TODO: Mejorar codio para que visualmente sea más bonito-->
+<template name="user_loggedin">
+    {{#if loggingIn}}
+    <li><a>Logging in...</a></li>
+    {{else}}
+    <li>
+        <img class="img-rounded" style="height: 32px; margin-top: 4px;" src={{currentUser.services.google.picture}} />
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            {{currentUser.services.google.name}}
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a>Account Settings</a></li>
+            <li class="divider"></li>
+            <li><a id="logout">Logout</a></li>
+        </ul>
+    </li>
+    {{/if}}
+</template>
+
+<template name="user_loggedout">
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+    <div id="loginWithGoogle">
+        <a style="cursor:pointer;">Login with Google</a>
+    </div>
+</template>
