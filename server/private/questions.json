@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "_id": "1",
+      "statement": "El capital social se refiere a",
+      "answers": {
+        "answer_1": "El capital que la sociedad genera a partir de sus beneficios",
+        "answer_2": "Las aportaciones de los socios como capital de la sociedad",
+        "answer_3": "Las aportaciones de las personas que trabajan en la empresa"
+      },
+      "correctAnswer": "answer_2"
+    },
+
+    {
+      "_id": "2",
+      "statement": "El capital social se refiere a",
+      "answers": {
+        "answer_1": "Los recursos aportados por los socios de la empresa ",
+        "answer_2": "La financiación aportada por las entidades de crédito ",
+        "answer_3": "Los recursos generados por el negocio"
+      },
+      "correctAnswer": "answer_1"
+    }
+  ]
+}

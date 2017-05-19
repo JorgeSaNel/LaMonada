@@ -1,14 +1,14 @@
 import { Meteor } from 'meteor/meteor';
 
-export const Student = new Mongo.Collection('student');
+export const Questions = new Mongo.Collection('questions');
 
 Meteor.startup(() => {
-  Insert sample data if the student collection is empty
-  if (Student.find().count() === 0) {
-    JSON.parse(Assets.getText("student.json")).student.forEach(function (doc) {
-      Student.insert(doc);
-    });
-  }
+  //Insert sample data if the student collection is empty
+  // if (Questions.find().count() === 0) {
+  //   JSON.parse(Assets.getText("questions.json")).questions.forEach(function (doc) {
+  //     Questions.insert(doc);
+  //   });
+  // }
 });
 
 // export const Lists = new Mongo.Collection('lists');
