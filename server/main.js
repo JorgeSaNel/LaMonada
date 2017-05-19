@@ -1,7 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 
-Meteor.startup(function () {
-  // Insert sample data if the student collection is empty
+export const Student = new Mongo.Collection('student');
+
+Meteor.startup(() => {
+  Insert sample data if the student collection is empty
   if (Student.find().count() === 0) {
     JSON.parse(Assets.getText("student.json")).student.forEach(function (doc) {
       Student.insert(doc);
