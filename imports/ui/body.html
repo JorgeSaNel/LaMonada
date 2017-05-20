@@ -1,14 +1,17 @@
 <body>
     <div id="main">
         <!--All the code must be here-->
-        {{#if currentUser}} 
-        {{> menu}} 
-        {{/if}} 
-        
-        {{> text}} 
-        
-        {{> user_login}}
+        {{#if currentUser}} {{> menu}} {{else}} {{> text}} {{/if}}
 
+        <center>{{> user_login}} </center>
+
+        {{#if currentUser}} {{> iniciarJuego}} {{/if}} 
+        
+        {{#if currentUser}}
+        <ul>
+            {{#each Questions}} {{> question}} {{/each}}
+        </ul>
+        {{/if}} 
 
         {{> footer}}
     </div>
@@ -23,9 +26,22 @@
         <h3>Simplemente se utilizará:</h3>
         <div>
             <li>Información básica de su perfil: Email, Nombre, Foto</li>
-            <li>Consulta y administra tus hojas de cálculo en Google Drive, como:</li>
-            <li>Crea hojas de cálculo nuevas.</li>
-            <li>Consulta y modifica las hojas de cálculo existentes.</li>
+            <li>Consultar y administrar sus hojas de cálculo en Google Drive, como:</li>
+            <li>Crear hojas de cálculo nuevas.</li>
+            <li>Consultar y modificar las hojas de cálculo ya existentes.</li>
         </div>
     </div>
+</template>
+
+<!--How to show text from DB-->
+<template name="question">
+  <li>{{statement}}</li>
+  {{#if answers}}
+  <div>
+    <li>{{answers.answer_1}}</li>
+    <li>{{answers.answer_2}}</li>
+    <li>{{answers.answer_3}}</li>
+  </div>
+  {{/if}}
+  <br>
 </template>

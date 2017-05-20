@@ -1,0 +1,21 @@
+<body>
+    <div id="main">
+        <!--All the code must be here-->
+        {{#if currentUser}} {{> menu}} {{else}} {{> text}} {{/if}}
+
+        <center>{{> user_login}} </center>
+
+              
+        {{> footer}}
+    </div>
+</body>
+
+
+<template name="text">
+    <!--<div style="margin-left:25%;padding:1px 16px;height:1000px;">-->
+    <div>
+        <br>
+        <h1 style="text-align: center">La Monada </h1>
+       
+    </div>
+</template>
