@@ -5,15 +5,12 @@
 
         <center>{{> user_login}} </center>
 
-        {{#if currentUser}} {{> iniciarJuego}} {{/if}} 
-        
-        {{#if currentUser}}
+        {{#if currentUser}} {{> iniciarJuego}} {{/if}} {{#if currentUser}}
         <ul>
             {{#each Questions}} {{> question}} {{/each}}
         </ul>
-        {{/if}} 
 
-        {{> footer}}
+        {{/if}} {{> footer}}
     </div>
 </body>
 
@@ -33,15 +30,16 @@
     </div>
 </template>
 
-<!--How to show text from DB-->
 <template name="question">
-  <li>{{statement}}</li>
-  {{#if answers}}
-  <div>
-    <li>{{answers.answer_1}}</li>
-    <li>{{answers.answer_2}}</li>
-    <li>{{answers.answer_3}}</li>
-  </div>
-  {{/if}}
-  <br>
+    <form>
+        {{#if answers}}
+        <h3>{{statement}}</h3>
+        <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>
+        <label><input type="radio" name="answer" value="2"> {{answers.answer_2}}</label>
+        <label><input type="radio" name="answer" value="3"> {{answers.answer_3}}</label>
+
+        <br>
+        <input type="button" value="Click"> 
+        {{/if}}
+    </form>
 </template>
