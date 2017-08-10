@@ -1,0 +1,290 @@
+{
+  "questions": [
+    {
+      "_id": "1",
+      "statement": "El Balance es",
+      "answers": {
+        "answer_1": "Un documento contable que informa de la situación del patrimonio de la empresa en un momento dado del tiempo",
+        "answer_2": "Un documento contable que informa del resultado obtenido por la empresa durante un ejercicio económico",
+        "answer_3": "Un documento contable que informa de los movimientos de tesorería que han tenido lugar en la empresa durante un ejercicio económico"
+      },
+      "correctAnswer": "answer_2"
+    },
+
+    {
+      "_id": "2",
+      "statement": "El Balance informa de",
+      "answers": {
+        "answer_1": "El valor de los bienes y derechos pertenecientes a la empresa (activos)",
+        "answer_2": "El valor de los recursos financieros de la empresa (patrimonio neto y pasivos)",
+        "answer_3": "Ambos"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "3",
+      "statement": "El capital social se refiere a",
+      "answers": {
+        "answer_1": "El capital que la sociedad genera a partir de sus beneficios",
+        "answer_2": "Las aportaciones de los socios como capital de la sociedad",
+        "answer_3": "Las aportaciones de las personas que trabajan en la empresa"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "4",
+      "statement": "El capital social se refiere a",
+      "answers": {
+        "answer_1": "Los recursos aportados por los socios de la empresa ",
+        "answer_2": "La financiación aportada por las entidades de crédito ",
+        "answer_3": "Los recursos generados por el negocio"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "5",
+      "statement": "Las reservas son",
+      "answers": {
+        "answer_1": "El patrimonio neto o fondos propios de la empresa junto con el capital social",
+        "answer_2": "El pasivo de la empresa junto con los préstamos y créditos",
+        "answer_3": "El patrimonio neto o fondos propios de la empresa "
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "6",
+      "statement": "Las reservas son",
+      "answers": {
+        "answer_1": "Beneficios generados por la empresa que quedan retenidos para mantener los activos en condiciones óptimas",
+        "answer_2": "Beneficios generados por la empresa que quedan retenidos para generar un fondo de ahorro",
+        "answer_3": "Beneficios generados por la empresa que quedan retenidos para invertirse y crecer"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Las reservas son",
+      "answers": {
+        "answer_1": "Recursos financieros procedentes de los beneficios generados por la empresa",
+        "answer_2": "Recursos financieros procedentes de las entidades financieras",
+        "answer_3": "Recursos financieros procedentes de la Bolsa"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "8",
+      "statement": "Las reservas pertenecen a",
+      "answers": {
+        "answer_1": "Los trabajadores",
+        "answer_2": "Los accionistas",
+        "answer_3": "Los directivos"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Los préstamos bancarios a largo plazo son",
+      "answers": {
+        "answer_1": "Recursos prestados por las entidades financieras",
+        "answer_2": "Capital prestado por los socios",
+        "answer_3": "Capital prestado por cualquier acreedor"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Los préstamos bancarios a largo plazo son",
+      "answers": {
+        "answer_1": "Dinero que la empresa capta en la Bolsa",
+        "answer_2": "Dinero prestado por los socios",
+        "answer_3": "Deuda de la empresa contraída con un banco o caja de ahorros"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Los préstamos bancarios a largo plazo constituyen",
+      "answers": {
+        "answer_1": "Los pasivos corrientes, junto con los proveedores",
+        "answer_2": "Los pasivos no corrientes de la empresa, junto con los empréstitos y créditos",
+        "answer_3": "Los capitales permanentes, junto con el capital social"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Los préstamos bancarios a largo plazo son",
+      "answers": {
+        "answer_1": "Deuda contraída por la empresa a cambio del pago de intereses y devolución del principal a la entidad prestamista",
+        "answer_2": "Dinero que la entidad financiera presta a la empresa, pero del que ésta sólo pagará intereses en la medida en la que se vaya disponiendo del dinero",
+        "answer_3": "Dinero que la entidad financiera presta a la empresa a cambio del pago de dividendos"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Los préstamos bancarios a largo plazo son",
+      "answers": {
+        "answer_1": "Recursos financieros que la entidad financiera presta a la empresa a cambio de la participación en la gestión del negocio",
+        "answer_2": "Recursos financieros que dan derecho a la entidad financiera a la toma de decisiones dentro de la empresa",
+        "answer_3": "Recursos financieros que comprometen a la empresa sólo desde el punto de vista económico"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Los intereses son",
+      "answers": {
+        "answer_1": "El tipo de interés del préstamo aplicado sobre el importe prestado",
+        "answer_2": "El tipo de interés del préstamo aplicado sobre el importe prestado más los gastos de gestión",
+        "answer_3": "El tipo de interés del préstamo aplicado sobre el importe prestado más los gastos de formalización"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "El tipo de interés aplicado al préstamo bancario a largo plazo depende de",
+      "answers": {
+        "answer_1": "La duración del ciclo de explotación de la empresa",
+        "answer_2": "El grado de solvencia de la entidad que lo solicita",
+        "answer_3": "La cuantía de tesorería que tenga la empresa "
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Los préstamos bancarios a largo plazo constituyen",
+      "answers": {
+        "answer_1": "La financiación ajena a largo plazo, junto con los empréstitos y créditos",
+        "answer_2": "La financiación externa, junto con los empréstitos y créditos",
+        "answer_3": "La financiación ajena, junto con el capital social"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Las reservas generan a los accionistas",
+      "answers": {
+        "answer_1": "El derecho a suscribir con preferencia nuevas acciones",
+        "answer_2": "El derecho a voto en las Juntas Generales de Accionistas",
+        "answer_3": "El derecho a recibir dividendos"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Las reservas se crean para",
+      "answers": {
+        "answer_1": "Ahorrar",
+        "answer_2": "Reinvertirse y permitir el crecimiento de la empresa",
+        "answer_3": "Repartirse entre los propietarios"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "7",
+      "statement": "Las reservas",
+      "answers": {
+        "answer_1": "No suponen ningún coste financiero para la empresa",
+        "answer_2": "Tienen un elevado coste de oportunidad ",
+        "answer_3": "Tiene un menor coste financiero que el capital social y los préstamos"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "12",
+      "statement": "El capital social tiene",
+      "answers": {
+        "answer_1": "Vencimiento a largo plazo (más de 18 meses)",
+        "answer_2": "Su vencimiento lo decide la dirección de la empresa",
+        "answer_3": "Duración indefinida"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "12",
+      "statement": "El capital social está dividido en",
+      "answers": {
+        "answer_1": "Títulos de propiedad denominados acciones o participaciones sociales",
+        "answer_2": "Títulos de propiedad denominados obligaciones",
+        "answer_3": "Títulos de propiedad denominados bonos"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "12",
+      "statement": "Una empresa se constituye a partir de",
+      "answers": {
+        "answer_1": "Préstamos y créditos de entidades financieras",
+        "answer_2": "Obligaciones y bonos emitidos por la empresa",
+        "answer_3": "Capital social"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "12",
+      "statement": "El capital social es",
+      "answers": {
+        "answer_1": "El patrimonio neto o fondos propios de la empresa",
+        "answer_2": "El pasivo de la empresa junto con los préstamos y créditos",
+        "answer_3": "El patrimonio neto o fondos propios de la empresa junto con las reservas"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "12",
+      "statement": "La rentabilidad del capital social que reciben los accionistas se denomina",
+      "answers": {
+        "answer_1": "Dividendos",
+        "answer_2": "Intereses",
+        "answer_3": "Cupones"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "12",
+      "statement": "Los dividendos",
+      "answers": {
+        "answer_1": "Son de cuantía fija",
+        "answer_2": "Son de cuantía variable ",
+        "answer_3": "Existe obligación legal de repartirlos"
+      },
+      "correctAnswer": "answer_1"
+    },
+
+    {
+      "_id": "12",
+      "statement": "Las variaciones en el capital social suponen",
+      "answers": {
+        "answer_1": "Más efectivo cuando aumenta el capital social, porque entran fondos",
+        "answer_2": "Menos efectivo cuando aumenta el capital social, porque se reparte entre los financiadores",
+        "answer_3": "El capital social no está relacionado con el efectivo"
+      },
+      "correctAnswer": "answer_1"
+    }
+
+  ]
+}

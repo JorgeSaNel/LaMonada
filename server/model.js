@@ -1,0 +1,1 @@
+Student = new Meteor.Collection('student');
