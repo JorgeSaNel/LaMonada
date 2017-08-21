@@ -20,7 +20,7 @@ Template.question.events({
         var userAnswer = $(answer).val();
 
         // SELECT * WHERE "_id" = idQuestion
-        var rightAnswer = Questions.findOne({ "_id": idQuestion});
+        var rightAnswer = Questions.findOne({ "_id": idQuestion.ToString()});
 
 console.log(userAnswer);
 console.log(rightAnswer.correctAnswer);
@@ -31,7 +31,8 @@ console.log(rightAnswer.correctAnswer);
         else {
             console.log("Pregunta Fallada");
         }
-        //TODO - Insert estado de la pregunta en el usuario
-        Meteor.call('questions.checkAnswer', answer, idQuestion);
+    //TODO - Insert estado de la pregunta en el usuario
+    // ../api/questions.js - La idea es que tire de este fichero
+        //Meteor.call('questions.checkAnswer', answer, idQuestion);
     }
 });

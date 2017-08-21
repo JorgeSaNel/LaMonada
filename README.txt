@@ -8,5 +8,5 @@ La Monada is a game about businesses. Simulates the way a company is built, with
 How to run on Windows:
 First download this project and save it somewhere.
 Go to https://www.meteor.com/ and download it.
-Afterwards, in a console, go to the project's folder and run 'Meteor'.
+Afterwards, in a console, go to the project's folder and run 'meteor'.
 In a browser put 'http://localhost:3000/'

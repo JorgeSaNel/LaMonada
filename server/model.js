@@ -1,1 +1,1 @@
-Student = new Meteor.Collection('student');
+Questions = new Meteor.Collection('questions');
