@@ -5,12 +5,20 @@
 
         <center>{{> user_login}} </center>
 
-        {{#if currentUser}} {{> iniciarJuego}} {{/if}} {{#if currentUser}}
-        <ul>
-            {{#each Questions}} {{> question}} {{/each}}
-        </ul>
+        <!-- ¿Que quería hacer aquí? -->
+        <!-- {{#if currentUser}} {{> iniciarJuego}} {{/if}}  -->
+        
+        {{#if currentUser}}
+            <ul>
+                {{#with Questions}}
+                    {{> question}}
+                {{/with}}
 
-        {{/if}} {{> footer}}
+                <!-- {{#each Questions}} {{> question}} {{/each}} -->
+            </ul>
+        {{/if}} 
+        
+        {{> footer}}
     </div>
 </body>
 
@@ -32,6 +40,7 @@
 
 <template name="question">
     <form>
+        <!-- Check if there is a questions with its answers -->
         {{#if answers}}
         <h3>{{statement}}</h3>
         <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>

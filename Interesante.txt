@@ -1,0 +1,23 @@
+=======================================================
+== ------------- Realizacion del Juego ------------- ==
+=======================================================
+
+Insertar en Base de Datos:
+    PREGUNTAS
+    Para ello se ha utilizado un JSON con las preguntas que se quiere meter. IMPORTANTE que en JSON no haya comentarios, pues lee esto como si fuesen caracteres
+    e intenta insertarlo en la BBDD, dando error. Se ha seguido el siguiente tutorial
+        https://eureka.ykyuen.info/2015/02/19/meteor-insert-sample-data-if-the-mongodb-is-empty/
+    Hay tres tipos de preguntas, las que son únicas y, dentro de las que tienen opciones, si es primera opcion o segunda.
+    Se marca solamente si es primera opcion y si es unica, pues la tercera se puede adivinar
+
+SESSION:
+    Para saber en qué pregunta se encuentra el usuario debemos utilizar sesion:
+        https://stackoverflow.com/questions/24038944/meteor-how-to-retrieve-an-array-of-questions-from-the-mongo-db-and-displaying-ju
+    Es necesario poner un import { Session } from 'meteor/session' para que funcione 
+
+=======================================================
+== -------------- Cambios en el Juego -------------- ==
+=======================================================
+
+CAMBIOS EN EL JUEGO
+    Para simplificar la mecánica del juego, se ha cambiado la pregunta 11 por la 8, junto a sus respectivas subpreguntas
