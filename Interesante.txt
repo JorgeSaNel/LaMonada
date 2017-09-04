@@ -15,9 +15,20 @@ SESSION:
         https://stackoverflow.com/questions/24038944/meteor-how-to-retrieve-an-array-of-questions-from-the-mongo-db-and-displaying-ju
     Es necesario poner un import { Session } from 'meteor/session' para que funcione 
 
+SEGURIDAD
+    Se ha seguido este tutorial para garantizar que otro usuario no puede insertar datos en la BBDD
+    https://www.meteor.com/tutorials/blaze/security-with-methods
+    
 =======================================================
 == -------------- Cambios en el Juego -------------- ==
 =======================================================
 
 CAMBIOS EN EL JUEGO
     Para simplificar la mecánica del juego, se ha cambiado la pregunta 11 por la 8, junto a sus respectivas subpreguntas
+
+=======================================================
+== -------------------- Cuentas -------------------- ==
+=======================================================
+
+Se ha creado una cuenta para dar servicio al juego, la cual es:
+    'lamonada.aprendejugando@gmail.com'
