@@ -15,6 +15,10 @@ SESSION:
         https://stackoverflow.com/questions/24038944/meteor-how-to-retrieve-an-array-of-questions-from-the-mongo-db-and-displaying-ju
     Es necesario poner un import { Session } from 'meteor/session' para que funcione 
 
+    Para mayor seguridad, la insercción de la BBDD del usuario se hace por Meteor Methods, siguiendo estos tutoriales mas el oficial de Meteor
+https://forums.meteor.com/t/solved-meteor-methods-and-calls-method-not-found-404-error/19776/4
+https://stackoverflow.com/questions/27739206/error-invoking-method-method-not-found-404
+
 SEGURIDAD
     Se ha seguido este tutorial para garantizar que otro usuario no puede insertar datos en la BBDD
     https://www.meteor.com/tutorials/blaze/security-with-methods
