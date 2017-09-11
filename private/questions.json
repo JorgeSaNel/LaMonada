@@ -38,7 +38,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "El capital social se refiere a",
+      "statement": "1.- El capital social se refiere a",
       "answers": {
         "answer_1": "El capital que la sociedad genera a partir de sus beneficios",
         "answer_2": "Las aportaciones de los socios como capital de la sociedad",
@@ -52,7 +52,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "El capital social se refiere a",
+      "statement": "1.- El capital social se refiere a",
       "answers": {
         "answer_1": "Los recursos aportados por los socios de la empresa ",
         "answer_2": "La financiación aportada por las entidades de crédito ",
@@ -67,7 +67,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "Las reservas son",
+      "statement": "2.- Las reservas son",
       "answers": {
         "answer_1": "El patrimonio neto o fondos propios de la empresa junto con el capital social",
         "answer_2": "El pasivo de la empresa junto con los préstamos y créditos",
@@ -82,7 +82,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "Las reservas son",
+      "statement": "3.- Las reservas son",
       "answers": {
         "answer_1": "Beneficios generados por la empresa que quedan retenidos para mantener los activos en condiciones óptimas",
         "answer_2": "Beneficios generados por la empresa que quedan retenidos para generar un fondo de ahorro",
@@ -96,7 +96,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "Las reservas son",
+      "statement": "3.- Las reservas son",
       "answers": {
         "answer_1": "Recursos financieros procedentes de los beneficios generados por la empresa",
         "answer_2": "Recursos financieros procedentes de las entidades financieras",
@@ -111,7 +111,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "Las reservas pertenecen a",
+      "statement": "4.- Las reservas pertenecen a",
       "answers": {
         "answer_1": "Los trabajadores",
         "answer_2": "Los accionistas",
@@ -126,7 +126,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "Los préstamos bancarios a largo plazo son",
+      "statement": "5.- Los préstamos bancarios a largo plazo son",
       "answers": {
         "answer_1": "Recursos prestados por las entidades financieras",
         "answer_2": "Capital prestado por los socios",
@@ -140,7 +140,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "Los préstamos bancarios a largo plazo son",
+      "statement": "5.- Los préstamos bancarios a largo plazo son",
       "answers": {
         "answer_1": "Dinero que la empresa capta en la Bolsa",
         "answer_2": "Dinero prestado por los socios",
@@ -155,7 +155,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "Los préstamos bancarios a largo plazo constituyen",
+      "statement": "6.- Los préstamos bancarios a largo plazo constituyen",
       "answers": {
         "answer_1": "Los pasivos corrientes, junto con los proveedores",
         "answer_2": "Los pasivos no corrientes de la empresa, junto con los empréstitos y créditos",
@@ -170,7 +170,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "Los préstamos bancarios a largo plazo son",
+      "statement": "7.- Los préstamos bancarios a largo plazo son",
       "answers": {
         "answer_1": "Deuda contraída por la empresa a cambio del pago de intereses y devolución del principal a la entidad prestamista",
         "answer_2": "Dinero que la entidad financiera presta a la empresa, pero del que ésta sólo pagará intereses en la medida en la que se vaya disponiendo del dinero",
@@ -184,7 +184,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "Los préstamos bancarios a largo plazo son",
+      "statement": "7.- Los préstamos bancarios a largo plazo son",
       "answers": {
         "answer_1": "Recursos financieros que la entidad financiera presta a la empresa a cambio de la participación en la gestión del negocio",
         "answer_2": "Recursos financieros que dan derecho a la entidad financiera a la toma de decisiones dentro de la empresa",
@@ -199,7 +199,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "Las reservas",
+      "statement": "8.- Las reservas",
       "answers": {
         "answer_1": "No suponen ningún coste financiero para la empresa",
         "answer_2": "Tienen un elevado coste de oportunidad ",
@@ -214,7 +214,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "Los intereses son",
+      "statement": "9.- Los intereses son",
       "answers": {
         "answer_1": "El tipo de interés del préstamo aplicado sobre el importe prestado",
         "answer_2": "El tipo de interés del préstamo aplicado sobre el importe prestado más los gastos de gestión",
@@ -228,7 +228,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "El tipo de interés aplicado al préstamo bancario a largo plazo depende de",
+      "statement": "9.- El tipo de interés aplicado al préstamo bancario a largo plazo depende de",
       "answers": {
         "answer_1": "La duración del ciclo de explotación de la empresa",
         "answer_2": "El grado de solvencia de la entidad que lo solicita",
@@ -243,7 +243,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "Los préstamos bancarios a largo plazo constituyen",
+      "statement": "10.- Los préstamos bancarios a largo plazo constituyen",
       "answers": {
         "answer_1": "La financiación ajena a largo plazo, junto con los empréstitos y créditos",
         "answer_2": "La financiación externa, junto con los empréstitos y créditos",
@@ -258,7 +258,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "Las reservas son",
+      "statement": "11.- Las reservas son",
       "answers": {
         "answer_1": "El derecho a suscribir con preferencia nuevas acciones",
         "answer_2": "El derecho a voto en las Juntas Generales de Accionistas",
@@ -272,7 +272,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "Las reservas se crean para",
+      "statement": "11.- Las reservas se crean para",
       "answers": {
         "answer_1": "Ahorrar",
         "answer_2": "Reinvertirse y permitir el crecimiento de la empresa",
@@ -287,7 +287,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "El capital social tiene",
+      "statement": "12.- El capital social tiene",
       "answers": {
         "answer_1": "Vencimiento a largo plazo (más de 18 meses)",
         "answer_2": "Su vencimiento lo decide la dirección de la empresa",
@@ -302,7 +302,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "El capital social está dividido en",
+      "statement": "13.- El capital social está dividido en",
       "answers": {
         "answer_1": "Títulos de propiedad denominados acciones o participaciones sociales",
         "answer_2": "Títulos de propiedad denominados obligaciones",
@@ -316,7 +316,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "Una empresa se constituye a partir de",
+      "statement": "13.- Una empresa se constituye a partir de",
       "answers": {
         "answer_1": "Préstamos y créditos de entidades financieras",
         "answer_2": "Obligaciones y bonos emitidos por la empresa",
@@ -331,7 +331,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "El capital social es",
+      "statement": "14.- El capital social es",
       "answers": {
         "answer_1": "El patrimonio neto o fondos propios de la empresa",
         "answer_2": "El pasivo de la empresa junto con los préstamos y créditos",
@@ -346,7 +346,7 @@
         "part": 1
       },
       "hasSecondOption": true,
-      "statement": "La rentabilidad del capital social que reciben los accionistas se denomina",
+      "statement": "15.- La rentabilidad del capital social que reciben los accionistas se denomina",
       "answers": {
         "answer_1": "Dividendos",
         "answer_2": "Intereses",
@@ -360,7 +360,7 @@
         "circuit": "Circuito",
         "part": 1
       },
-      "statement": "Los dividendos",
+      "statement": "15.- Los dividendos",
       "answers": {
         "answer_1": "Son de cuantía fija",
         "answer_2": "Son de cuantía variable ",
@@ -375,7 +375,7 @@
         "part": 1
       },
       "isUnique": true,
-      "statement": "Las variaciones en el capital social suponen",
+      "statement": "16.- Las variaciones en el capital social suponen",
       "answers": {
         "answer_1": "Más efectivo cuando aumenta el capital social, porque entran fondos",
         "answer_2": "Menos efectivo cuando aumenta el capital social, porque se reparte entre los financiadores",
@@ -391,7 +391,7 @@
       },
       "hasSecondOption": true,
       "isJoker": true,
-      "statement": "El Fondo de Maniobra o rotación es",
+      "statement": "COMODÍN.- El Fondo de Maniobra o rotación es",
       "answers": {
         "answer_1": "La parte del ciclo de explotación o activos corrientes financiada por recursos permanentes",
         "answer_2": "La financiación de las inversiones a largo plazo de la empresa o activos no corrientes por capitales permanentes",
@@ -406,7 +406,7 @@
         "part": 1
       },
       "isJoker": true,
-      "statement": "Con relación al Fondo de Maniobra, los fondos propios y los préstamos bancarios a largo plazo financian",
+      "statement": "COMODÍN.- Con relación al Fondo de Maniobra, los fondos propios y los préstamos bancarios a largo plazo financian",
       "answers": {
         "answer_1": "Únicamente las inversiones a largo plazo o activos no corrientes",
         "answer_2": "Unicamente las inversiones a corto plazo o activos corrientes",
@@ -421,7 +421,7 @@
         "part": 2
       },
       "hasSecondOption": true,
-      "statement": "Los inmovilizados inmateriales son",
+      "statement": "17.- Los inmovilizados inmateriales son",
       "answers": {
         "answer_1": "Elementos permanentes de carácter inmaterial que constituyen la estructura de la empresa",
         "answer_2": "Elementos de la explotación que servirán de forma permanente a la actividad de la empresa",
@@ -435,7 +435,7 @@
         "circuit": "Circuito",
         "part": 2
       },
-      "statement": "Los inmovilizados inmateriales son",
+      "statement": "17.- Los inmovilizados inmateriales son",
       "answers": {
         "answer_1": "Inversiones a corto plazo que constituyen la estructura de la empresa",
         "answer_2": "Inversiones de carácter inmaterial que constituyen el ciclo de explotación de la empresa",
@@ -450,7 +450,7 @@
         "part": 2
       },
       "isUnique": true,
-      "statement": "El plazo de vida estimado del inmovilizado inmaterial es",
+      "statement": "18.- El plazo de vida estimado del inmovilizado inmaterial es",
       "answers": {
         "answer_1": "Inferior a un año",
         "answer_2": "Superior a un año",
@@ -465,7 +465,7 @@
         "part": 2
       },
       "hasSecondOption": true,
-      "statement": "El inmovilizado inmaterial NO debe financiarse con: ",
+      "statement": "19.- El inmovilizado inmaterial NO debe financiarse con: ",
       "answers": {
         "answer_1": "Capitales permanentes",
         "answer_2": "Fondos propios y pasivos a largo plazo",
@@ -479,7 +479,7 @@
         "circuit": "Circuito",
         "part": 2
       },
-      "statement": "El inmovilizado inmaterial NO debe financiarse con: ",
+      "statement": "19.- El inmovilizado inmaterial NO debe financiarse con: ",
       "answers": {
         "answer_1": "Acreedores a corto plazo",
         "answer_2": "Fondos propios y pasivos no corrientes",
@@ -494,7 +494,7 @@
         "part": 2
       },
       "isUnique": true,
-      "statement": "¿El inmovilizado inmaterial pierde valor a lo largo del tiempo (depreciación)?",
+      "statement": "20.- ¿El inmovilizado inmaterial pierde valor a lo largo del tiempo (depreciación)?",
       "answers": {
         "answer_1": "Sí, en general",
         "answer_2": "Sólo la propiedad industrial",
@@ -509,7 +509,7 @@
         "part": 2
       },
       "hasSecondOption": true,
-      "statement": "La depreciación del inmovilizado inmaterial es",
+      "statement": "21.- La depreciación del inmovilizado inmaterial es",
       "answers": {
         "answer_1": "La pérdida de valor que experimenta el inmovilizado inmaterial",
         "answer_2": "El gasto ocasionado por la pérdida de valor del inmovilizado inmaterial",
@@ -523,7 +523,7 @@
         "circuit": "Circuito",
         "part": 2
       },
-      "statement": "La imputación de la depreciación del inmovilizado inmaterial como gasto se denomina",
+      "statement": "21.- La imputación de la depreciación del inmovilizado inmaterial como gasto se denomina",
       "answers": {
         "answer_1": "Fondo de amortización",
         "answer_2": "También se denomina depreciación",
@@ -538,7 +538,7 @@
         "part": 2
       },
       "hasSecondOption": true,
-      "statement": "Los inmovilizados materiales son",
+      "statement": "22.- Los inmovilizados materiales son",
       "answers": {
         "answer_1": "Activos de carácter material de la explotación de la empresa",
         "answer_2": "Activos corrientes",
@@ -552,7 +552,7 @@
         "circuit": "Circuito",
         "part": 2
       },
-      "statement": "Los inmovilizados materiales son",
+      "statement": "22.- Los inmovilizados materiales son",
       "answers": {
         "answer_1": "Inversiones a corto plazo que constituyen la explotación del negocio",
         "answer_2": "Inversiones de carácter permanente que constituyen la estructura de la empresa",
@@ -567,7 +567,7 @@
         "part": 2
       },
       "isUnique": true,
-      "statement": "¿El inmovilizado material pierde valor a lo largo del tiempo (depreciación)?",
+      "statement": "23.- ¿El inmovilizado material pierde valor a lo largo del tiempo (depreciación)?",
       "answers": {
         "answer_1": "Sí, excepto los terrenos",
         "answer_2": "No",
@@ -582,7 +582,7 @@
         "part": 2
       },
       "hasSecondOption": true,
-      "statement": "La depreciación del inmovilizado material que implica la dotación de amortización NO se debe a",
+      "statement": "24.- La depreciación del inmovilizado material que implica la dotación de amortización NO se debe a",
       "answers": {
         "answer_1": "El paso del tiempo",
         "answer_2": "Su uso",
@@ -596,7 +596,7 @@
         "circuit": "Circuito",
         "part": 2
       },
-      "statement": "La depreciación del inmovilizado material que implica la dotación de amortización NO se debe a",
+      "statement": "24.- La depreciación del inmovilizado material que implica la dotación de amortización NO se debe a",
       "answers": {
         "answer_1": "Una revalorización del elemento en el mercado",
         "answer_2": "La obsolescencia",
@@ -612,7 +612,7 @@
       },
       "hasSecondOption": true,
       "isJoker": true,
-      "statement": "La Inversión en Inmovilizado debe realizarse con relación a",
+      "statement": "COMODÍN.- La Inversión en Inmovilizado debe realizarse con relación a",
       "answers": {
         "answer_1": "Lo que se espera producir y vender",
         "answer_2": "La actividad del ciclo de explotación",
@@ -627,7 +627,7 @@
         "part": 2
       },
       "isJoker": true,
-      "statement": "Invertir en Inmovilizado supone",
+      "statement": "COMODÍN.- Invertir en Inmovilizado supone",
       "answers": {
         "answer_1": "Menos dinero disponible para los accionistas y acreedores de la empresa",
         "answer_2": "Más dinero disponible para los accionistas y acreedores de la empresa",
@@ -642,7 +642,7 @@
         "part": 3
       },
       "hasSecondOption": true,
-      "statement": "25. Las existencias son",
+      "statement": "25.- Las existencias son",
       "answers": {
         "answer_1": "a) Elementos ligados al ciclo de explotación",
         "answer_2": "b) Activos no corrientes",
@@ -656,7 +656,7 @@
         "circuit": "Circuito",
         "part": 3
       },
-      "statement": "Las existencias NO son",
+      "statement": "25.- Las existencias NO son",
       "answers": {
         "answer_1": "a) Bienes almacenables que pertenecen al ciclo de explotación de la empresa",
         "answer_2": "b) Bienes almacenables que, en ocasiones son vendidos directamente, y en otras se incorporan a un proceso para ser transformados y posteriormente vendidos",
@@ -671,7 +671,7 @@
         "part": 3
       },
       "isUnique": true,
-      "statement": "26. La inversión en existencias implica",
+      "statement": "26.- La inversión en existencias implica",
       "answers": {
         "answer_1": "a) Que se han comprado existencias y, por tanto, hay más dinero para repartir entre los accionistas y acreedores de la empresa",
         "answer_2": "b) Que la inversión está materializada en existencias y, por tanto, hay menos dinero libre para los accionistas y acreedores de la empresa",
@@ -686,7 +686,7 @@
         "part": 3
       },
       "hasSecondOption": true,
-      "statement": "27. La inversión en existencias implica",
+      "statement": "27.- La inversión en existencias implica",
       "answers": {
         "answer_1": "a) Que el beneficio a final de año disminuirá en esa cuantía invertida en existencias",
         "answer_2": "b) Que las existencias compradas implican una mayor disponibilidad de caja para los accionistas y acreedores de la empresa",
@@ -700,7 +700,7 @@
         "circuit": "Circuito",
         "part": 3
       },
-      "statement": "La inversión en existencias implica",
+      "statement": "27.- La inversión en existencias implica",
       "answers": {
         "answer_1": "a) Hay menos dinero disponible para los financiadores de la empresa",
         "answer_2": "b) Hay más dinero disponible para los financiadores de la empresa",
@@ -715,7 +715,7 @@
         "part": 3
       },
       "hasSecondOption": true,
-      "statement": "28. Los clientes en el balance reflejan",
+      "statement": "28.- Los clientes en el balance reflejan",
       "answers": {
         "answer_1": "a) El importe vendido a los clientes",
         "answer_2": "b) El importe cobrado de los clientes",
@@ -729,7 +729,7 @@
         "circuit": "Circuito",
         "part": 3
       },
-      "statement": "Los clientes en el balance NO indican",
+      "statement": "28.- Los clientes en el balance NO indican",
       "answers": {
         "answer_1": "a) Una obligación de pago",
         "answer_2": "b) Cuentas pendientes de cobrar de clientes",
@@ -744,7 +744,7 @@
         "part": 3
       },
       "isUnique": true,
-      "statement": "29. Cuanto mayor es el importe de clientes",
+      "statement": "29.- Cuanto mayor es el importe de clientes",
       "answers": {
         "answer_1": "a) Menos dinero disponible hay para los financiadores de la empresa ",
         "answer_2": "b) Más dinero disponible hay para los accionistas",
@@ -759,7 +759,7 @@
         "part": 3
       },
       "hasSecondOption": true,
-      "statement": "30. Las inversiones financieras a corto plazo son",
+      "statement": "30.- Las inversiones financieras a corto plazo son",
       "answers": {
         "answer_1": "a) Acciones emitidas por la empresa",
         "answer_2": "b) Acciones u otros instrumentos financieros que se van a vender antes de un año",
@@ -773,7 +773,7 @@
         "circuit": "Circuito",
         "part": 3
       },
-      "statement": "Realizar inversiones financieras a corto plazo supone",
+      "statement": "30.- Realizar inversiones financieras a corto plazo supone",
       "answers": {
         "answer_1": "a) Menos dinero en caja",
         "answer_2": "b) Más dinero en caja",
@@ -788,7 +788,7 @@
         "part": 3
       },
       "isUnique": true,
-      "statement": "31. Las inversiones financieras a corto plazo implican",
+      "statement": "31.- Las inversiones financieras a corto plazo implican",
       "answers": {
         "answer_1": "a) Más dinero disponible para los financiadores de la empresa",
         "answer_2": "b) Menos dinero disponible para los financiadores de la empresa",
@@ -803,7 +803,7 @@
         "part": 3
       },
       "hasSecondOption": true,
-      "statement": "32. Caja y bancos es",
+      "statement": "32.- Caja y bancos es",
       "answers": {
         "answer_1": "a) El efectivo de la empresa",
         "answer_2": "b) La tesorería de la empresa",
@@ -817,7 +817,7 @@
         "circuit": "Circuito",
         "part": 3
       },
-      "statement": "Si aumenta el saldo de Caja y bancos al final del año, significa que la empresa",
+      "statement": "32.- Si aumenta el saldo de Caja y bancos al final del año, significa que la empresa",
       "answers": {
         "answer_1": "a) Ha dispuesto de ese dinero para los pagos e inversiones de la empresa",
         "answer_2": "b) No ha dispuesto de ese dinero durante el ejercicio económico",
@@ -832,7 +832,7 @@
         "part": 3
       },
       "isUnique": true,
-      "statement": "33. Con el dinero en Caja y bancos la empresa",
+      "statement": "33.- Con el dinero en Caja y bancos la empresa",
       "answers": {
         "answer_1": "a) Puede pagar a sus proveedores",
         "answer_2": "b) Puede pagar los impuestos",
@@ -847,7 +847,7 @@
         "part": 3
       },
       "isUnique": true,
-      "statement": "34. Con el dinero de Caja y bancos la empresa",
+      "statement": "34.- Con el dinero de Caja y bancos la empresa",
       "answers": {
         "answer_1": "a) Puede pagar los gastos de investigación, desarrollo e innovación",
         "answer_2": "b) Puede costear una campaña de marketing",
@@ -862,7 +862,7 @@
         "part": 3
       },
       "isUnique": true,
-      "statement": "35. En Caja y bancos la empresa ingresa",
+      "statement": "35.- En Caja y bancos la empresa ingresa",
       "answers": {
         "answer_1": "a) El dinero que recibe de un préstamo bancario a largo plazo",
         "answer_2": "b) Lo que cobra de sus clientes",
@@ -877,7 +877,7 @@
         "part": 3
       },
       "hasSecondOption": true,
-      "statement": "36. Si la variación de Caja y bancos durante el ejercicio es positiva, significa que la empresa",
+      "statement": "36.- Si la variación de Caja y bancos durante el ejercicio es positiva, significa que la empresa",
       "answers": {
         "answer_1": "a) Ha tenido más cobros que pagos",
         "answer_2": "b) Ha tenido más ingresos que gastos",
@@ -891,7 +891,7 @@
         "circuit": "Circuito",
         "part": 3
       },
-      "statement": "Si aumenta Caja y bancos, la empresa tiene",
+      "statement": "36.- Si aumenta Caja y bancos, la empresa tiene",
       "answers": {
         "answer_1": "a) Más deudas",
         "answer_2": "b) Más liquidez",
@@ -907,7 +907,7 @@
       },
       "hasSecondOption": true,
       "isJoker": true,
-      "statement": "La FINANCIACIÓN DE LOS ACTIVOS CORRIENTES supone",
+      "statement": "COMDÍN.- La FINANCIACIÓN DE LOS ACTIVOS CORRIENTES supone",
       "answers": {
         "answer_1": "a) Poder usar el crédito de proveedores",
         "answer_2": "b) Un gasto",
@@ -922,7 +922,7 @@
         "part": 3
       },
       "isJoker": true,
-      "statement": "El ACTIVO CORRIENTE SE PUEDE FINANCIAR con",
+      "statement": "COMODÍN.- El ACTIVO CORRIENTE SE PUEDE FINANCIAR con",
       "answers": {
         "answer_1": "a) Recursos financieros a corto plazo",
         "answer_2": "b) Recursos financieros a largo plazo",
@@ -937,7 +937,7 @@
         "part": 4
       },
       "hasSecondOption": true,
-      "statement": "37. Hacienda (Hacienda Pública, acreedor por conceptos fiscales) se refiere a",
+      "statement": "37.- Hacienda (Hacienda Pública, acreedor por conceptos fiscales) se refiere a",
       "answers": {
         "answer_1": "a) Impuestos pendientes de pagar a la Administración Pública",
         "answer_2": "b) Anticipos de impuestos",
@@ -951,7 +951,7 @@
         "circuit": "Circuito",
         "part": 4
       },
-      "statement": "Hacienda (Hacienda Pública, acreedor por conceptos fiscales) se refiere a",
+      "statement": "37.- Hacienda (Hacienda Pública, acreedor por conceptos fiscales) se refiere a",
       "answers": {
         "answer_1": "a) Pago de impuestos ya anticipados por la empresa",
         "answer_2": "b) Impuestos que la empresa tiene que pagar a Hacienda",
@@ -966,7 +966,7 @@
         "part": 4
       },
       "isUnique": true,
-      "statement": "38. Hacienda (Hacienda Pública, acreedor por conceptos fiscales) representa",
+      "statement": "38.- Hacienda (Hacienda Pública, acreedor por conceptos fiscales) representa",
       "answers": {
         "answer_1": "a) Un derecho de cobro",
         "answer_2": "b) Una obligación de pago",
@@ -981,7 +981,7 @@
         "part": 4
       },
       "hasSecondOption": true,
-      "statement": "39. La empresa saldará su deuda con Hacienda",
+      "statement": "39.- La empresa saldará su deuda con Hacienda",
       "answers": {
         "answer_1": "a) A corto plazo",
         "answer_2": "b) A largo plazo",
@@ -995,7 +995,7 @@
         "circuit": "Circuito",
         "part": 4
       },
-      "statement": "La empresa puede tener otras deudas con Administraciones Públicas",
+      "statement": "39.- La empresa puede tener otras deudas con Administraciones Públicas",
       "answers": {
         "answer_1": "a) No",
         "answer_2": "b) Sí, con los organismos de la Seguridad Social",
@@ -1010,7 +1010,7 @@
         "part": 4
       },
       "isUnique": true,
-      "statement": "40. Hacienda puede ser acreedora de la empresa por",
+      "statement": "40.- Hacienda puede ser acreedora de la empresa por",
       "answers": {
         "answer_1": "a) Retenciones de impuestos pendientes de pago (IRPF en nóminas, por ejemplo)",
         "answer_2": "b) Impuesto sobre sociedades generado en el último ejercicio",
@@ -1025,7 +1025,7 @@
         "part": 4
       },
       "hasSecondOption": true,
-      "statement": "41. Proveedores representa",
+      "statement": "41.- Proveedores representa",
       "answers": {
         "answer_1": "a) Lo que los proveedores han vendido a la empresa",
         "answer_2": "b) Lo que la empresa ha dejado a deber a los proveedores",
@@ -1039,7 +1039,7 @@
         "circuit": "Circuito",
         "part": 4
       },
-      "statement": "Proveedores representa",
+      "statement": "41.- Proveedores representa",
       "answers": {
         "answer_1": "a) La cuenta a pagar a los proveedores",
         "answer_2": "b) La factura de los proveedores",
@@ -1054,7 +1054,7 @@
         "part": 4
       },
       "isUnique": true,
-      "statement": "42. Proveedores es",
+      "statement": "42.- Proveedores es",
       "answers": {
         "answer_1": "a) Una deuda",
         "answer_2": "b) Un derecho de cobro",
@@ -1069,7 +1069,7 @@
         "part": 4
       },
       "hasSecondOption": true,
-      "statement": "43. El crédito de los proveedores tiene coste",
+      "statement": "43.- El crédito de los proveedores tiene coste",
       "answers": {
         "answer_1": "a) Sí",
         "answer_2": "b) No",
@@ -1083,7 +1083,7 @@
         "circuit": "Circuito",
         "part": 4
       },
-      "statement": "El coste del crédito de los proveedores se considera",
+      "statement": "43.- El coste del crédito de los proveedores se considera",
       "answers": {
         "answer_1": "a) Como un gasto financiero",
         "answer_2": "b) Como un coste implícito de acuerdo al descuento por pronto pago",
@@ -1098,7 +1098,7 @@
         "part": 4
       },
       "isUnique": true,
-      "statement": "44. Proveedores es una deuda",
+      "statement": "44.- Proveedores es una deuda",
       "answers": {
         "answer_1": "a) A corto plazo",
         "answer_2": "b) A largo plazo",
@@ -1113,7 +1113,7 @@
         "part": 4
       },
       "hasSecondOption": true,
-      "statement": "45. Un incremento de proveedores implica",
+      "statement": "45.- Un incremento de proveedores implica",
       "answers": {
         "answer_1": "a) Menos dinero disponible para los financiadores de la empresa",
         "answer_2": "b) Más dinero disponible para los financiadores de la empresa",
@@ -1127,7 +1127,7 @@
         "circuit": "Circuito",
         "part": 4
       },
-      "statement": "Un incremento de proveedores implica",
+      "statement": "45.- Un incremento de proveedores implica",
       "answers": {
         "answer_1": "a) Más dinero libre para los accionistas y acreedores de la empresa",
         "answer_2": "b) Menos dinero libre para los accionistas y acreedores de la empresa",
@@ -1163,7 +1163,7 @@
     {
       "_id": "80",
       "location": "Resultado",
-      "statement": "1. La cuenta de resultados",
+      "statement": "1.- La cuenta de resultados",
       "hasSecondOption": true,      
       "answers": {
         "answer_1": "a) Es el cálculo del resultado obtenido por la empresa durante un período de tiempo",
@@ -1175,7 +1175,7 @@
     {
       "_id": "81",
       "location": "Resultado",
-      "statement": "La cuenta de resultados se calcula como",
+      "statement": "1.- La cuenta de resultados se calcula como",
       "answers": {
         "answer_1": "a) La diferencia entre los ingresos y los gastos generados por la empresa durante un período de tiempo",
         "answer_2": "b) La diferencia entre los cobros y los pagos generados por la empresa durante un período de tiempo",
@@ -1186,7 +1186,7 @@
     {
       "_id": "82",
       "location": "Resultado",
-      "statement": "2. El margen bruto es",
+      "statement": "2.- El margen bruto es",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) La diferencia entre todos los ingresos y gastos del período",
@@ -1198,7 +1198,7 @@
     {
       "_id": "83",
       "location": "Resultado",
-      "statement": "El margen bruto es",
+      "statement": "2.- El margen bruto es",
       "answers": {
         "answer_1": "a) La diferencia entre los ingresos por ventas y los costes totales (variables y fijos)",
         "answer_2": "b) La diferencia entre los ingresos por ventas y todos los gastos del período",
@@ -1209,7 +1209,7 @@
     {
       "_id": "84",
       "location": "Resultado",
-      "statement": "3. El margen comercial es",
+      "statement": "3.- El margen comercial es",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) La diferencia entre el margen bruto y los gastos de comercialización (gastos de venta y comisiones de los comerciales)",
@@ -1221,7 +1221,7 @@
     {
       "_id": "85",
       "location": "Resultado",
-      "statement": "El margen comercial es",
+      "statement": "3.- El margen comercial es",
       "answers": {
         "answer_1": "a) Cuánto gana la empresa por las ventas realizadas por sus comerciales",
         "answer_2": "b) Cuánto le queda a la empresa después de descontar los gastos de producción y los de comercialización",
@@ -1232,7 +1232,7 @@
     {
       "_id": "86",
       "location": "Resultado",
-      "statement": "El EBITDA es",
+      "statement": "COMODÍN.- El EBITDA es",
       "hasSecondOption": true,
       "isJoker": true,
       "answers": {
@@ -1245,7 +1245,7 @@
     {
       "_id": "87",
       "location": "Resultado",
-      "statement": "El EBITDA informa de",
+      "statement": "COMODÍN.- El EBITDA informa de",
       "isJoker": true,
       "answers": {
         "answer_1": "a) La capacidad de generar beneficios de la empresa al margen de su política de amortizaciones, financiera y fiscal",
@@ -1257,7 +1257,7 @@
     {
       "_id": "88",
       "location": "Resultado",
-      "statement": "4. La amortización",
+      "statement": "4.- La amortización",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) Es un gasto y hay que deducirla del EBITDA para obtener el resultado generado por la explotación del negocio",
@@ -1269,7 +1269,7 @@
     {
       "_id": "89",
       "location": "Resultado",
-      "statement": "La amortización",
+      "statement": "4.- La amortización",
       "answers": {
         "answer_1": "a) Depreciación y amortización es lo mismo",
         "answer_2": "b) Es el gasto originado por la depreciación del inmovilizado y se resta del EBITDA para obtener el resultado de explotación",
@@ -1280,7 +1280,7 @@
     {
       "_id": "90",
       "location": "Resultado",
-      "statement": "El RESULTADO DE EXPLOTACIÓN o EBIT es",
+      "statement": "COMODÍN.- El RESULTADO DE EXPLOTACIÓN o EBIT es",
       "hasSecondOption": true,
       "isJoker": true,
       "answers": {
@@ -1293,7 +1293,7 @@
     {
       "_id": "91",
       "location": "Resultado",
-      "statement": "El RESULTADO DE EXPLOTACIÓN o EBIT informa de",
+      "statement": "COMODÍN.- El RESULTADO DE EXPLOTACIÓN o EBIT informa de",
       "answers": {
         "answer_1": "a) La capacidad de generar beneficios de la empresa al margen de su política financiera y fiscal",
         "answer_2": "b) La capacidad de generar beneficios de la empresa sin tener en cuenta los intereses y los impuestos",
@@ -1304,7 +1304,7 @@
     {
       "_id": "92",
       "location": "Resultado",
-      "statement": "5. Los ingresos y gastos financieros se derivan de",
+      "statement": "5.- Los ingresos y gastos financieros se derivan de",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) Los préstamos contraídos por la empresa",
@@ -1316,7 +1316,7 @@
     {
       "_id": "93",
       "location": "Resultado",
-      "statement": "Los ingresos y gastos financieros se refieren a",
+      "statement": "5.- Los ingresos y gastos financieros se refieren a",
       "answers": {
         "answer_1": "a) Los ingresos suelen ser intereses o dividendos cobrados de las inversiones realizadas",
         "answer_2": "b) Los gastos suelen ser intereses pagados por deudas contraídas",
@@ -1327,7 +1327,7 @@
     {
       "_id": "94",
       "location": "Resultado",
-      "statement": "El RESULTADO ANTES DE IMPUESTOS o EBT es",
+      "statement": "COMODÍN.- El RESULTADO ANTES DE IMPUESTOS o EBT es",
       "hasSecondOption": true,
       "isJoker": true,
       "answers": {
@@ -1340,7 +1340,7 @@
     {
       "_id": "95",
       "location": "Resultado",
-      "statement": "El RESULTADO ANTES DE IMPUESTOS o EBT informa de",
+      "statement": "COMODÍN.- El RESULTADO ANTES DE IMPUESTOS o EBT informa de",
       "isJoker": true,
       "answers": {
         "answer_1": "a) La capacidad de generar beneficios de la empresa al margen de la política fiscal",
@@ -1352,7 +1352,7 @@
     {
       "_id": "96",
       "location": "Resultado",
-      "statement": "6. Los impuestos que se deducen del resultado antes de impuestos son",
+      "statement": "6.- Los impuestos que se deducen del resultado antes de impuestos son",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) Los impuestos derivados del resultado de este año",
@@ -1364,7 +1364,7 @@
     {
       "_id": "97",
       "location": "Resultado",
-      "statement": "Los impuestos que se deducen del resultado antes de impuestos son",
+      "statement": "6.- Los impuestos que se deducen del resultado antes de impuestos son",
       "answers": {
         "answer_1": "a) Los impuestos que figuran en el estado de flujos de Efectivo",
         "answer_2": "b) Los impuestos derivados del resultado generado este año",
@@ -1375,7 +1375,7 @@
     {
       "_id": "98",
       "location": "Resultado",
-      "statement": "El RESULTADO NETO o EAT informa de",
+      "statement": "COMODÍN.- El RESULTADO NETO o EAT informa de",
       "hasSecondOption": true,
       "isJoker": true,
       "answers": {
@@ -1388,7 +1388,7 @@
     {
       "_id": "99",
       "location": "Resultado",
-      "statement": "El RESULTADO NETO o EAT se denomina así porque es",
+      "statement": "COMODÍN.- El RESULTADO NETO o EAT se denomina así porque es",
       "isJoker":true,
       "answers": {
         "answer_1": "a) El resultado generado por la empresa tras descontar los impuestos",
@@ -1400,7 +1400,7 @@
     {
       "_id": "100",
       "location": "Resultado",
-      "statement": "7. Los dividendos se restan del resultado neto porque son",
+      "statement": "7.- Los dividendos se restan del resultado neto porque son",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) La parte de ese resultado (si es positivo) que se reparte a los accionistas",
@@ -1412,7 +1412,7 @@
     {
       "_id": "101",
       "location": "Resultado",
-      "statement": "Los dividendos son",
+      "statement": "7.- Los dividendos son",
       "answers": {
         "answer_1": "a) La remuneración a los acreedores por las deudas contraídas",
         "answer_2": "b) La remuneración a los accionistas por el capital aportado",
@@ -1423,7 +1423,7 @@
     {
       "_id": "102",
       "location": "Resultado",
-      "statement": "El RESULTADO RETENIDO es",
+      "statement": "COMODÍN.- El RESULTADO RETENIDO es",
       "hasSecondOption": true,
       "isJoker":true,
       "answers": {
@@ -1436,7 +1436,7 @@
     {
       "_id": "103",
       "location": "Resultado",
-      "statement": "El RESULTADO RETENIDO es",
+      "statement": "COMODÍN.- El RESULTADO RETENIDO es",
       "isJoker": true,
       "answers": {
         "answer_1": "a) El resultado de restar los dividendos al resultado neto",
@@ -1475,7 +1475,7 @@
       "_id": "106",
       "location": "Efectivo",
       "hasSecondOption": true,
-      "statement": "1. El estado de flujos de efectivo se determina como",
+      "statement": "1.- El estado de flujos de efectivo se determina como",
       "answers": {
         "answer_1": "a) Los flujos de efectivo derivados de las actividades de explotación (FEAE)",
         "answer_2": "b) Las flujos de efectivo derivados de las actividades de inversión (FEAI) y de financiación (FEAF)",
@@ -1486,7 +1486,7 @@
     {
       "_id": "107",
       "location": "Efectivo",
-      "statement": "El estado de flujos de efectivo se obtiene como",
+      "statement": "1.- El estado de flujos de efectivo se obtiene como",
       "answers": {
         "answer_1": "a) El saldo inicial de caja más los movimientos de caja de la explotación, de las inversiones y de la financiación",
         "answer_2": "b) El saldo inicial de caja menos las entradas y salidas de capital social y préstamos",
@@ -1498,7 +1498,7 @@
       "_id": "108",
       "location": "Efectivo",
       "hasSecondOption": true,
-      "statement": "2. Los flujos de efectivo derivados de las actividades de explotación (FEAE) se pueden obtener de forma directa",
+      "statement": "2.- Los flujos de efectivo derivados de las actividades de explotación (FEAE) se pueden obtener de forma directa",
       "answers": {
         "answer_1": "a) Restando a los ingresos por ventas todos los gastos de explotación",
         "answer_2": "b) Restando a los ingresos por ventas todos los gastos de explotación más las variaciones en el fondo de maniobra",
@@ -1509,7 +1509,7 @@
     {
       "_id": "109",
       "location": "Efectivo",
-      "statement": "Los flujos de efectivo derivados de las actividades de explotación (FEAE) se pueden obtener de forma indirecta",
+      "statement": "2.- Los flujos de efectivo derivados de las actividades de explotación (FEAE) se pueden obtener de forma indirecta",
       "answers": {
         "answer_1": "a) Haciendo ajustes a partir del resultado antes de impuestos",
         "answer_2": "b) Haciendo ajustes a partir del resultado de explotación",
@@ -1520,7 +1520,7 @@
     {
       "_id": "110",
       "location": "Efectivo",
-      "statement": "3. Los gastos de explotación",
+      "statement": "3.- Los gastos de explotación",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) Son los gastos asociados a la explotación y se restan de los ingresos por ventas",
@@ -1532,7 +1532,7 @@
     {
       "_id": "111",
       "location": "Efectivo",
-      "statement": "La amortización",
+      "statement": "3.- La amortización",
       "answers": {
         "answer_1": "a) Se resta de los ingresos por ventas porque es un gasto de explotación",
         "answer_2": "b) No se resta de los ingresos por ventas porque es un gasto de explotación, pero no supone una salida de caja ",
@@ -1543,7 +1543,7 @@
     {
       "_id": "112",
       "location": "Efectivo",
-      "statement": "4. El pago de impuestos se refiere a",
+      "statement": "4.- El pago de impuestos se refiere a",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) El impuesto sobre sociedades generado durante este ejercici",
@@ -1555,7 +1555,7 @@
     {
       "_id": "113",
       "location": "Efectivo",
-      "statement": "El pago de impuestos se refiere a",
+      "statement": "4.- El pago de impuestos se refiere a",
       "answers": {
         "answer_1": "a) El impuesto sobre sociedades",
         "answer_2": "b) El impuesto de actividades económicas",
@@ -1566,7 +1566,7 @@
     {
       "_id": "114",
       "location": "Efectivo",
-      "statement": "5. Los ajustes relativos al fondo de maniobra en los flujos de efectivo derivados de las actividades de explotación (FEAE) se refieren, fundamentalmente, a",
+      "statement": "5.- Los ajustes relativos al fondo de maniobra en los flujos de efectivo derivados de las actividades de explotación (FEAE) se refieren, fundamentalmente, a",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) La variación de Existencias, Clientes, e Inversiones Financieras a corto plazo, que si han aumentado respecto al año anterior, se restan, y si han disminuido, se suman",
@@ -1578,7 +1578,7 @@
     {
       "_id": "115",
       "location": "Efectivo",
-      "statement": "Los ajustes relativos a los clientes en el cálculo de los flujos de efectivo derivados de las actividades de explotación (FEAE)  se refieren a",
+      "statement": "5.- Los ajustes relativos a los clientes en el cálculo de los flujos de efectivo derivados de las actividades de explotación (FEAE)  se refieren a",
       "answers": {
         "answer_1": "a) Si Clientes ha aumentado (se ha incrementado lo que la empresa tiene pendiente de cobrar), se restará",
         "answer_2": "b) Si Clientes ha aumentado, se sumará por tener más derechos de cobro",
@@ -1591,7 +1591,7 @@
       "location": "Efectivo",
       "hasSecondOption": true,
       "isJoker":true,
-      "statement": "Los flujos de efectivo de las actividades de explotación (FEAE) se refieren a",
+      "statement": "COMODÍN.- Los flujos de efectivo de las actividades de explotación (FEAE) se refieren a",
       "answers": {
         "answer_1": "a) Los movimientos de tesorería derivados de las actividades de explotación",
         "answer_2": "b) Los cambios en el patrimonio derivados de las actividades de explotación",
@@ -1602,7 +1602,7 @@
     {
       "_id": "117",
       "location": "Efectivo",
-      "statement": "Los flujos de efectivo de las actividades de explotación (FEAE) se refieren a",
+      "statement": "COMODÍN.- Los flujos de efectivo de las actividades de explotación (FEAE) se refieren a",
       "isJoker":true,
       "answers": {
         "answer_1": "a) Movimientos de efectivo debidos a las inversiones de la empresa",
@@ -1614,7 +1614,7 @@
     {
       "_id": "118",
       "location": "Efectivo",
-      "statement": "6. Los flujos de efectivo de las actividades de inversión (FEAI) incluyen",
+      "statement": "6.- Los flujos de efectivo de las actividades de inversión (FEAI) incluyen",
       "hasSecondOption": true,
       "answers": {
         "answer_1": "a) Pagos por inversiones en inmovilizado y cobros por desinversiones en inmovilizado",
@@ -1626,7 +1626,7 @@
     {
       "_id": "119",
       "location": "Efectivo",
-      "statement": "Los pagos por inversiones se restan porque se refieren, fundamentalmente, a",
+      "statement": "6.- Los pagos por inversiones se restan porque se refieren, fundamentalmente, a",
       "answers": {
         "answer_1": "a) Salidas de caja ocasionadas por compras de inmovilizado material, inmaterial o financiero",
         "answer_2": "b) Salidas de caja ocasionadas por la compra de cualquier activo corriente o no corriente",
@@ -1639,7 +1639,7 @@
       "location": "Efectivo",
       "hasSecondOption": true,
       "isJoker":true,
-      "statement": "Los flujos de efectivo de las actividades de inversión (FEAI) suponen",
+      "statement": "COMODÍN.- Los flujos de efectivo de las actividades de inversión (FEAI) suponen",
       "answers": {
         "answer_1": "a) Entradas de caja cuando hay venta de un inmovilizado",
         "answer_2": "b) Entradas de caja cuando hay cobro de intereses o/y dividendos de inversiones financieras",
@@ -1650,7 +1650,7 @@
     {
       "_id": "121",
       "location": "Efectivo",
-      "statement": "Los flujos de efectivo de las actividades de inversión (FEAI) suponen",
+      "statement": "COMODÍN.- Los flujos de efectivo de las actividades de inversión (FEAI) suponen",
       "isJoker":true,
       "answers": {
         "answer_1": "a) Movimientos de efectivo derivados del inmovilizado",
@@ -1663,7 +1663,7 @@
       "_id": "122",
       "location": "Efectivo",
       "hasSecondOption": true,
-      "statement": "7. Cobros y pagos por instrumentos de patrimonio neto",
+      "statement": "7.-  Cobros y pagos por instrumentos de patrimonio neto",
       "answers": {
         "answer_1": "a) Se restan cuando se amortizan o compran acciones propias, porque son salidas de efectivo",
         "answer_2": "b) Se suman cuando se emiten o venden acciones propias, porque son entradas de efectivo",
@@ -1674,7 +1674,7 @@
     {
       "_id": "123",
       "location": "Efectivo",
-      "statement": "Cobros y pagos por instrumentos de pasivo financiero",
+      "statement": "7.- Cobros y pagos por instrumentos de pasivo financiero",
       "answers": {
         "answer_1": "a) Se restan cuando se amortizan préstamos o empréstitos, porque sale dinero",
         "answer_2": "b) Se suman cuando se contraen nuevos préstamos o empréstitos, porque entra dinero",
@@ -1687,21 +1687,21 @@
       "location": "Efectivo",
       "hasSecondOption": true,
       "isJoker":true,
-      "statement": "7. Cobros y pagos por instrumentos de patrimonio neto",
+      "statement": "COMODÍN.- Los flujos de efectivo de las actividades de financiación (FEAF) suponen",
       "answers": {
-        "answer_1": "a) Se restan cuando se amortizan o compran acciones propias, porque son salidas de efectivo",
-        "answer_2": "b) Se suman cuando se emiten o venden acciones propias, porque son entradas de efectivo",
-        "answer_3": "c) Ambos "
+        "answer_1": "a) Entradas de caja cuando hay emisión de acciones",
+        "answer_2": "b) Entradas de caja cuando hay amortización de préstamos",
+        "answer_3": "c) Ambos"
       },
       "correctAnswer": 1
     },
     {
       "_id": "125",
       "location": "Efectivo",
-      "statement": "Cobros y pagos por instrumentos de pasivo financiero",
+      "statement": "COMODÍN.- Los flujos de efectivo de las actividades de financiación (FEAF) incluyen",
       "answers": {
-        "answer_1": "a) Se restan cuando se amortizan préstamos o empréstitos, porque sale dinero",
-        "answer_2": "b) Se suman cuando se contraen nuevos préstamos o empréstitos, porque entra dinero",
+        "answer_1": "a) Entradas de caja derivadas del cobro de dividendos",
+        "answer_2": "b) Salidas de caja derivadas del pago de intereses",
         "answer_3": "c) Ambos"
       },
       "correctAnswer": 2
@@ -1710,10 +1710,10 @@
       "_id": "126",
       "location": "Efectivo",
       "isUnique":true,
-      "statement": "Los flujos de efectivo de las actividades de financiación (FEAF) suponen",
+      "statement": "8.- El efectivo al inicio de un período de tiempo es",
       "answers": {
-        "answer_1": "a) Entradas de caja cuando hay emisión de acciones",
-        "answer_2": "b) Entradas de caja cuando hay amortización de préstamos",
+        "answer_1": "a) El importe de Caja y Bancos del balance del año anterior",
+        "answer_2": "b) El saldo de efectivo que había al inicio del período",
         "answer_3": "c) Ambos"
       },
       "correctAnswer": 3

@@ -5,13 +5,28 @@ import { menu } from './structure/menu.js';
 import { footer } from './structure/footer.html';
 import { userLogIn } from './userLogIn.js'
 import { Questions } from '../api/collections/questions.js';
+import { Matches } from '../api/collections/questions.js';
 
 import './body.html';
 import './body.css';
 
 Template.body.helpers({
     Questions() {
-        var currentQuestion = Session.get('currentQuestion') || 1;
+debugger;
+        var match = Matches.find({ "user": String(Meteor.userId()) })
+        if (match.count() === 0)
+            Meteor.call('createMatch');
+
+//TODO - Hacer algo cuando un jugador quiera jugar más de una vez
+//Si no contestas, pasa a la siguiente pregunta
+        match = Matches.findOne({ "user": String(Meteor.userId()) })
+
+        if(match.hasSecondOption)
+            var questionID = Number(match.lastQuestionAnsweredCorrectly) + 2;
+        else
+            var questionID = Number(match.lastQuestionAnsweredCorrectly) + 1;
+
+        var currentQuestion = Session.get('currentQuestion') || questionID;
         Session.set('currentQuestion', currentQuestion);
 
         return Questions.findOne({ "_id": String(currentQuestion) });
@@ -27,17 +42,9 @@ Template.body.events({
 
         var idQuestion = Session.get('currentQuestion')
         var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });     // SELECT * WHERE "_id" = idQuestion
-        var correctAnswer = false;
-        if (rightAnswer.correctAnswer == userAnswer) {     // It's the right answer
-            correctAnswer = true;
-        }else{
-            if (rightAnswer.isJoker == true) {
-                jokerFailed = true;
-            }
-        }
         // Call CheckAnswer to check if the User Answer is the correct one.
         // The function is located at '\imports\api\collections\questions.js'
-        Meteor.call('questions.checkAnswer', Number(userAnswer), Number(idQuestion), correctAnswer);
+        Meteor.call('questions.checkAnswer', Number(userAnswer), Number(idQuestion));
 
 
         // Set currentQuestion to next one
@@ -45,7 +52,7 @@ Template.body.events({
         if (rightAnswer.isJoker == true) {
             jokerFailed = true;
             nextQuestion = 2;
-        }else if (rightAnswer.location.circuit == "Balance") {
+        } else if (rightAnswer.location.circuit == "Balance") {
             nextQuestion = idQuestion + 2;
         } else if (rightAnswer.isUnique == true) {
             if (jokerFailed)

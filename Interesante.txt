@@ -24,6 +24,12 @@ SEGURIDAD
     https://www.meteor.com/tutorials/blaze/security-with-methods
     
 =======================================================
+== ----------------- Base de Datos ----------------- ==
+=======================================================
+No se ha metido el Nombre del Usuario, simplemente el ID, ya que haciendo un  Left Join de Meteor.userId() con Users se podría sacar el Nombre -> Meteor.user().services.google.name
+Tampoco se ha guardado si la respuesta del usuario es correcta, simplemente se ha guardado la respuesta que el ha dado ya que Left Join del idQuestion con Questions se podría sacar si la pregunta se acertó o se fallo.
+
+=======================================================
 == -------------- Cambios en el Juego -------------- ==
 =======================================================
 

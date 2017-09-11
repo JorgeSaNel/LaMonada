@@ -2,3 +2,5 @@ LIST OF THINGS TO IMPROVE IN THE PROJECT
 
 Login with FB
 Check out the questions -> Not sure if it follows the correct way
+MongoDB esta hecho para correr en 32-bit. Cambiar a 64bits
+Hacer algo cuando un jugador quiera jugar más de una vez
