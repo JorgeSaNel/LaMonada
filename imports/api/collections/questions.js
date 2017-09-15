@@ -29,8 +29,7 @@ Meteor.methods({
 });
 
 function insertAnswerOnDDBB(idQuestion, answer_User) {
-debugger;
-    var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });
+    var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });     // Equivalent to SELECT * WHERE "_id" = idQuestion on SQL
     var correctAnswer = false;
     if(rightAnswer.correctAnswer == answer_User){ // Update last Questions Answered Correctly by user in Matches.DB
         correctAnswer = true;
@@ -54,7 +53,6 @@ debugger;
 }
 
 function insertNewMatch() {
-debugger;
     if (Matches.find().count() === 0) {
         maxID = 1;
     } else {
