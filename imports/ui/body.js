@@ -4,8 +4,11 @@ import { Session } from 'meteor/session';
 import { menu } from './structure/menu.js';
 import { footer } from './structure/footer.html';
 import { userLogIn } from './userLogIn.js'
+
+//Imports from DDBB
 import { Questions } from '../api/collections/questions.js';
 import { Matches } from '../api/collections/questions.js';
+import { User_QuestionsAnswered } from '../api/collections/questions.js';
 
 import './body.html';
 import './body.css';
@@ -17,7 +20,7 @@ Template.body.helpers({
             Meteor.call('createMatch');
 
         //TODO - Hacer algo cuando un jugador quiera jugar más de una vez
-        match = Matches.findOne({ "user": String(Meteor.userId()) })
+        match = Matches.findOne({ "user": String(Meteor.userId()) });
 
         if (match.hasSecondOption)
             var questionID = Number(match.lastQuestionAnsweredCorrectly) + 2;
@@ -28,7 +31,43 @@ Template.body.helpers({
         Session.set('currentQuestion', currentQuestion);
 
         return Questions.findOne({ "_id": String(currentQuestion) });
+    }
+})
+
+var answered;
+var correct;
+Template.showEndOfQuestions.helpers({
+    showAllQuestionsAnswered: function () {
+        answered = User_QuestionsAnswered.find({
+            "user": String(Meteor.userId()),
+            "GameNumber": GetGameNumber()
+        }).count()
+
+        return answered;
     },
+
+    showAllCorrectQuestions: function () {
+        correct = User_QuestionsAnswered.find({
+            "user": String(Meteor.userId()),
+            "GameNumber": GetGameNumber(),
+            correctAnswer: true
+        }).count()
+        return correct;
+    },
+
+    showAllIncorrectQuestions: function () {
+        return User_QuestionsAnswered.find({
+            "user": String(Meteor.userId()),
+            "GameNumber": GetGameNumber(),
+            correctAnswer: false
+        }).count()
+    },
+
+    showMark: function () {
+        var mark = correct * 10 / answered
+        return parseFloat(Math.round(mark * 100) / 100).toFixed(2);
+    },
+
 })
 
 var jokerFailed = false;
@@ -40,8 +79,9 @@ Template.body.events({
         $(answer).prop('checked', false); //Set radio button to false
 
         if (userAnswer == undefined) {
-            //TODO - Mostrar por pantalla el error
-            return new Meteor.Error('Contesta a una pregunta para continuar');
+            //TODO - Mejorar el mostrado por pantalla del error
+            window.alert("Contesta a la pregunta para continuar");
+            return new Meteor.Error('Contesta a la pregunta para continuar');
         }
 
         var idQuestion = Session.get('currentQuestion')
@@ -56,6 +96,24 @@ Template.body.events({
         Meteor.call('questions.checkAnswer', Number(userAnswer), Number(idQuestion));
     },
 });
+
+var ErrorAtCountQuestion = false;
+function GetGameNumber() {
+    var game = Matches.findOne(
+        {
+            "user": String(Meteor.userId()), "endOfGame": true
+        }, {
+            sort: { _id: -1 }
+        });
+
+    if (game == undefined && !ErrorAtCountQuestion){
+        ErrorAtCountQuestion = true;
+        window.alert("Debe contestar a todas las preguntas para continuar el juego");        
+    }else{
+        ErrorAtCountQuestion = false;
+        return game.GameNumber;
+    }
+}
 
 
 function AnaliseNextQuestion(rightAnswer, userAnswer) {

@@ -1739,7 +1739,8 @@
         "answer_2": "El saldo de efectivo que había al inicio del período",
         "answer_3": "Ambos"
       },
-      "correctAnswer": 3
+      "correctAnswer": 3,
+      "endOfQuestions": true
     }
 
 

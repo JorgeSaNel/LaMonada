@@ -31,10 +31,11 @@ Meteor.methods({
 function insertAnswerOnDDBB(idQuestion, answer_User) {
     var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });     // Equivalent to SELECT * WHERE "_id" = idQuestion on SQL
     var correctAnswer = false;
-    if(rightAnswer.correctAnswer == answer_User){ // Update last Questions Answered Correctly by user in Matches.DB
+    if (rightAnswer.correctAnswer == answer_User) { // Update last Questions Answered Correctly by user in Matches.DB
         correctAnswer = true;
         Matches.update({
-            user: Meteor.userId()},
+            user: Meteor.userId()
+        },
             {
                 $set: {
                     lastQuestionAnsweredCorrectly: String(idQuestion)
@@ -42,28 +43,41 @@ function insertAnswerOnDDBB(idQuestion, answer_User) {
             }
         );
     }
-    
+    if (rightAnswer.endOfQuestions) {
+        Matches.update({
+            user: Meteor.userId()
+        },
+            {
+                $set: {
+                    endOfQuestions: true
+                }
+            }
+        );
+    }
+
     User_QuestionsAnswered.insert({
         user: Meteor.userId(),
         question: idQuestion,
         userAnswerWas: answer_User,
         answeredAt: new Date(),
-        correctAnswer: correctAnswer
+        correctAnswer: correctAnswer,
+        GameNumber: gameNumber
     });
 }
 
+var gameNumber;
 function insertNewMatch() {
     if (Matches.find().count() === 0) {
-        maxID = 1;
+        gameNumber = 1;
     } else {
-        var matchNumber = Matches.find().sort({ _id: -1 }).limit(1)
-        var maxID = matchNumber.GameNumber + 1;
+        var matchNumber = Matches.findOne({}, { sort: { _id: -1 } });
+        gameNumber = matchNumber.GameNumber + 1;
     }
 
     Matches.insert({
         user: Meteor.userId(),
         createdOn: new Date(),
-        GameNumber: maxID,
+        GameNumber: gameNumber,
         lastQuestionAnsweredCorrectly: 0
     });
 }

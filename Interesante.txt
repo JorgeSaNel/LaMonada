@@ -29,6 +29,12 @@ SEGURIDAD
 No se ha metido el Nombre del Usuario, simplemente el ID, ya que haciendo un  Left Join de Meteor.userId() con Users se podría sacar el Nombre -> Meteor.user().services.google.name
 Tampoco se ha guardado si la respuesta del usuario es correcta, simplemente se ha guardado la respuesta que el ha dado ya que Left Join del idQuestion con Questions se podría sacar si la pregunta se acertó o se fallo.
 
+Sobre actualizar de 32bits a 64bits la BBDD de MongoDB -->
+https://forums.meteor.com/t/is-meteor-64-bit/19758
+https://stackoverflow.com/questions/34624904/how-to-make-meteor-work-on-64bit-mongodb-on-windows-10
+En conclusión, no se puede hacer tan fácilmente, pero cuando se sube el proyecto a la nube de meteor, este ya tiene incorporado una BBDD de más de 2Gb
+
+
 =======================================================
 == -------------- Cambios en el Juego -------------- ==
 =======================================================
