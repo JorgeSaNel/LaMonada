@@ -5,3 +5,15 @@
     padding: 25px;  
     margin: 25px;
 }
+
+#markText{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#congratsAfterQuestions{
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+

@@ -97,6 +97,14 @@ Template.showEndOfQuestions.helpers({
 
 })
 
+Template.showEndOfQuestions.events({
+    'click :button': function (event, template) {
+        //TODO - Mejorar el mostrado por pantalla del error
+        window.alert("pasamos al juego");
+        return new Meteor.Error("pasamos al juego");
+    },
+});
+
 var ErrorAtCountQuestion = false;
 function GetGameNumber() {
     var game = Matches.findOne(
@@ -106,10 +114,10 @@ function GetGameNumber() {
             sort: { _id: -1 }
         });
 
-    if (game == undefined && !ErrorAtCountQuestion){
+    if (game == undefined && !ErrorAtCountQuestion) {
         ErrorAtCountQuestion = true;
-        window.alert("Debe contestar a todas las preguntas para continuar el juego");        
-    }else{
+        window.alert("Debe contestar a todas las preguntas para continuar el juego");
+    } else {
         ErrorAtCountQuestion = false;
         return game.GameNumber;
     }

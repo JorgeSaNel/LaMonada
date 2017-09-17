@@ -1,11 +1,7 @@
 <body>
     <div id="main">
         <!--All the code must be here-->
-        {{#if currentUser}} 
-            {{> menu}} 
-        {{else}} 
-            {{> informationToStartGame}} 
-        {{/if}}
+        {{#if currentUser}} {{> menu}} {{else}} {{> informationToStartGame}} {{/if}}
 
         <center>{{> user_login}} </center>
 
@@ -14,13 +10,7 @@
 
         {{#if currentUser}}
         <ul>
-            {{#if Questions}} 
-                {{#with Questions}} 
-                    {{> ShowOneQuestion}} 
-                {{/with}} 
-            {{else}} 
-                {{> showEndOfQuestions}} 
-            {{/if}}
+            {{#if Questions}} {{#with Questions}} {{> ShowOneQuestion}} {{/with}} {{else}} {{> showEndOfQuestions}} {{/if}}
         </ul>
         {{/if}} {{> footer}}
     </div>
@@ -57,18 +47,36 @@
 </template>
 
 <template name="showEndOfQuestions">
-    <h3>¡ENHORABUENA!</h3>
-    <p>Has terminado la primera fase y hemos creado la empresa La Mónada. Échale un vistazo al resúmen de las preguntas contestadas
-        antes de empezar con la segunda fase del juego</p>
+    <div class="textAfterQuestions">
+        <center>
+            <div id="congratsAfterQuestions">
+                <h3>¡ENHORABUENA!</h3>
+                <img src="MonoConFondoBlanco.png" alt="Mono" style="width:304px;height:228px;">
+                <h3>Has terminado la primera fase y hemos creado la empresa La Mónada.</h3>
+            </div>
+        </center>
 
-    <div>
-        <li>El numero total de preguntas CONTESTADAS ha sido {{showAllQuestionsAnswered}}</li>
-        <li>El numero total de preguntas CORRECTAS ha sido {{showAllCorrectQuestions}}</li>
-        <li>El numero total de preguntas INCORRECTAS ha sido {{showAllIncorrectQuestions}}</li>
+        <br>
+        <h4>Échale un vistazo al resúmen de las preguntas contestadas antes de empezar con la segunda fase del juego</h4>
+        <div>
+            <li>Has contestado a {{showAllQuestionsAnswered}} preguntas</li>
+            <li>Has acertado {{showAllCorrectQuestions}} preguntas</li>
+            <li>Has fallado {{showAllIncorrectQuestions}} preguntas</li>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-sm-4" id="markText">Su nota final es</div>
+            <div class="col-sm-4" id="markText">
+                {{showMark}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">Clike en el botón para pasar a la segunda fase del juego</div>
+            <div class="col-sm-4">
+                <input type="button" value="Continuar">
+            </div>
+        </div>
     </div>
-
-    Su nota final es
-    <h5>{{showMark}}</h5>
-
-    <input type="button" value="Continuar">
 </template>
