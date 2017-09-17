@@ -1,26 +1,28 @@
 <body>
     <div id="main">
         <!--All the code must be here-->
-        {{#if currentUser}} {{> menu}} {{else}} {{> informationToStartGame}} {{/if}}
+        {{#if currentUser}} 
+            {{> menu}} 
+        {{else}} 
+            {{> informationToStartGame}} 
+        {{/if}}
 
         <center>{{> user_login}} </center>
 
         <!-- ¿Que quería hacer aquí? -->
         <!-- {{#if currentUser}} {{> iniciarJuego}} {{/if}}  -->
-        
+
         {{#if currentUser}}
-            <ul>
-                {{#if Questions}}
-                    {{#with Questions}}
-                        {{> question}}
-                    {{/with}}   
-                {{else}}
-                    {{> showEndOfQuestions}}
-                {{/if}}
-            </ul>
-        {{/if}} 
-        
-        {{> footer}}
+        <ul>
+            {{#if Questions}} 
+                {{#with Questions}} 
+                    {{> ShowOneQuestion}} 
+                {{/with}} 
+            {{else}} 
+                {{> showEndOfQuestions}} 
+            {{/if}}
+        </ul>
+        {{/if}} {{> footer}}
     </div>
 </body>
 
@@ -40,32 +42,33 @@
     </div>
 </template>
 
-<template name="question">
+<template name="ShowOneQuestion">
     <form>
         <!-- Check if there is a questions with its answers -->
         {{#if answers}}
-            <h3>{{statement}}</h3>
-            <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>
-            <label><input type="radio" name="answer" value="2"> {{answers.answer_2}}</label>
-            <label><input type="radio" name="answer" value="3"> {{answers.answer_3}}</label>
+        <h3>{{statement}}</h3>
+        <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>
+        <label><input type="radio" name="answer" value="2"> {{answers.answer_2}}</label>
+        <label><input type="radio" name="answer" value="3"> {{answers.answer_3}}</label>
 
-            <br>
-            <input type="button" value="Click">
-        {{/if}}
+        <br>
+        <input type="button" value="Click"> {{/if}}
     </form>
 </template>
 
 <template name="showEndOfQuestions">
     <h3>¡ENHORABUENA!</h3>
-    <p>Has terminado la primera fase y hemos creado la empresa La Mónada. Échale un vistazo al resúmen de las preguntas contestadas antes de empezar con la segunda fase del juego</p>
-    
+    <p>Has terminado la primera fase y hemos creado la empresa La Mónada. Échale un vistazo al resúmen de las preguntas contestadas
+        antes de empezar con la segunda fase del juego</p>
+
     <div>
         <li>El numero total de preguntas CONTESTADAS ha sido {{showAllQuestionsAnswered}}</li>
         <li>El numero total de preguntas CORRECTAS ha sido {{showAllCorrectQuestions}}</li>
         <li>El numero total de preguntas INCORRECTAS ha sido {{showAllIncorrectQuestions}}</li>
     </div>
 
-    Su nota final es <h5>{{showMark}}</h5>
+    Su nota final es
+    <h5>{{showMark}}</h5>
 
     <input type="button" value="Continuar">
 </template>

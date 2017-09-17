@@ -1,10 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
-import { Session } from 'meteor/session';
 
-export const Questions = new Meteor.Collection('questions');
-export const User_QuestionsAnswered = new Mongo.Collection('questionsAnsweredByUser');
-export const Matches = new Mongo.Collection('matches');
+import './allCollections.js';
 
 Meteor.methods({
     // Check if answer is the correct one and update the DDBB

@@ -5,10 +5,10 @@ import { menu } from './structure/menu.js';
 import { footer } from './structure/footer.html';
 import { userLogIn } from './userLogIn.js'
 
-//Imports from DDBB
-import { Questions } from '../api/collections/questions.js';
-import { Matches } from '../api/collections/questions.js';
-import { User_QuestionsAnswered } from '../api/collections/questions.js';
+//Imports Collections
+import { Questions } from '../api/collections/allCollections.js';
+import { Matches } from '../api/collections/allCollections.js';
+import { User_QuestionsAnswered } from '../api/collections/allCollections.js';
 
 import './body.html';
 import './body.css';
@@ -33,6 +33,33 @@ Template.body.helpers({
         return Questions.findOne({ "_id": String(currentQuestion) });
     }
 })
+
+var jokerFailed = false;
+var hasJoker = false;
+Template.ShowOneQuestion.events({
+    'click :button': function (event, template) {
+        var answer = template.find('input:radio[name=answer]:checked');
+        var userAnswer = $(answer).val();
+        $(answer).prop('checked', false); //Set radio button to false
+
+        if (userAnswer == undefined) {
+            //TODO - Mejorar el mostrado por pantalla del error
+            window.alert("Contesta a la pregunta para continuar");
+            return new Meteor.Error('Contesta a la pregunta para continuar');
+        }
+
+        var idQuestion = Session.get('currentQuestion')
+        var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });
+
+        var nextQuestion = AnaliseNextQuestion(rightAnswer, userAnswer);
+
+        Session.set('currentQuestion', nextQuestion);
+
+        // Call CheckAnswer to check if the User Answer is the correct one.
+        // The function is located at '\imports\api\collections\questions.js'
+        Meteor.call('questions.checkAnswer', Number(userAnswer), Number(idQuestion));
+    },
+});
 
 var answered;
 var correct;
@@ -70,33 +97,6 @@ Template.showEndOfQuestions.helpers({
 
 })
 
-var jokerFailed = false;
-var hasJoker = false;
-Template.body.events({
-    'click :button': function (event, template) {
-        var answer = template.find('input:radio[name=answer]:checked');
-        var userAnswer = $(answer).val();
-        $(answer).prop('checked', false); //Set radio button to false
-
-        if (userAnswer == undefined) {
-            //TODO - Mejorar el mostrado por pantalla del error
-            window.alert("Contesta a la pregunta para continuar");
-            return new Meteor.Error('Contesta a la pregunta para continuar');
-        }
-
-        var idQuestion = Session.get('currentQuestion')
-        var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });
-
-        var nextQuestion = AnaliseNextQuestion(rightAnswer, userAnswer);
-
-        Session.set('currentQuestion', nextQuestion);
-
-        // Call CheckAnswer to check if the User Answer is the correct one.
-        // The function is located at '\imports\api\collections\questions.js'
-        Meteor.call('questions.checkAnswer', Number(userAnswer), Number(idQuestion));
-    },
-});
-
 var ErrorAtCountQuestion = false;
 function GetGameNumber() {
     var game = Matches.findOne(
@@ -114,7 +114,6 @@ function GetGameNumber() {
         return game.GameNumber;
     }
 }
-
 
 function AnaliseNextQuestion(rightAnswer, userAnswer) {
     var nextQuestion = 0;
