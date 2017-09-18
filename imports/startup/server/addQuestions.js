@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Questions } from '../../api/collections/allCollections.js';
+import { Questions } from '../../api/collections/methods.js';
 
 Meteor.startup(function () {
 

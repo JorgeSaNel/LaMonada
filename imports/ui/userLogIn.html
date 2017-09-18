@@ -3,7 +3,11 @@
 </template>
 
 <template name="user_login">
-    {{#if currentUser}} {{> user_loggedin}} {{else}} {{> loginButtons}} {{/if}}
+    {{#if currentUser}} 
+        {{> user_loggedin}} 
+    {{else}} 
+        {{> loginButtons}} 
+    {{/if}}
 </template>
 
 <!--TODO: Mejorar codio para que visualmente sea más bonito-->
@@ -17,8 +21,9 @@
         </li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            {{currentUser.services.google.name}}
-            <b class="caret"></b></a>
+                {{currentUser.services.google.name}}
+                <b class="caret"></b>
+            </a>
             
             <ul class="dropdown-menu">
                 <li><a>Account Settings</a></li>

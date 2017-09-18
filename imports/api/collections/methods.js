@@ -1,7 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-import './allCollections.js';
+//All Collections
+export const Questions = new Meteor.Collection('questions');
+export const User_QuestionsAnswered = new Mongo.Collection('questionsAnsweredByUser');
+export const Matches = new Mongo.Collection('matches');
 
 Meteor.methods({
     // Check if answer is the correct one and update the DDBB
@@ -51,6 +54,7 @@ function insertAnswerOnDDBB(idQuestion, answer_User) {
             }
         );
     }
+    var getGameNumber = Matches.findOne({"user": Meteor.userId()}, {"GameNumber": 1, sort: { "GameNumber": -1 }});
 
     User_QuestionsAnswered.insert({
         user: Meteor.userId(),
@@ -58,17 +62,16 @@ function insertAnswerOnDDBB(idQuestion, answer_User) {
         userAnswerWas: answer_User,
         answeredAt: new Date(),
         correctAnswer: correctAnswer,
-        GameNumber: gameNumber
+        GameNumber: getGameNumber.GameNumber
     });
 }
 
-var gameNumber;
 function insertNewMatch() {
     if (Matches.find().count() === 0) {
-        gameNumber = 1;
+        var gameNumber = 1;
     } else {
         var matchNumber = Matches.findOne({}, { sort: { _id: -1 } });
-        gameNumber = matchNumber.GameNumber + 1;
+        var gameNumber = matchNumber.GameNumber + 1;
     }
 
     Matches.insert({

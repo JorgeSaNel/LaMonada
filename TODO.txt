@@ -1,6 +1,11 @@
 LIST OF THINGS TO IMPROVE IN THE PROJECT
 
+-- LOG IN -- 
 Login with FB
+ARREGALR -- Inicias sesion con una cuenta. Te sales, y vuelves a iniciar sesion pero con otra cuenta. 
+Coge el userID del antiguo usuario
+
+-- DDBB --
 MongoDB esta hecho para correr en 32-bit. Cambiar a 64bits
 
 -- imports\ui\body.js --

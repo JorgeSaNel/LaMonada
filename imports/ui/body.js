@@ -6,23 +6,28 @@ import { footer } from './structure/footer.html';
 import { userLogIn } from './userLogIn.js'
 
 //Imports Collections
-import { Questions } from '../api/collections/allCollections.js';
-import { Matches } from '../api/collections/allCollections.js';
-import { User_QuestionsAnswered } from '../api/collections/allCollections.js';
+import { Questions } from '../api/collections/methods.js';
+import { Matches } from '../api/collections/methods.js';
+import { User_QuestionsAnswered } from '../api/collections/methods.js';
 
 import './body.html';
 import './body.css';
 
-Template.body.helpers({
+Template.StartQuestions.helpers({
     Questions() {
         var match = Matches.find({ "user": String(Meteor.userId()) })
         if (match.count() === 0)
             Meteor.call('createMatch');
+         
+        
+        match = Matches.findOne({ "user": String(Meteor.userId()) })
+        /*if(match.endOfGame)
+            //TODO - Hacer algo cuando un jugador quiera jugar más de una vez
+            window.alert("Ya contestaste a todas las pregunas. Por favor, inicia la segunda fase");*/
 
-        //TODO - Hacer algo cuando un jugador quiera jugar más de una vez
-        match = Matches.findOne({ "user": String(Meteor.userId()) });
+        var question = Questions.findOne({ "_id": match.lastQuestionAnsweredCorrectly });
 
-        if (match.hasSecondOption)
+        if(question.hasSecondOption)
             var questionID = Number(match.lastQuestionAnsweredCorrectly) + 2;
         else
             var questionID = Number(match.lastQuestionAnsweredCorrectly) + 1;
@@ -117,7 +122,10 @@ function GetGameNumber() {
     if (game == undefined && !ErrorAtCountQuestion) {
         ErrorAtCountQuestion = true;
         window.alert("Debe contestar a todas las preguntas para continuar el juego");
-    } else {
+        return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");
+    } else if(ErrorAtCountQuestion){
+        return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");        
+    }else{
         ErrorAtCountQuestion = false;
         return game.GameNumber;
     }
