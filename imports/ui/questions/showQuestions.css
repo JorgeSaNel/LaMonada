@@ -1,0 +1,15 @@
+#markText{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#congratsAfterQuestions{
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+label {
+    font-weight: normal !important;
+    cursor: pointer; cursor: hand;
+}
