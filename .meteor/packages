@@ -29,3 +29,5 @@ session@1.1.7
 dynamic-import@0.1.1
 check@1.2.5
 twbs:bootstrap
+
+themeteorchef:bert            # Handler the alerts

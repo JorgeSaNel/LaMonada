@@ -7,9 +7,9 @@ Followed this:
     https://guide.meteor.com/accounts.html
     https://console.developers.google.com/apis/credentials?pli=1&project=platinum-lead-162918
 
-Cuando te desloggeas, meteor coge las credenciales del antiguo autor. Para solucionarlo:
-    https://forums.meteor.com/t/is-logout-with-oauth-and-accounts-google-working-as-expected/16901/3
-
+Cuando te desloggeas, meteor coge las credenciales del antiguo autor. Para solucionarlo se ha tenido que limpiar las cookies
+y resetear la sesion en la funcion del LogOut:
+    https://stackoverflow.com/questions/28798364/how-can-i-delete-session-variables-on-logout-in-meteor
 
 Insertar en Base de Datos:
     PREGUNTAS
@@ -43,7 +43,14 @@ https://forums.meteor.com/t/flowrouter-or-ironrouter/4705
 
 BootStrap:
     meteor twbs:bootstrap
-    
+
+=======================================================
+== -------------- Diseño de la página -------------- ==
+=======================================================
+Para las alertas se ha utilizado el paquete de Bert:
+    https://www.youtube.com/watch?v=0W1UiTRkIUQ -- Tutorial que se ha seguido
+    https://github.com/themeteorchef/bert -- GitHub del cógido
+
 =======================================================
 == ----------------- Base de Datos ----------------- ==
 =======================================================

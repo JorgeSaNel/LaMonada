@@ -44,8 +44,7 @@ Template.ShowOneQuestion.events({
         $(answer).prop('checked', false); //Set radio button to false
 
         if (userAnswer == undefined) {
-            //TODO - Mejorar el mostrado por pantalla del error
-            window.alert("Contesta a la pregunta para continuar");
+            Bert.alert('Contesta a una pregunta para continuar', 'default', 'fixed-top', 'fa-bell');
             return new Meteor.Error('Contesta a la pregunta para continuar');
         }
 
@@ -117,7 +116,7 @@ function GetGameNumber() {
 
     if (game == undefined && !ErrorAtCountQuestion) {
         ErrorAtCountQuestion = true;
-        window.alert("Debe contestar a todas las preguntas para continuar el juego");
+        Bert.alert('Debe contestar a todas las preguntas para continuar el juego', 'warning', 'fixed-top', 'fa-remove');        
         return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");
     } else if(ErrorAtCountQuestion){
         return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");        

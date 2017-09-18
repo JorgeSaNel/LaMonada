@@ -1,37 +1,47 @@
 import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
 
 import './userLogIn.html';
 
-Template.user_loggedout.rendered = function() {
+Template.user_loggedout.rendered = function () {
     $('.dropdown-toggle').dropdown()
 }
 
-Template.user_loggedin.rendered = function() {
+Template.user_loggedin.rendered = function () {
     $('.dropdown-toggle').dropdown()
 }
 
 Template.user_loggedout.events({
     "click #login": function (e, tmpl) {
-        event.preventDefault();
         Meteor.loginWithGoogle({
             //Show what information is needed from the user
             requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/spreadsheets']
-        }, 
-        function (err) {
-            if (err)
+        }, function (err) {
+            if (err) {
                 Session.set('errorMessage', err.reason || 'Unknown error');
+                Bert.alert('Error al Iniciar Sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-top', 'fa-remove');
+            } else {
+                Bert.alert('Iniciado sesión correctamente', 'success', 'fixed-top', 'fa-check');
+            }
         });
     }
 });
 
 Template.user_loggedin.events({
     "click #logout": function (e, tmpl) {
-        event.preventDefault();
         Meteor.logout(function (err) {
             if (err) {
-                //error handling
+                //An error occured
+                Bert.alert('Error al cerrar sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-top', 'fa-remove');
             } else {
-                //show an alert  
+                // your cleanup code here
+                Object.keys(Session.keys).forEach(function (key) {
+                    Session.set(key, undefined);
+                });
+                Session.keys = {}; // remove session keys
+                //Router.go('/');  // redirect to the home page or elsewhere using iron:router
+
+                Bert.alert('Cerrado sesión correctamente', 'success', 'fixed-top', 'fa-check');
             }
         });
     }
