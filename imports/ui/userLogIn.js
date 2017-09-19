@@ -13,6 +13,8 @@ Template.user_loggedin.rendered = function () {
 
 Template.user_loggedout.events({
     "click #login": function (e, tmpl) {
+        e.preventDefault();
+        
         Meteor.loginWithGoogle({
             //Show what information is needed from the user
             requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/spreadsheets']

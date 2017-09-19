@@ -1,10 +1,9 @@
-<body>
+<template name="MainBody">
     <div id="main">
-        <!--All the code must be here-->
         {{#if currentUser}} 
             {{> menu}} 
             <center>{{> user_login}} </center>
-            {{> StartQuestions}}
+            {{> Template.dynamic template=main}}
         {{else}}
             {{> informationToStartGame}} 
             <center>{{> user_login}} </center> 
@@ -12,7 +11,15 @@
 
         {{> footer}}
     </div>
-</body>
+</template>
+
+<template name="StartPlayingOnBoard">
+    {{> StartSecondPhase_Board}}
+</template>
+
+<template name="MainPage">
+    {{> StartQuestions}}
+</template>
 
 <template name="informationToStartGame">
     <!--<div style="margin-left:25%;padding:1px 16px;height:1000px;">-->

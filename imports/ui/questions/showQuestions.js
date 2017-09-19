@@ -3,9 +3,9 @@ import { Session } from 'meteor/session';
 import { Meteor } from 'meteor/meteor';
 
 //Imports Collections
-import { Questions } from '../../api/collections/methods.js';
-import { Matches } from '../../api/collections/methods.js';
-import { User_QuestionsAnswered } from '../../api/collections/methods.js';
+import { Questions } from '/imports/api/collections/methods.js';
+import { Matches } from '/imports/api/collections/methods.js';
+import { User_QuestionsAnswered } from '/imports/api/collections/methods.js';
 
 import './showQuestions.html';
 import './showQuestions.css';
@@ -96,14 +96,6 @@ Template.showEndOfQuestions.helpers({
     },
 
 })
-
-Template.showEndOfQuestions.events({
-    'click :button': function (event, template) {
-        //TODO - Mejorar el mostrado por pantalla del error
-        window.alert("pasamos al juego");
-        return new Meteor.Error("pasamos al juego");
-    },
-});
 
 var ErrorAtCountQuestion = false;
 function GetGameNumber() {

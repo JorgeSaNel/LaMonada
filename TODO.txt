@@ -2,15 +2,13 @@ LIST OF THINGS TO IMPROVE IN THE PROJECT
 
 -- LOG IN -- 
 Login with FB
-ARREGALR -- Inicias sesion con una cuenta. Te sales, y vuelves a iniciar sesion pero con otra cuenta. 
-Coge el userID del antiguo usuario
+Coge el userID del antiguo usuario -- Problema de Meteor
 
 -- DDBB --
 MongoDB esta hecho para correr en 32-bit. Cambiar a 64bits
 
 -- imports\ui\body.js --
 Hacer algo cuando un jugador quiera jugar más de una vez
-Mejorar el mostrado por pantalla del error
 
 -- private\questions.json --
 Separar las preguntas de resultado y efectivo
