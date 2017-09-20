@@ -49,12 +49,20 @@ https://forums.meteor.com/t/flowrouter-or-ironrouter/4705
 BootStrap:
     meteor twbs:bootstrap
 
+COMO SE HA CREADO EL TABLERO
+    Se ha utilizado zonas de mapas, siguiendo la libreria de http://www.outsharked.com/imagemapster/default.aspx?demos.html
+    Se identifica cada zona y se crea algún evento
+
+    Para identificar cada zona se ha utilizado http://imagemap-generator.dariodomi.de/, que dada una foto te saca las coordenadas de cada foto
+y crea el HTML correspondiente
+
 =======================================================
 == -------------- Diseño de la página -------------- ==
 =======================================================
-Para las alertas se ha utilizado el paquete de Bert:
-    https://www.youtube.com/watch?v=0W1UiTRkIUQ -- Tutorial que se ha seguido
-    https://github.com/themeteorchef/bert -- GitHub del cógido
+ALERTAS
+    Para las alertas se ha utilizado el paquete de Bert:
+        https://www.youtube.com/watch?v=0W1UiTRkIUQ -- Tutorial que se ha seguido
+        https://github.com/themeteorchef/bert -- GitHub del cógido
 
 =======================================================
 == ----------------- Base de Datos ----------------- ==
@@ -81,3 +89,10 @@ CAMBIOS EN EL JUEGO
 
 Se ha creado una cuenta para dar servicio al juego, la cual es:
     'lamonada.aprendejugando@gmail.com'
+
+
+=======================================================
+== --------------------- Otros --------------------- ==
+=======================================================
+Añadir script tag: 
+    https://www.kaplankomputing.com/blog/tutorials/two-ways-to-add-a-script-tag-in-meteor/

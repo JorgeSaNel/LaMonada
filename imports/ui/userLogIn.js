@@ -3,13 +3,13 @@ import { Session } from 'meteor/session';
 
 import './userLogIn.html';
 
-Template.user_loggedout.rendered = function () {
+/*Template.user_loggedout.rendered = function () {
     $('.dropdown-toggle').dropdown()
 }
 
 Template.user_loggedin.rendered = function () {
     $('.dropdown-toggle').dropdown()
-}
+}*/
 
 Template.user_loggedout.events({
     "click #login": function (e, tmpl) {
