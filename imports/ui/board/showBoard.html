@@ -3,53 +3,77 @@
 	<a href="/">Go Back</a>
 	<br> Pasamos al juego
 
-	<br> {{> Beatles}}
-	<!-- 	<br> {{> ImageOfBoard}} -->
-</template>
-
-<template name="Beatles">
-	<img id="beatles" src="http://www.outsharked.com/imagemapster/examples/images/beatles_basic.jpg" style="width:400px;height:240px;"
-	 usemap="#beatles-map">
-	<map name="beatles-map">
-		<area shape="rect" data-name="paul,all" coords="36,46,121,131" href="#" />
-		<area shape="rect" data-name="ringo,all" coords="113,76,198,161" href="#" />
-		<area shape="rect" data-name="john,all" coords="192,50,277,135" href="#" />
-		<area shape="rect" data-name="george,all" coords="262,60,347,145" href="#" />
-	</map>
-
-	<div id="beatles-caption" style="clear:both;border: 1px solid black; width: 400px; padding: 6px; display:none;">
-		<div id="beatles-caption-header" style="font-style: italic; font-weight: bold; margin-bottom: 12px;"></div>
-		<div id="beatles-caption-text"></div>
-	</div>
+<!-- 	<br> {{> ImageOfBoard}} -->	
+	<br> {{> Second}}
 </template>
 
 <template name="ImageOfBoard">
-	<img src="/BoardWithoutData.png" alt="Tablero del Juego" usemap="#Board" />
+	<img id="FullBoard" src="/BoardWithoutData.png" alt="Tablero del Juego" 
+	usemap="#Board" />
 	<map name="Board" id="Board">
 		<!-- Outside Part -->
-		<area alt="" title="Gastos De Produccion" href="#" shape="poly" coords="216,548,136,522,150,480,228,508" />
-		<area alt="" title="Gastos De Comercializacion" href="#" shape="poly" coords="247,463,175,424,196,384,268,426" />
-		<area alt="" title="Gastos De Administracion" href="#" shape="poly" coords="277,414,209,365,232,333,301,382" />
-		<area alt="" title="Gastos Generales" href="#" shape="poly" coords="309,368,248,310,275,278,336,337" />
-		<area alt="" title="Amortizacion Material" href="#" shape="poly" coords="450,253,413,178,449,160,488,234" />
-		<area alt="" title="Amortizacion Inmaterial" href="#" shape="poly" coords="502,227,471,151,511,135,540,214" />
-		<area alt="" title="Ingresos Financieros" href="#" shape="poly" coords="679,196,682,110,725,114,722,198" />
-		<area alt="" title="Gastos Financieros" href="#" shape="poly" coords="735,195,750,115,791,124,779,205" />
-		<area alt="" title="Dividendos" href="#" shape="poly" coords="1046,369,1114,318,1138,352,1071,403" />
+		<area data-name="GastosProduccion, all" alt="" title="Gastos De Producción" href="#" shape="poly" coords="134,522,216,548,228,506,149,479" />
+		<area data-name="GastosComercializacion, all" alt="" title="Gastos De Comercialización" href="#" shape="poly" coords="249,462,268,426,194,383,174,422" />
+		<area data-name="GastosAdministracion, all" alt="" title="Gastos De Administración" href="#" shape="poly" coords="274,414,301,380,231,330,205,366" />
+		<area data-name="GastosGenerales, all" alt="" title="Gastos Generales" href="#" shape="poly" coords="308,369,338,336,276,279,246,313" />
+		<area data-name="AmortizacionMaterial, all" alt="" title="Amortización Material" href="#" shape="poly" coords="449,253,488,234,450,157,412,177" />
+		<area data-name="AmortizacionInmaterial, all" alt="" title="Amortización Inmaterial" href="#" shape="poly" coords="500,229,541,215,512,134,472,149" />
+		<area data-name="IngresosFinancieros, all" alt="" title="Ingresos Financieros" href="#" shape="poly" coords="678,195,722,199,725,113,681,111" />
+		<area data-name="GastosFinancieros, all" alt="" title="Gastos Financieros" href="#" shape="poly" coords="776,207,733,198,749,115,791,123" />
+		<area data-name="Dividendos, all" alt="" title="Dividendos" href="#" shape="poly" coords="1072,404,1045,368,1113,317,1138,352" />
 
  		<!-- Blue Part -->
-		<area alt="" title="Inmovilizado Inmaterial" href="#" shape="rect" coords="345,348,671,493" />
-		<area alt="" title="Inmovilizado Material" href="#" shape="rect" coords="347,495,670,634" />
-		<area alt="" title="Existencias" href="#" shape="rect" coords="347,639,674,741" />
-		<area alt="" title="Clientes" href="#" shape="rect" coords="347,744,673,811" />
-		<area alt="" title="Inversiones Financieras a C/P" href="#" shape="rect" coords="348,814,674,873" />
-		<area alt="" title="Caja y Bancos" href="#" shape="rect" coords="348,876,669,995" />
+		<area data-name="InmovilizadoInmaterial, all" alt="" title="Inmovilizado Inmaterial" href="#" shape="rect" coords="347,346,674,492" />
+		<area data-name="InmovilizadoMaterial, all" alt="" title="Inmovilizado Material" href="#" shape="rect" coords="347,493,675,635" />
+		<area data-name="Existencias, all" alt="" title="Existencias" href="#" shape="rect" coords="347,639,674,741" />
+		<area data-name="Clientes, all" alt="" title="Clientes" href="#" shape="rect" coords="347,741,674,812" />
+		<area data-name="InversionesFinancieras, all" alt="" title="Inversiones Financieras a C/P" href="#" shape="rect" coords="347,813,674,872" />
+		<area data-name="CajaBancos, all" alt="" title="Caja y Bancos" href="#" shape="rect" coords="347,874,674,995" />
 
 		<!-- Pink Part	-->
-		<area alt="" title="Capital Social" href="#" shape="rect" coords="675,349,1000,524" />
-		<area alt="" title="Reservas" href="#" shape="rect" coords="674,527,1000,657" />
-		<area alt="" title="Prestamos Bancarios a L/P" href="#" shape="rect" coords="676,663,1000,781" />
-		<area alt="" title="Hacienda" href="#" shape="rect" coords="678,784,998,844" />
-		<area alt="" title="Proveedores" href="#" shape="rect" coords="678,849,1001,995" />
+		<area data-name="CapitalSocial, all" alt="" title="Capital Social" href="#" shape="rect" coords="675,348,1001,524" />
+		<area data-name="Reservas, all" alt="" title="Reservas" href="#" shape="rect" coords="675,527,1001,656" />
+		<area data-name="Prestamos, all" alt="" title="Prestamos Bancarios a L/P" href="#" shape="rect" coords="675,659,1001,782" />
+		<area data-name="Hacienda, all" alt="" title="Hacienda" href="#" shape="rect" coords="675,782,1001,846" />
+		<area data-name="Proveedores, all" alt="" title="Proveedores" href="#" shape="rect" coords="675,847,1001,995" />
+	</map>
+
+	<!-- Show on screen where the mouse is over Name -->	
+	<div id="board-caption" style="clear:both;border: 1px solid black; width: 600px; padding: 6px; display:none;">
+		<div id="boardPart-caption-header" style="font-style: italic; font-weight: bold; margin-bottom: 12px;"></div>
+	</div>
+</template>
+
+<template name="Second">
+	<div style="clear: both; width: 500px; height: 50px; border: 1px solid black;" id="selections"></div>
+
+	<img id="FullBoard" src="/BoardWithoutData.png" alt="Tablero del Juego" 
+	usemap="#Board" />
+	<map name="Board" id="Board">
+		<!-- Outside Part -->
+		<area name="GastosProduccion" alt="" title="Gastos De Producción" href="#" shape="poly" coords="134,522,216,548,228,506,149,479" />
+		<area name="GastosComercializacion" alt="" title="Gastos De Comercialización" href="#" shape="poly" coords="249,462,268,426,194,383,174,422" />
+		<area name="GastosAdministracion" alt="" title="Gastos De Administración" href="#" shape="poly" coords="274,414,301,380,231,330,205,366" />
+		<area name="GastosGenerales" alt="" title="Gastos Generales" href="#" shape="poly" coords="308,369,338,336,276,279,246,313" />
+		<area name="AmortizacionMaterial" alt="" title="Amortización Material" href="#" shape="poly" coords="449,253,488,234,450,157,412,177" />
+		<area name="AmortizacionInmaterial" alt="" title="Amortización Inmaterial" href="#" shape="poly" coords="500,229,541,215,512,134,472,149" />
+		<area name="IngresosFinancieros" alt="" title="Ingresos Financieros" href="#" shape="poly" coords="678,195,722,199,725,113,681,111" />
+		<area name="GastosFinancieros" alt="" title="Gastos Financieros" href="#" shape="poly" coords="776,207,733,198,749,115,791,123" />
+		<area name="Dividendos" alt="" title="Dividendos" href="#" shape="poly" coords="1072,404,1045,368,1113,317,1138,352" />
+
+		<!-- Blue Part -->
+		<area name="InmovilizadoInmaterial" alt="" title="Inmovilizado Inmaterial" href="#" shape="rect" coords="347,346,674,492" />
+		<area name="InmovilizadoMaterial" alt="" title="Inmovilizado Material" href="#" shape="rect" coords="347,493,675,635" />
+		<area name="Existencias" alt="" title="Existencias" href="#" shape="rect" coords="347,639,674,741" />
+		<area name="Clientes" alt="" title="Clientes" href="#" shape="rect" coords="347,741,674,812" />
+		<area name="InversionesFinancieras" alt="" title="Inversiones Financieras a C/P" href="#" shape="rect" coords="347,813,674,872" />
+		<area name="CajaBancos" alt="" title="Caja y Bancos" href="#" shape="rect" coords="347,874,674,995" />
+
+		<!-- Pink Part	-->
+		<area name="CapitalSocial" alt="" title="Capital Social" href="#" shape="rect" coords="675,348,1001,524" />
+		<area name="Reservas" alt="" title="Reservas" href="#" shape="rect" coords="675,527,1001,656" />
+		<area name="Prestamos" alt="" title="Prestamos Bancarios a L/P" href="#" shape="rect" coords="675,659,1001,782" />
+		<area name="Hacienda" alt="" title="Hacienda" href="#" shape="rect" coords="675,782,1001,846" />
+		<area name="Proveedores" alt="" title="Proveedores" href="#" shape="rect" coords="675,847,1001,995" />
 	</map>
 </template>
