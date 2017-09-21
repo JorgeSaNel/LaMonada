@@ -160,7 +160,9 @@
             "activity": "Paga 4M de Dividendos de Caja y Bancos",
             "from": "Caja y Bancos",
             "to": "Dividendos",
-            "quantity": -4
+            "quantity": -4,
+            "endOfYear": true,
+            "endOfActivities": true
         }
     ]
 }

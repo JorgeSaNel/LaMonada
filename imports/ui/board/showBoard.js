@@ -1,4 +1,5 @@
 import { Template } from 'meteor/templating';
+import { Meteor } from 'meteor/meteor';
 
 import { BusinessActivity } from '/imports/api/collections/methods.js';
 import { Matches } from '/imports/api/collections/methods.js';
@@ -158,7 +159,7 @@ Template.ImageOfBoard.onRendered(function () {
         showToolTip: true,
         areas: colors,
         onClick: function (e) {
-             var singleSelecImage = false;
+            var singleSelecImage = false;
             countOfCliks += 1;
             if (countOfCliks % 2 === 0) {
                 secondCaption = captions[e.key];
@@ -193,6 +194,7 @@ Template.ImageOfBoard.events({
         if (countOfCliks % 2 === 0) {
             event.preventDefault();
 
+            var correctAnswer = false;
             var activity = BusinessActivity.findOne({
                 "year": activityYear,
                 "_id": String(activityId)
@@ -203,14 +205,15 @@ Template.ImageOfBoard.events({
 
                 Bert.alert('Enhorabuena! Has acertado', 'success', 'fixed-bottom', 'fa-check');
 
+                correctAnswer = true;
                 activityId += 1;
                 changeActivityText();
-            }else
-                Bert.alert('La combinación no es correcta. Por favor, vuelve a intentarlo', 'warning', 'fixed-top', 'fa-remove');            
-        }
+            } else
+                Bert.alert('La combinación no es correcta. Por favor, vuelve a intentarlo', 'warning', 'fixed-top', 'fa-remove');
 
-        //TODO - FINISH
-        Meteor.call('insertUserActivity', Number(userAnswer), Number(idQuestion));        
+            Meteor.call('insertUserActivity', Number(activityId), Number(activityYear),
+                                            String(firstCaption), String(secondCaption), correctAnswer);
+        }
     },
 });
 
@@ -228,6 +231,8 @@ var activityId = 1;
 var activityYear = 1;
 var fullTextOfActivities = "";
 function changeActivityText() {
+    var lastActivity = Matches.findOne({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
+
     var activity = BusinessActivity.findOne({
         "year": activityYear,
         "_id": String(activityId)
@@ -238,6 +243,12 @@ function changeActivityText() {
     else
         fullTextOfActivities = fullTextOfActivities + "<li style='margin-left:2em'>" + activity.activity + "</li>";
 
+    //Go to last activity answered correctly
+    if(lastActivity.lastActivityAnsweredCorrectly != activityId){
+        activityId += 1;
+        changeActivityText();
+    }
+
     //If it's just text, call again the function until there's a movement on DDBB
     if (activity.quantity === undefined) {
         activityId += 1;
@@ -246,3 +257,9 @@ function changeActivityText() {
 
     $('#activityText').html(fullTextOfActivities);
 }
+
+function GetGameNumber() {
+    var getNumber = Matches.findOne({ "user": Meteor.userId() }, { "GameNumber": 1, sort: { "GameNumber": -1 } });
+    return getNumber.GameNumber;
+}
+

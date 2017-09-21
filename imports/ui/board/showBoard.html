@@ -1,12 +1,22 @@
 <template name="StartSecondPhase_Board">
 
 	{{#if isCorrectUser.endOfGame}}
-		{{> ActivityText}}
-		<br> 
-		{{> ImageOfBoard}}
+		{{#unless isCorrectUser.endOfActivity}}
+			{{> ActivityText}}
+			<br> 
+			{{> ImageOfBoard}}
+		{{else}}
+			{{> ShowEndOfGame}}
+		{{/unless}}
 	{{else}}
 		{{> WithoutPermissions}}
 	{{/if}}
+</template>
+
+<template name="ShowEndOfGame">
+	<div>
+		Enhorabuena! Ha terminado el juego exitosamente.
+	</div>
 </template>
 
 <template name="WithoutPermissions">

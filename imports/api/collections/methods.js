@@ -6,6 +6,7 @@ export const Questions = new Meteor.Collection('questions');
 export const User_QuestionsAnswered = new Mongo.Collection('questionsAnsweredByUser');
 export const Matches = new Mongo.Collection('matches');
 export const BusinessActivity = new Mongo.Collection('businessActivity');
+export const User_ActivityHistory = new Mongo.Collection('activityAnsweredByUser');
 
 Meteor.methods({
     // Check if answer is the correct one and update the DDBB
@@ -20,30 +21,51 @@ Meteor.methods({
 
         insertAnswerOnDDBB(idQuestion, answer_User);
     },
+
     'createMatch'() {
         // Make sure the user is logged in before inserting on DDBB
         if (!Meteor.userId()) {
             throw new Meteor.Error('not-authorized');
         }
+
         insertNewMatch();
     },
-    //TODO - FINISH
-    'insertUserActivity'(){
+
+    'insertUserActivity'(activityId, activityYear, from, to, isCorrect) {
+        check(activityId, Number);
+        check(activityYear, Number);
+        check(from, String);
+        check(to, String);
+        check(isCorrect, Boolean);
+
+        // Make sure the user is logged in before inserting on DDBB
+        if (!Meteor.userId()) {
+            throw new Meteor.Error('not-authorized');
+        }
+
+        insertUserActivity(activityId, activityYear, from, to, isCorrect);
+
+        checkEndOfActivity(activityId);
 
     }
 });
 
+//Update Collections: Matches - User_QuestionsAnswered
+//Use Collections: Questions
 function insertAnswerOnDDBB(idQuestion, answer_User) {
     var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });     // Equivalent to SELECT * WHERE "_id" = idQuestion on SQL
     var correctAnswer = false;
-    if (rightAnswer.correctAnswer == answer_User) { // Update last Questions Answered Correctly by user in Matches.DB
+
+    // Update last Questions Answered Correctly by user in Matches.DB
+    if (rightAnswer.correctAnswer == answer_User) {
         correctAnswer = true;
         Matches.update({
             user: Meteor.userId()
         },
             {
                 $set: {
-                    lastQuestionAnsweredCorrectly: String(idQuestion)
+                    lastQuestionAnsweredCorrectly: String(idQuestion),
+                    updatedAt: new Date()
                 }
             }
         );
@@ -55,12 +77,12 @@ function insertAnswerOnDDBB(idQuestion, answer_User) {
         },
             {
                 $set: {
-                    endOfQuestions: true
+                    endOfQuestions: true,
+                    updatedAt: new Date()
                 }
             }
         );
     }
-    var getGameNumber = Matches.findOne({"user": Meteor.userId()}, {"GameNumber": 1, sort: { "GameNumber": -1 }});
 
     User_QuestionsAnswered.insert({
         user: Meteor.userId(),
@@ -68,10 +90,11 @@ function insertAnswerOnDDBB(idQuestion, answer_User) {
         userAnswerWas: answer_User,
         answeredAt: new Date(),
         correctAnswer: correctAnswer,
-        GameNumber: getGameNumber.GameNumber
+        GameNumber: GetGameNumber()
     });
 }
 
+//Update Collections: Matches
 function insertNewMatch() {
     if (Matches.find().count() === 0) {
         var gameNumber = 1;
@@ -86,5 +109,58 @@ function insertNewMatch() {
         GameNumber: gameNumber,
         lastQuestionAnsweredCorrectly: 0
     });
+}
+
+//Update Collections: User_ActivityHistory - Matches
+function insertUserActivity(activityId, activityYear, from, to, isCorrect) {
+    User_ActivityHistory.insert({
+        user: Meteor.userId(),
+        answeredAt: new Date(),
+        GameNumber: GetGameNumber(),
+        id_Activity: activityId,
+        year_Activity: activityYear,
+        from: from,
+        to: to,
+        isCorrect: isCorrect,
+    });
+
+    if (isCorrect) {
+        Matches.update({
+            user: Meteor.userId(),
+            GameNumber: GetGameNumber()
+        },
+            {
+                $set: {
+                    lastActivityAnsweredCorrectly: activityId,
+                    updatedAt: new Date()
+                }
+            }
+        );
+    }
+}
+
+//Update Collections: Matches
+//Use collection: BusinessActivity
+function checkEndOfActivity(activityId) {
+    var getActivity = BusinessActivity.findOne({ "_id": String(activityId) });
+
+    if (getActivity.endOfActivities) {
+        Matches.update({
+            user: Meteor.userId(),
+            GameNumber: GetGameNumber()
+        }, {
+                $set: {
+                    endOfActivity: true,
+                    updatedAt: new Date()
+                }
+            }
+        );
+    }
+}
+
+//Use Collections: Matches
+function GetGameNumber() {
+    var getNumber = Matches.findOne({ "user": Meteor.userId() }, { "GameNumber": 1, sort: { "GameNumber": -1 } });
+    return getNumber.GameNumber;
 }
 
