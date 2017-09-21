@@ -5,6 +5,7 @@ import { Mongo } from 'meteor/mongo';
 export const Questions = new Meteor.Collection('questions');
 export const User_QuestionsAnswered = new Mongo.Collection('questionsAnsweredByUser');
 export const Matches = new Mongo.Collection('matches');
+export const BusinessActivity = new Mongo.Collection('businessActivity');
 
 Meteor.methods({
     // Check if answer is the correct one and update the DDBB
@@ -26,6 +27,10 @@ Meteor.methods({
         }
         insertNewMatch();
     },
+    //TODO - FINISH
+    'insertUserActivity'(){
+
+    }
 });
 
 function insertAnswerOnDDBB(idQuestion, answer_User) {
@@ -43,6 +48,7 @@ function insertAnswerOnDDBB(idQuestion, answer_User) {
             }
         );
     }
+    //If it's the last question, insert the END
     if (rightAnswer.endOfQuestions) {
         Matches.update({
             user: Meteor.userId()

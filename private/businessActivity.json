@@ -1,0 +1,166 @@
+{
+    "businessActivity": [
+        {
+            "_id": "1",
+            "year": 1,
+            "number": 1,
+            "activity": "1.- La empresa recibe pedidos por importe de 80M",
+            "isStatement": true
+        },
+        {
+            "_id": "2",
+            "year": 1,
+            "number": 2,
+            "activity": "2.- Para satisfacer esta demanda, fabrica juegos, incrementando Existencias, con un coste de 40M, ya que:",
+            "isStatement": true
+        },
+        {
+            "_id": "3",
+            "year": 1,
+            "number": 2,
+            "activity": "Compra por 20M de materias primas a través de Caja y Bancos a Existencias",
+            "from": "Caja y Bancos",
+            "to": "Existencias",
+            "quantity": -20
+        },
+        {
+            "_id": "4",
+            "year": 1,
+            "number": 2,
+            "activity": "Paga costes de fabricación de 10M de Caja y Bancos a Existencias",
+            "from": "Caja y Bancos",
+            "to": "Existencias",
+            "quantity": -10
+        },
+        {
+            "_id": "5",
+            "year": 1,
+            "number": 2,
+            "activity": "Paga costes de montaje de 10M de Caja y Bancos a Existencias",
+            "from": "Caja y Bancos",
+            "to": "Existencias",
+            "quantity": -10
+        },
+        {
+            "_id": "6",
+            "year": 1,
+            "number": 3,
+            "activity": "3.- La empresa vende los juegos por valor de 80M (Ingresos por ventas), lo que implica: ",
+            "isStatement": true
+        },
+        {
+            "_id": "7",
+            "year": 1,
+            "number": 3,
+            "activity": "Incorpora los costes de producción de 40M asociados a esas ventas de Existencias a Gastos de Producción",
+            "from": "Existencias",
+            "to": "Gastos de Producción",
+            "quantity": -40
+        },
+        {
+            "_id": "8",
+            "year": 1,
+            "number": 3,
+            "activity": "Cobra 80M en Caja y Bancos",
+            "from": "Caja y Bancos",
+            "to": "Caja y Bancos",
+            "quantity": 80
+        },
+        {
+            "_id": "9",
+            "year": 1,
+            "number": 4,
+            "activity": "4.- Compra 20M de materia prima de Caja y Bancos para actualizar Existencias",
+            "from": "Caja y Bancos",
+            "to": "Existencias",
+            "quantity": -20,
+            "isStatement": true
+        },
+        {
+            "_id": "10",
+            "year": 1,
+            "number": 5,
+            "activity": "5.- Paga los gastos fijos:",
+            "isStatement": true
+        },
+        {
+            "_id": "11",
+            "year": 1,
+            "number": 5,
+            "activity": "10M de marketing y ventas de Caja y Bancos a Gastos de comercialización",
+            "from": "Caja y Bancos",
+            "to": "Gastos de Comercialización",
+            "quantity": -10
+        },
+        {
+            "_id": "12",
+            "year": 1,
+            "number": 5,
+            "activity": "7M de sueldos de Caja y Bancos a Gastos de Administración",
+            "from": "Caja y Bancos",
+            "to": "Gastos de Administración",
+            "quantity": -7
+        },
+        {
+            "_id": "13",
+            "year": 1,
+            "number": 5,
+            "activity": "2M para la formación a sus trabajadores de Caja y Bancos a Gastos generales",
+            "from": "Caja y Bancos",
+            "to": "Gastos Generales",
+            "quantity": -2
+        },
+        {
+            "_id": "14",
+            "year": 1,
+            "number": 5,
+            "activity": "Pierde un valor de 1M del inmovilizado inmaterial que va a su amortización correspondiente",
+            "from": "Inmovilizado Inmaterial",
+            "to": "Amortización inmovilizado Inmaterial",
+            "quantity": -1
+        },
+        {
+            "_id": "15",
+            "year": 1,
+            "number": 5,
+            "activity": "Pierde un valor de 2M del inmovilizado material que va a su amortización correspondiente",
+            "from": "Inmovilizado Material",
+            "to": "Amortización inmovilizado Material",
+            "quantity": -2
+        },
+        {
+            "_id": "16",
+            "year": 1,
+            "number": 6,
+            "activity": "6.- Toma decisiones financieras: ",
+            "isStatement": true
+        },
+        {
+            "_id": "17",
+            "year": 1,
+            "number": 6,
+            "activity": "Amortiza 15M del Préstamo Bancario a Largo Plazo de Caja y Bancos",
+            "from": "Préstamos Bancarios a Largo Plazo",
+            "to": "Caja y Bancos",
+            "quantity": -15
+        },
+        {
+            "_id": "18",
+            "year": 1,
+            "number": 6,
+            "activity": "Paga 2M de Intereses de Caja y Bancos",
+            "from": "Caja y Bancos",
+            "to": "Gastos Financieros",
+            "quantity": -2
+        },
+        {
+            "_id": "19",
+            "year": 1,
+            "number": 6,
+            "activity": "Paga 4M de Dividendos de Caja y Bancos",
+            "from": "Caja y Bancos",
+            "to": "Dividendos",
+            "quantity": -4
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+/* CSS declarations */
+
+#activityText {
+    width: 60%;
+    /* position: relative;
+    margin: 0 auto;
+    line-height: 1.4em; */
+}
+    
+/* If in mobile screen with maximum width 479px. 
+The iPhone screen resolution is 320x480 px (except iPhone4, 640x960) */    
+@media only screen and (max-width: 479px){
+    #activityText { width: 90%; }
+}
+
+#FullBoard {
+    max-width: 100%;
+    height: auto;
+}

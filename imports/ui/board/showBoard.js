@@ -1,95 +1,15 @@
 import { Template } from 'meteor/templating';
 
+import { BusinessActivity } from '/imports/api/collections/methods.js';
+import { Matches } from '/imports/api/collections/methods.js';
+
 import './showBoard.html';
 import './showBoard.css';
 require("jquery-imagemapster");
 
-Template.ImageOfBoard.onRendered(function () {
-    // Set up some options objects: 'single_opts' for when a single area is selected, which will show just a border
-    // 'all_opts' for when all are highlighted, to use a different effect - shaded white with a white border
-    // 'initial_opts' for general options that apply to the whole mapster. 'initial_opts' also includes callbacks
-    // onMouseover and onMouseout, which are fired when an area is entered or left. We will use these to show or
-    // remove the captions, and also set a flag to let the other code know if we're currently in an area.
-
-    var inArea,
-        image = $('#FullBoard'),
-        captions = {
-            GastosProduccion: ["Gastos de Producción"],
-            GastosComercializacion: ["Gastos de Comercialización"],
-            GastosAdministracion: ["Gastos de Administración"],
-            GastosGenerales: ["Gastos Generales"],
-            AmortizacionMaterial: ["Amortización Material"],
-            AmortizacionInmaterial: ["Amortización Inmaterial"],
-            IngresosFinancieros: ["Ingresos Financieros"],
-            GastosFinancieros: ["Gastos Financieros"],
-            Dividendos: ["Dividendos"],
-
-            InmovilizadoInmaterial: ["Inmovilizado Inmaterial"],
-            InmovilizadoMaterial: ["Inmovilizado Material"],
-            Existencias: ["Existencias"],
-            Clientes: ["Clientes"],
-            InversionesFinancieras: ["Inversiones Financieras a Corto Plazo"],
-            CajaBancos: ["Caja y Bancos"],
-
-            CapitalSocial: ["Capital Social"],
-            Reservas: ["Reservas"],
-            Prestamos: ["Préstamos Bancarios a Largo Plazo"],
-            Hacienda: ["Hacienda"],
-            Proveedores: ["Proveedores"]
-        },
-        single_opts = {
-            fillColor: '000000',
-            fillOpacity: 0,
-            stroke: true,
-            strokeColor: 'ff0000',
-            strokeWidth: 2
-        },
-        all_opts = {
-            fillColor: 'ffffff',
-            fillOpacity: 0.6,
-            stroke: true,
-            strokeWidth: 2,
-            strokeColor: 'ffffff'
-        },
-        initial_opts = {
-            mapKey: 'data-name',
-            isSelectable: false,
-            onMouseover: function (data) {
-                inArea = true;
-                $('#boardPart-caption-header').text(captions[data.key]);
-                $('#board-caption').show();
-            },
-            onMouseout: function (data) {
-                inArea = false;
-                $('#board-caption').hide();
-            }
-        };
-    opts = $.extend({}, all_opts, initial_opts, single_opts);
-
-
-    // Bind to the image 'mouseover' and 'mouseout' events to activate or deactivate ALL the areas, like the
-    // original demo. Check whether an area has been activated with "inArea" - IE<9 fires "onmouseover" 
-    // again for the image when entering an area, so all areas would stay highlighted when entering
-    // a specific area in those browsers otherwise. It makes no difference for other browsers.
-
-    image.mapster('unbind').mapster(opts).bind('mouseover', function () {
-        if (!inArea) {
-            image.mapster('set_options', all_opts)
-                .mapster('set', true, 'all')
-                .mapster('set_options', single_opts);
-        }
-    }).bind('mouseout', function () {
-        if (!inArea) {
-            image.mapster('set', false, 'all');
-        }
-    });
-
-    image.mapster('resize', 600, 0, 400);
-});
-
 var countOfCliks = 0;
 var firstCaption, secondCaption;
-Template.Second.onRendered(function () {
+Template.ImageOfBoard.onRendered(function () {
     // A cross reference of area names to text to be shown for each area
     var captions = {
         GastosProduccion: ["Gastos de Producción"],
@@ -226,9 +146,7 @@ Template.Second.onRendered(function () {
         }
     ]
 
-    var image = $('#FullBoard');
-
-    image.mapster({
+    var options = {
         fillOpacity: 0.4,
         fillColor: "B46464",
         stroke: true,
@@ -237,21 +155,23 @@ Template.Second.onRendered(function () {
         strokeWidth: 4,
         mapKey: 'name',
         listKey: 'name',
+        showToolTip: true,
+        areas: colors,
         onClick: function (e) {
-            var singleSelecImage = false;
+             var singleSelecImage = false;
             countOfCliks += 1;
-            if(countOfCliks % 2 === 0){
+            if (countOfCliks % 2 === 0) {
                 secondCaption = captions[e.key];
-                var newText = "Se pinchó en - " + firstCaption + " - y ahora en - " + secondCaption + " -";
+                var newText = "De <b>" + firstCaption + "</b> va a <b>" + secondCaption + "</b>";
                 $('#selections').html(newText);
 
-                Bert.alert('Has fallado. Por favor, vuelve a intentarlo', 'warning', 'fixed-top', 'fa-remove');
-            }else{
+                image.mapster('rebind', options);
+            } else {
                 firstCaption = captions[e.key];
-                var newText = "Se pinchó en - " + captions[e.key]
+                var newText = "De <b>" + captions[e.key] + "</b> va a <i> ...(eliga otra casilla para continuar)</i>"
                 $('#selections').html(newText);
 
-                if(countOfCliks != 1)
+                if (countOfCliks != 1)
                     singleSelecImage = true;
             }
 
@@ -259,10 +179,70 @@ Template.Second.onRendered(function () {
                 singleSelect: singleSelecImage
             });
         },
-        showToolTip: true,
-        toolTipClose: ["tooltip-click", "area-click"],
-        areas: colors
-    });
 
+    }
+
+    var image = $('#FullBoard');
+    image.mapster(options);
     image.mapster('resize', 600, 0, 400);
 });
+
+Template.ImageOfBoard.events({
+    'click #Board': function (event, template) {
+        //User's cliked twice, check if he's made the correct movement
+        if (countOfCliks % 2 === 0) {
+            event.preventDefault();
+
+            var activity = BusinessActivity.findOne({
+                "year": activityYear,
+                "_id": String(activityId)
+            });
+
+            if ((activity.from == firstCaption || activity.from == secondCaption) &&
+                (activity.to == firstCaption || activity.to == secondCaption)) {
+
+                Bert.alert('Enhorabuena! Has acertado', 'success', 'fixed-bottom', 'fa-check');
+
+                activityId += 1;
+                changeActivityText();
+            }else
+                Bert.alert('La combinación no es correcta. Por favor, vuelve a intentarlo', 'warning', 'fixed-top', 'fa-remove');            
+        }
+
+        //TODO - FINISH
+        Meteor.call('insertUserActivity', Number(userAnswer), Number(idQuestion));        
+    },
+});
+
+Template.ActivityText.onRendered(function () {
+    changeActivityText();
+});
+
+Template.StartSecondPhase_Board.helpers({
+    isCorrectUser() {
+        return Matches.findOne({ "user": String(Meteor.userId()) });
+    }
+})
+
+var activityId = 1;
+var activityYear = 1;
+var fullTextOfActivities = "";
+function changeActivityText() {
+    var activity = BusinessActivity.findOne({
+        "year": activityYear,
+        "_id": String(activityId)
+    });
+
+    if (activity.isStatement)
+        fullTextOfActivities = fullTextOfActivities + activity.activity + "<br>";
+    else
+        fullTextOfActivities = fullTextOfActivities + "<li style='margin-left:2em'>" + activity.activity + "</li>";
+
+    //If it's just text, call again the function until there's a movement on DDBB
+    if (activity.quantity === undefined) {
+        activityId += 1;
+        changeActivityText();
+    }
+
+    $('#activityText').html(fullTextOfActivities);
+}
