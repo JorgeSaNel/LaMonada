@@ -1,7 +1,9 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-
+/* import { Blaze } from 'meteor/blaze'
+ */
 import { BusinessActivity } from '/imports/api/collections/methods.js';
+import { User_ActivityHistory } from '/imports/api/collections/methods.js';
 import { Matches } from '/imports/api/collections/methods.js';
 
 import './showBoard.html';
@@ -204,15 +206,25 @@ Template.ImageOfBoard.events({
                 (activity.to == firstCaption || activity.to == secondCaption)) {
 
                 Bert.alert('Enhorabuena! Has acertado', 'success', 'fixed-bottom', 'fa-check');
-
                 correctAnswer = true;
-                activityId += 1;
-                changeActivityText();
             } else
                 Bert.alert('La combinación no es correcta. Por favor, vuelve a intentarlo', 'warning', 'fixed-top', 'fa-remove');
 
             Meteor.call('insertUserActivity', Number(activityId), Number(activityYear),
-                                            String(firstCaption), String(secondCaption), correctAnswer);
+                String(firstCaption), String(secondCaption), correctAnswer);
+
+            if (correctAnswer && !activity.endOfActivities) {
+                activityId += 1;
+                changeActivityText();
+            }
+/* debugger;
+            if(!activity.endOfActivities){
+                $('#FullBoard').mapster('unbind');
+                $("#EmptyDiv").html($("#DivOfBoard").find("img"));
+                //image_x.parentNode.removeChild(image_x);
+
+                Blaze.remove(Blaze.currentView);
+            } */
         }
     },
 });
@@ -225,10 +237,23 @@ Template.StartSecondPhase_Board.helpers({
     isCorrectUser() {
         return Matches.findOne({ "user": String(Meteor.userId()) });
     }
-})
+});
+
+Template.ShowEndOfGame.helpers({
+    numberOfMovements() {
+        //TODO - Quitar
+        //Meteor.call('resetear');
+
+        return User_ActivityHistory.find({
+            "user": String(Meteor.userId()),
+            "GameNumber": GetGameNumber()
+        }).count()
+    }
+});
 
 var activityId = 1;
 var activityYear = 1;
+var activityFound = false;
 var fullTextOfActivities = "";
 function changeActivityText() {
     var lastActivity = Matches.findOne({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
@@ -243,19 +268,20 @@ function changeActivityText() {
     else
         fullTextOfActivities = fullTextOfActivities + "<li style='margin-left:2em'>" + activity.activity + "</li>";
 
+    var lastOne = lastActivity.lastActivityAnsweredCorrectly
     //Go to last activity answered correctly
-    if(lastActivity.lastActivityAnsweredCorrectly != activityId){
+    if (lastOne + 1 != activityId && lastOne != undefined && !activityFound) {
         activityId += 1;
         changeActivityText();
-    }
-
-    //If it's just text, call again the function until there's a movement on DDBB
-    if (activity.quantity === undefined) {
+    } else if (activity.quantity === undefined) {
+        activityFound = true;
+        //If it's just text, call again the function until there's a movement on DDBB
         activityId += 1;
         changeActivityText();
     }
 
     $('#activityText').html(fullTextOfActivities);
+    activityFound = false;
 }
 
 function GetGameNumber() {

@@ -12,5 +12,7 @@ Hacer algo cuando un jugador quiera jugar más de una vez
 
 -- private\questions.json --
 Separar las preguntas de resultado y efectivo
-Check out the questions -> Not sure if it follows the correct way
+
+-- Fin del juego --
+Cuando termina el juego, se sigue mostrando el tablero. Eliminarlo o esconderlo
 

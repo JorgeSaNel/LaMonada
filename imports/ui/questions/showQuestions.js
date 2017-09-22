@@ -15,18 +15,21 @@ Template.StartQuestions.helpers({
         var match = Matches.find({ "user": String(Meteor.userId()) })
         if (match.count() === 0)
             Meteor.call('createMatch');
-               
+
         match = Matches.findOne({ "user": String(Meteor.userId()) })
         /*if(match.endOfGame)
             //TODO - Hacer algo cuando un jugador quiera jugar más de una vez
             window.alert("Ya contestaste a todas las pregunas. Por favor, inicia la segunda fase");*/
 
-        var question = Questions.findOne({ "_id": match.lastQuestionAnsweredCorrectly });
+        var questionID = 1;
+        if (match.lastQuestionAnsweredCorrectly != 0) {
+            var question = Questions.findOne({ "_id": String(match.lastQuestionAnsweredCorrectly) });
 
-        if(question.hasSecondOption)
-            var questionID = Number(match.lastQuestionAnsweredCorrectly) + 2;
-        else
-            var questionID = Number(match.lastQuestionAnsweredCorrectly) + 1;
+            if (question.hasSecondOption)
+                var questionID = Number(match.lastQuestionAnsweredCorrectly) + 2;
+            else
+                var questionID = Number(match.lastQuestionAnsweredCorrectly) + 1;
+        }
 
         var currentQuestion = Session.get('currentQuestion') || questionID;
         Session.set('currentQuestion', currentQuestion);
@@ -65,6 +68,7 @@ var answered;
 var correct;
 Template.showEndOfQuestions.helpers({
     showAllQuestionsAnswered: function () {
+debugger;
         answered = User_QuestionsAnswered.find({
             "user": String(Meteor.userId()),
             "GameNumber": GetGameNumber()
@@ -99,20 +103,21 @@ Template.showEndOfQuestions.helpers({
 
 var ErrorAtCountQuestion = false;
 function GetGameNumber() {
+debugger;
     var game = Matches.findOne(
         {
-            "user": String(Meteor.userId()), "endOfGame": true
+            "user": String(Meteor.userId()), "endOfQuestions": true
         }, {
             sort: { _id: -1 }
         });
 
     if (game == undefined && !ErrorAtCountQuestion) {
         ErrorAtCountQuestion = true;
-        Bert.alert('Debe contestar a todas las preguntas para continuar el juego', 'warning', 'fixed-top', 'fa-remove');        
+        Bert.alert('Debe contestar a todas las preguntas para continuar el juego', 'warning', 'fixed-top', 'fa-remove');
         return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");
-    } else if(ErrorAtCountQuestion){
-        return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");        
-    }else{
+    } else if (ErrorAtCountQuestion) {
+        return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");
+    } else {
         ErrorAtCountQuestion = false;
         return game.GameNumber;
     }

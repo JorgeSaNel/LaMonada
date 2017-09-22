@@ -47,6 +47,27 @@ Meteor.methods({
 
         checkEndOfActivity(activityId);
 
+    },
+
+    //TODO - QUITAR
+    'resetear'() {
+        // Make sure the user is logged in before inserting on DDBB
+        if (!Meteor.userId()) {
+            throw new Meteor.Error('not-authorized');
+        }
+
+        Matches.update({
+            user: Meteor.userId(),
+            GameNumber: GetGameNumber()
+        },
+            {
+                $set: {
+                    lastActivityAnsweredCorrectly: 1,
+                    endOfActivity: false,
+                    updatedAt: new Date()
+                }
+            }
+        )
     }
 });
 
