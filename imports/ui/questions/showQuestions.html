@@ -1,13 +1,24 @@
 <template name="StartQuestions">
     <ul>
-        {{#if Questions}} 
-            {{#with Questions}} 
-                {{> ShowOneQuestion}} 
-            {{/with}} 
-        {{else}} 
-            {{> showEndOfQuestions}} 
-        {{/if}}
+        {{#unless UserHasEnded.endOfQuestions}}
+            {{#if Questions}} 
+                {{#with Questions}} 
+                    {{> ShowOneQuestion}} 
+                {{/with}} 
+            {{/if}}
+        {{else}}
+            {{#if UserHasEnded.endOfQuestions}} 
+                {{> showEndOfQuestions}}
+            {{else}}
+                {{> NoPermissions}} 
+            {{/if}}
+        {{/unless}}
     </ul>
+</template>
+
+<template name= "NoPermissions">
+    No dispone de permisos suficiones
+    {{ WithoutPermission }}
 </template>
 
 <template name="ShowOneQuestion">

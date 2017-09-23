@@ -1,12 +1,11 @@
 /* CSS declarations go here */
 
-body {
+body, html{
     font-family: "Lato", sans-serif;
-    /*
-    background-image: url("/Logotype.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-size: 100% 100%;
-    border: 1px solid red;*/
+    height: 100%; 
+    min-height: 100%;
+    margin: 0;
 }
+
+
 

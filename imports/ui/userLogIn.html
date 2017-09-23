@@ -6,7 +6,7 @@
     {{#if currentUser}} 
         {{> user_loggedin}} 
     {{else}} 
-        {{> loginButtons}} 
+        {{> loginButtonsBig}} 
     {{/if}}
 </template>
 
@@ -16,29 +16,24 @@
         <li><a>Logging in...</a></li>
     {{else}}
         <div>
-            <li>
-                <img class="img-rounded" style="height: 32px; margin-top: 4px;" src={{currentUser.services.google.picture}} />
-            </li>
-            <li class="dropdown">
+            <img class="img-rounded" style="height: 32px; margin-top: 4px;" src={{currentUser.services.google.picture}} />
+            <div class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     {{currentUser.services.google.name}}
                     <b class="caret"></b>
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a>Account Settings</a></li>
-                    <li class="divider"></li>
-                    <li><a id="logout">Logout</a></li>
+                    <a id="logout">Logout</a>
                 </ul>
-            </li>
+            </div>
         </div>
     {{/if}}
 </template>
 
-<template name="user_loggedout">
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-
-    <div id="loginWithGoogle">
-        <a style="cursor:pointer;">Login with Google</a>
-    </div>
+<template name="loginButtonsBig">
+    <a id="loginGoogle" class="btn btn-default btn-lg btn-login google" href="#">
+            <i class="fa fa-google-plus fa-fw"></i> 
+            Sign in with Google
+    </a>
 </template>

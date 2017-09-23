@@ -1,15 +1,21 @@
 <template name="MainBody">
-    <div id="main">
+    <div class="mainBody">
         {{#if currentUser}} 
-            {{> menu}} 
-            <center>{{> user_login}} </center>
-            {{> Template.dynamic template=main}}
+            <div id="main">
+                {{> menu}} 
+                <center>{{> user_login}} </center>
+                {{> Template.dynamic template=main}}
+            </div>
         {{else}}
-            {{> informationToStartGame}} 
-            <center>{{> user_login}} </center> 
+            <div class="bgimg">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <center>{{> user_login}} </center>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            {{> informationToStartGame}}
         {{/if}}
 
-        {{> footer}}
+        {{> footer}}        
     </div>
 </template>
 
@@ -22,18 +28,70 @@
 </template>
 
 <template name="informationToStartGame">
-    <!--<div style="margin-left:25%;padding:1px 16px;height:1000px;">-->
-    <div>
+    <div class="divForInformationText">
+        <div class="row">
+            <div class="col-sm-12 textIntoDiv">
+                <p class="TextTitle">
+                    La Monada
+                </p>
+            </div>
+        </div>
         <br>
-        <h1 style="text-align: center">La Monada </h1>
-        <h2>Para jugar a este juego es necesario conectarse a su cuenta de Google</h2>
-        <h3>Simplemente se utilizará:</h3>
-        <div>
-            <li>Información básica de su perfil: Email, Nombre, Foto</li>
-            <li>Consultar y administrar sus hojas de cálculo en Google Drive, como:</li>
-            <li>Crear hojas de cálculo nuevas.</li>
-            <li>Consultar y modificar las hojas de cálculo ya existentes.</li>
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                {{> descriptionLaMonada}}
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <br>
+
+        <div class="dhn-info-div">
+            <div class="row">
+                <div class="col-sm-6">
+                    {{> descriptionBoard}}
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="container">
+                        <img src="BoardWithoutData.png">
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-sm-12 buttonLogIn">
+                <center>
+                    {{> user_login}}
+                </center>
+            </div>
         </div>
     </div>
 </template>
 
+<template name="descriptionLaMonada">
+    <div class="descriptionText">
+        La mónada es un juego-simulador que nos va enseñando cuáles son los elementos que sustentan el funcionamiento de la empresa
+        y cómo afectan las diferentes operaciones a su patrimonio, resultados y creación de valor.
+    </div>
+</template>
+
+<template name="descriptionBoard">
+    <p>
+        El juego consta de un tablero, que se ha diseñado con el balance en el centro como mónada o base de la información contable-financiera,
+        y en torno a él giran la cuenta de resultados y el estado de flujos de efectivo para simbolizar la generación de
+        resultados y de caja que se derivan del desempeño de la actividad de la empresa a partir de su patrimonio, reflejado
+        en el balance.
+    </p>
+    <br>
+    <br>
+    <p>
+        El tablero muestra la necesaria armonía, coherencia y relación que debe existir entre los tres estados contables representados,
+        puesto que el resultado y el efectivo generados durante el ejercicio económico forman parte del balance.
+    </p>
+</template>

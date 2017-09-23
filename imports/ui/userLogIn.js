@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
 
 import './userLogIn.html';
+import './userLogIn.css';
 
 /*Template.user_loggedout.rendered = function () {
     $('.dropdown-toggle').dropdown()
@@ -11,7 +12,7 @@ Template.user_loggedin.rendered = function () {
     $('.dropdown-toggle').dropdown()
 }*/
 
-Template.user_loggedout.events({
+/* Template.user_loggedout.events({
     "click #login": function (e, tmpl) {
         e.preventDefault();
         
@@ -27,7 +28,7 @@ Template.user_loggedout.events({
             }
         });
     }
-});
+}); */
 
 Template.user_loggedin.events({
     "click #logout": function (e, tmpl) {
@@ -41,9 +42,30 @@ Template.user_loggedin.events({
                     Session.set(key, undefined);
                 });
                 Session.keys = {}; // remove session keys
+
                 //Router.go('/');  // redirect to the home page or elsewhere using iron:router
 
                 Bert.alert('Cerrado sesión correctamente', 'success', 'fixed-top', 'fa-check');
+            }
+        });
+    }
+});
+
+Template.loginButtonsBig.events({
+    'click a#loginGoogle': function (e, t) {
+        e.preventDefault();
+
+        Meteor.loginWithGoogle({
+            //Show what information is needed from the user
+            requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/spreadsheets']
+        }, function (err) {
+            if (err) {
+                Session.set('errorMessage', err.reason || 'Unknown error');
+                Bert.alert('Error al Iniciar Sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-top', 'fa-remove');
+            } else {
+                Bert.alert('Iniciado sesión correctamente', 'success', 'fixed-top', 'fa-check');
+
+                //Router.go('/');  // redirect to the home page or elsewhere using iron:router
             }
         });
     }

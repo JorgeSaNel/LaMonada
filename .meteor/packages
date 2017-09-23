@@ -32,6 +32,7 @@ accounts-ui@1.1.9
 google-config-ui@1.0.0
 useraccounts:bootstrap
 twbs:bootstrap
+#accounts-ui-unstyled
 
 # security
 dynamic-import@0.1.1
@@ -52,4 +53,3 @@ shell-server@0.2.4            # Server-side component of the `meteor shell` comm
 service-configuration@1.0.11
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 sunkay:easy-side-menu
-

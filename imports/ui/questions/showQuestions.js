@@ -35,6 +35,10 @@ Template.StartQuestions.helpers({
         Session.set('currentQuestion', currentQuestion);
 
         return Questions.findOne({ "_id": String(currentQuestion) });
+    },
+
+    UserHasEnded(){
+        return Matches.findOne({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
     }
 })
 
@@ -68,7 +72,6 @@ var answered;
 var correct;
 Template.showEndOfQuestions.helpers({
     showAllQuestionsAnswered: function () {
-debugger;
         answered = User_QuestionsAnswered.find({
             "user": String(Meteor.userId()),
             "GameNumber": GetGameNumber()
@@ -87,11 +90,7 @@ debugger;
     },
 
     showAllIncorrectQuestions: function () {
-        return User_QuestionsAnswered.find({
-            "user": String(Meteor.userId()),
-            "GameNumber": GetGameNumber(),
-            correctAnswer: false
-        }).count()
+        return answered - correct;
     },
 
     showMark: function () {
@@ -101,26 +100,15 @@ debugger;
 
 })
 
-var ErrorAtCountQuestion = false;
-function GetGameNumber() {
-debugger;
-    var game = Matches.findOne(
-        {
-            "user": String(Meteor.userId()), "endOfQuestions": true
-        }, {
-            sort: { _id: -1 }
-        });
-
-    if (game == undefined && !ErrorAtCountQuestion) {
-        ErrorAtCountQuestion = true;
+Template.NoPermissions.helpers({
+    WithoutPermission(){
         Bert.alert('Debe contestar a todas las preguntas para continuar el juego', 'warning', 'fixed-top', 'fa-remove');
-        return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");
-    } else if (ErrorAtCountQuestion) {
-        return new Meteor.Error("Debe contestar a todas las preguntas para continuar el juego");
-    } else {
-        ErrorAtCountQuestion = false;
-        return game.GameNumber;
     }
+});
+
+function GetGameNumber() {
+    var getNumber = Matches.findOne({ "user": Meteor.userId() }, { "GameNumber": 1, sort: { "GameNumber": -1 } });
+    return getNumber.GameNumber;
 }
 
 function AnaliseNextQuestion(rightAnswer, userAnswer) {
