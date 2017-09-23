@@ -10,21 +10,22 @@
     {{/if}}
 </template>
 
-<!--TODO: Mejorar codigo para que visualmente sea más bonito-->
 <template name="user_loggedin">
     {{#if loggingIn}}
         <li><a>Logging in...</a></li>
     {{else}}
-        <div>
-            <img class="img-rounded" style="height: 32px; margin-top: 4px;" src={{currentUser.services.google.picture}} />
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    {{currentUser.services.google.name}}
-                    <b class="caret"></b>
-                </a>
+        <div class="topcorner">
+            <p style="float: left;">
+                <img class="img" style="height: 35px; padding-right: 1.8em;" src={{currentUser.services.google.picture}} />
+            </p>
 
-                <ul class="dropdown-menu">
-                    <a id="logout">Logout</a>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                            {{currentUser.services.google.name}}
+                        <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a id="logout" role="menuitem" tabindex="-1" href="#">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>
@@ -34,6 +35,6 @@
 <template name="loginButtonsBig">
     <a id="loginGoogle" class="btn btn-default btn-lg btn-login google" href="#">
             <i class="fa fa-google-plus fa-fw"></i> 
-            Sign in with Google
+            Inicia sesión con Google
     </a>
 </template>

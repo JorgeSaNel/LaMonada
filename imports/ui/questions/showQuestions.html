@@ -1,42 +1,57 @@
 <template name="StartQuestions">
-    <ul>
-        {{#unless UserHasEnded.endOfQuestions}}
-            {{#if Questions}} 
-                {{#with Questions}} 
-                    {{> ShowOneQuestion}} 
-                {{/with}} 
-            {{/if}}
-        {{else}}
-            {{#if UserHasEnded.endOfQuestions}} 
-                {{> showEndOfQuestions}}
-            {{else}}
-                {{> NoPermissions}} 
-            {{/if}}
-        {{/unless}}
-    </ul>
+    {{#unless UserHasEnded.endOfQuestions}} {{#if Questions}} {{#with Questions}} {{> ShowOneQuestion}} {{/with}} {{/if}} {{else}}
+    {{#if UserHasEnded.endOfQuestions}} {{> showEndOfQuestions}} {{else}} {{> NoPermissions}} {{/if}} {{/unless}}
 </template>
 
-<template name= "NoPermissions">
-    No dispone de permisos suficiones
-    {{ WithoutPermission }}
+<template name="NoPermissions">
+    No dispone de permisos suficiones {{ WithoutPermission }}
 </template>
 
 <template name="ShowOneQuestion">
-    <form>
-        <!-- Check if there is a questions with its answers -->
-        {{#if answers}}
-        <h3>{{statement}}</h3>
-            <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>
-            <br>
-            <label><input type="radio" name="answer" value="2"> {{answers.answer_2}}</label>
-            <br>
-            <label><input type="radio" name="answer" value="3"> {{answers.answer_3}}</label>
-            <br>
+    <div style="margin-top: 20px">
+        <div class="row">
+            <div class="col-sm-3">
+                {{> informationAboutQuestion}}
+            </div>
+            <div class="col-sm-6" style="background-color:lavender;">
+                {{#if answers}}
+                <h3>{{statement}}</h3>
+                <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>
+                <br>
+                <label><input type="radio" name="answer" value="2"> {{answers.answer_2}}</label>
+                <br>
+                <label><input type="radio" name="answer" value="3"> {{answers.answer_3}}</label>
+                <br>
 
-            <br>
-            <input type="button" value="Click"> 
-        {{/if}}
-    </form>
+                <br>
+                <center>
+                    <input type="button" value="Click">
+                </center>
+                {{/if}}
+            </div>
+            <div class="col-sm-3">
+                {{#if answers.isJoker}} 
+                    {{> JokerQuestion}} 
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="JokerQuestion">
+    Esta pregunta es una pregunta Comodín! Esto quiere decir que si aciertas esta pregunta, ganas una banana-comodín que te salvará
+    de retroceder más adelante, y podrás contiunar el circuito. Si no la aciertas, te tocará retroceder hasta el círculo
+    inicial e ir contestando a las 2ª opciones de las preguntas de los círculos rellenos hasta llegar de nuevo al círculo
+    banana y contestar otra pregunta comodín, pero esta vez sin posibilidad de ganar una banana
+</template>
+
+<template name="informationAboutQuestion">
+    {{textAnsweredQuestions}}
+    <br>
+    <h3>{{numberAnsweredQuestions}}</h3>
+
+    <br> La pregunta a la que está contestando corresponde a <br>
+    <h3 style="text-align:center">{{locationOfQuestion}}</h3>
 </template>
 
 <template name="showEndOfQuestions">

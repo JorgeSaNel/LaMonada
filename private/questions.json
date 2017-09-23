@@ -34,7 +34,7 @@
     {
       "_id": "3",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -49,7 +49,7 @@
     {
       "_id": "4",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "1.- El capital social se refiere a",
@@ -63,7 +63,7 @@
     {
       "_id": "5",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -78,7 +78,7 @@
     {
       "_id": "6",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -93,7 +93,7 @@
     {
       "_id": "7",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "3.- Las reservas son",
@@ -107,7 +107,7 @@
     {
       "_id": "8",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -122,7 +122,7 @@
     {
       "_id": "9",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -137,7 +137,7 @@
     {
       "_id": "10",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "5.- Los préstamos bancarios a largo plazo son",
@@ -151,7 +151,7 @@
     {
       "_id": "11",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -166,7 +166,7 @@
     {
       "_id": "12",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -181,7 +181,7 @@
     {
       "_id": "13",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "7.- Los préstamos bancarios a largo plazo son",
@@ -195,7 +195,7 @@
     {
       "_id": "14",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -210,7 +210,7 @@
     {
       "_id": "15",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -225,7 +225,7 @@
     {
       "_id": "16",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "9.- El tipo de interés aplicado al préstamo bancario a largo plazo depende de",
@@ -239,7 +239,7 @@
     {
       "_id": "17",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -254,7 +254,7 @@
     {
       "_id": "18",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -269,7 +269,7 @@
     {
       "_id": "19",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "11.- Las reservas se crean para",
@@ -283,7 +283,7 @@
     {
       "_id": "20",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -298,7 +298,7 @@
     {
       "_id": "21",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -313,7 +313,7 @@
     {
       "_id": "22",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "13.- Una empresa se constituye a partir de",
@@ -327,7 +327,7 @@
     {
       "_id": "23",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -342,7 +342,7 @@
     {
       "_id": "24",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -357,7 +357,7 @@
     {
       "_id": "25",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "statement": "15.- Los dividendos",
@@ -371,7 +371,7 @@
     {
       "_id": "26",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isUnique": true,
@@ -386,7 +386,7 @@
     {
       "_id": "27",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "hasSecondOption": true,
@@ -403,7 +403,7 @@
     {
       "_id": "28",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 1
       },
       "isJoker": true,
@@ -418,7 +418,7 @@
     {
       "_id": "29",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "hasSecondOption": true,
@@ -433,7 +433,7 @@
     {
       "_id": "30",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "statement": "17.- Los inmovilizados inmateriales son",
@@ -447,7 +447,7 @@
     {
       "_id": "31",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "isUnique": true,
@@ -462,7 +462,7 @@
     {
       "_id": "32",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "hasSecondOption": true,
@@ -477,7 +477,7 @@
     {
       "_id": "33",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "statement": "19.- El inmovilizado inmaterial NO debe financiarse con: ",
@@ -491,7 +491,7 @@
     {
       "_id": "34",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "isUnique": true,
@@ -506,7 +506,7 @@
     {
       "_id": "35",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "hasSecondOption": true,
@@ -521,7 +521,7 @@
     {
       "_id": "36",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "statement": "21.- La imputación de la depreciación del inmovilizado inmaterial como gasto se denomina",
@@ -535,7 +535,7 @@
     {
       "_id": "37",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "hasSecondOption": true,
@@ -550,7 +550,7 @@
     {
       "_id": "38",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "statement": "22.- Los inmovilizados materiales son",
@@ -564,7 +564,7 @@
     {
       "_id": "39",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "isUnique": true,
@@ -579,7 +579,7 @@
     {
       "_id": "40",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "hasSecondOption": true,
@@ -594,7 +594,7 @@
     {
       "_id": "41",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "isPreviousToJoker": true,
@@ -609,7 +609,7 @@
     {
       "_id": "42",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "hasSecondOption": true,
@@ -626,7 +626,7 @@
     {
       "_id": "43",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 2
       },
       "isJoker": true,
@@ -641,7 +641,7 @@
     {
       "_id": "44",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "hasSecondOption": true,
@@ -656,7 +656,7 @@
     {
       "_id": "45",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "statement": "25.- Las existencias NO son",
@@ -670,7 +670,7 @@
     {
       "_id": "46",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isUnique": true,
@@ -685,7 +685,7 @@
     {
       "_id": "47",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "hasSecondOption": true,
@@ -700,7 +700,7 @@
     {
       "_id": "48",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "statement": "27.- La inversión en existencias implica",
@@ -714,7 +714,7 @@
     {
       "_id": "49",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "hasSecondOption": true,
@@ -729,7 +729,7 @@
     {
       "_id": "50",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "statement": "28.- Los clientes en el balance NO indican",
@@ -743,7 +743,7 @@
     {
       "_id": "51",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isUnique": true,
@@ -758,7 +758,7 @@
     {
       "_id": "52",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "hasSecondOption": true,
@@ -773,7 +773,7 @@
     {
       "_id": "53",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "statement": "30.- Realizar inversiones financieras a corto plazo supone",
@@ -787,7 +787,7 @@
     {
       "_id": "54",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isUnique": true,
@@ -802,7 +802,7 @@
     {
       "_id": "55",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "hasSecondOption": true,
@@ -817,7 +817,7 @@
     {
       "_id": "56",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "statement": "32.- Si aumenta el saldo de Caja y bancos al final del año, significa que la empresa",
@@ -831,7 +831,7 @@
     {
       "_id": "57",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isUnique": true,
@@ -846,7 +846,7 @@
     {
       "_id": "58",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isUnique": true,
@@ -861,7 +861,7 @@
     {
       "_id": "59",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isUnique": true,
@@ -876,7 +876,7 @@
     {
       "_id": "60",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "hasSecondOption": true,
@@ -891,7 +891,7 @@
     {
       "_id": "61",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isPreviousToJoker": true,
@@ -906,7 +906,7 @@
     {
       "_id": "62",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "hasSecondOption": true,
@@ -923,7 +923,7 @@
     {
       "_id": "63",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 3
       },
       "isJoker": true,
@@ -938,7 +938,7 @@
     {
       "_id": "64",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "hasSecondOption": true,
@@ -953,7 +953,7 @@
     {
       "_id": "65",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "statement": "37.- Hacienda (Hacienda Pública, acreedor por conceptos fiscales) se refiere a",
@@ -967,7 +967,7 @@
     {
       "_id": "66",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "isUnique": true,
@@ -982,7 +982,7 @@
     {
       "_id": "67",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "hasSecondOption": true,
@@ -997,7 +997,7 @@
     {
       "_id": "68",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "statement": "39.- La empresa puede tener otras deudas con Administraciones Públicas",
@@ -1011,7 +1011,7 @@
     {
       "_id": "69",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "isUnique": true,
@@ -1026,7 +1026,7 @@
     {
       "_id": "70",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "hasSecondOption": true,
@@ -1041,7 +1041,7 @@
     {
       "_id": "71",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "statement": "41.- Proveedores representa",
@@ -1055,7 +1055,7 @@
     {
       "_id": "72",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "isUnique": true,
@@ -1070,7 +1070,7 @@
     {
       "_id": "73",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "hasSecondOption": true,
@@ -1085,7 +1085,7 @@
     {
       "_id": "74",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "statement": "43.- El coste del crédito de los proveedores se considera",
@@ -1099,7 +1099,7 @@
     {
       "_id": "75",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "isUnique": true,
@@ -1114,7 +1114,7 @@
     {
       "_id": "76",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "hasSecondOption": true,
@@ -1129,7 +1129,7 @@
     {
       "_id": "77",
       "location": {
-        "circuit": "Circuito",
+        "circuit": "Balance",
         "part": 4
       },
       "statement": "45.- Un incremento de proveedores implica",

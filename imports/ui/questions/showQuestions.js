@@ -37,13 +37,14 @@ Template.StartQuestions.helpers({
         return Questions.findOne({ "_id": String(currentQuestion) });
     },
 
-    UserHasEnded(){
+    UserHasEnded() {
         return Matches.findOne({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
     }
 })
 
 var jokerFailed = false;
 var hasJoker = false;
+var answeredQuestions = 0;
 Template.ShowOneQuestion.events({
     'click :button': function (event, template) {
         var answer = template.find('input:radio[name=answer]:checked');
@@ -55,6 +56,7 @@ Template.ShowOneQuestion.events({
             return new Meteor.Error('Contesta a la pregunta para continuar');
         }
 
+        answeredQuestions += 1;
         var idQuestion = Session.get('currentQuestion')
         var rightAnswer = Questions.findOne({ "_id": String(idQuestion) });
 
@@ -67,6 +69,31 @@ Template.ShowOneQuestion.events({
         Meteor.call('questions.checkAnswer', Number(userAnswer), Number(idQuestion));
     },
 });
+
+Template.informationAboutQuestion.helpers({
+    textAnsweredQuestions: function () {
+        if (answeredQuestions >= 1)
+            return "En esta sesión ha contestado a ";
+    },
+
+    numberAnsweredQuestions: function () {
+        if (answeredQuestions == 1)
+            return answeredQuestions + " pregunta";
+        else if (answered >= 2)
+            return answeredQuestions + " preguntas";
+    },
+
+    locationOfQuestion: function(){
+        var idQuestion = Session.get('currentQuestion')
+        var question = Questions.findOne({ "_id": String(idQuestion) });
+
+        if(question.location.circuit)
+            return question.location.circuit;
+        else
+            return question.location;
+    }
+
+})
 
 var answered;
 var correct;
@@ -96,12 +123,11 @@ Template.showEndOfQuestions.helpers({
     showMark: function () {
         var mark = correct * 10 / answered
         return parseFloat(Math.round(mark * 100) / 100).toFixed(2);
-    },
-
+    }
 })
 
 Template.NoPermissions.helpers({
-    WithoutPermission(){
+    WithoutPermission() {
         Bert.alert('Debe contestar a todas las preguntas para continuar el juego', 'warning', 'fixed-top', 'fa-remove');
     }
 });

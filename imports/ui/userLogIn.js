@@ -4,32 +4,6 @@ import { Session } from 'meteor/session';
 import './userLogIn.html';
 import './userLogIn.css';
 
-/*Template.user_loggedout.rendered = function () {
-    $('.dropdown-toggle').dropdown()
-}
-
-Template.user_loggedin.rendered = function () {
-    $('.dropdown-toggle').dropdown()
-}*/
-
-/* Template.user_loggedout.events({
-    "click #login": function (e, tmpl) {
-        e.preventDefault();
-        
-        Meteor.loginWithGoogle({
-            //Show what information is needed from the user
-            requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/spreadsheets']
-        }, function (err) {
-            if (err) {
-                Session.set('errorMessage', err.reason || 'Unknown error');
-                Bert.alert('Error al Iniciar Sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-top', 'fa-remove');
-            } else {
-                Bert.alert('Iniciado sesión correctamente', 'success', 'fixed-top', 'fa-check');
-            }
-        });
-    }
-}); */
-
 Template.user_loggedin.events({
     "click #logout": function (e, tmpl) {
         Meteor.logout(function (err) {
