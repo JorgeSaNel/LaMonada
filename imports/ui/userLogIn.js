@@ -28,6 +28,11 @@ Template.user_loggedin.events({
 Template.loginButtonsBig.events({
     'click a#loginGoogle': function (e, t) {
         e.preventDefault();
+        // your cleanup code here
+        Object.keys(Session.keys).forEach(function (key) {
+            Session.set(key, undefined);
+        });
+        Session.keys = {};
 
         Meteor.loginWithGoogle({
             //Show what information is needed from the user

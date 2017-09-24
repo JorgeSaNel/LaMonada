@@ -12,7 +12,7 @@ require("jquery-imagemapster");
 
 var countOfCliks = 0;
 var firstCaption, secondCaption;
-Template.ImageOfBoard.onRendered(function () {
+Template.ImageOfBoard.onRendered(function () {    
     // A cross reference of area names to text to be shown for each area
     var captions = {
         GastosProduccion: ["Gastos de Producción"],
@@ -205,10 +205,10 @@ Template.ImageOfBoard.events({
             if ((activity.from == firstCaption || activity.from == secondCaption) &&
                 (activity.to == firstCaption || activity.to == secondCaption)) {
 
-                Bert.alert('Enhorabuena! Has acertado', 'success', 'fixed-bottom', 'fa-check');
+                Bert.alert('Enhorabuena! Has acertado', 'success', 'growl-bottom-right', 'fa-check');
                 correctAnswer = true;
             } else
-                Bert.alert('La combinación no es correcta. Por favor, vuelve a intentarlo', 'warning', 'fixed-top', 'fa-remove');
+                Bert.alert('La combinación no es correcta. Por favor, vuelve a intentarlo', 'danger', 'growl-bottom-right', 'fa-remove');
 
             Meteor.call('insertUserActivity', Number(activityId), Number(activityYear),
                 String(firstCaption), String(secondCaption), correctAnswer);
@@ -264,7 +264,7 @@ function changeActivityText() {
     });
 
     if (activity.isStatement)
-        fullTextOfActivities = fullTextOfActivities + activity.activity + "<br>";
+        fullTextOfActivities = fullTextOfActivities + "<br>" + activity.activity + "<br>";
     else
         fullTextOfActivities = fullTextOfActivities + "<li style='margin-left:2em'>" + activity.activity + "</li>";
 

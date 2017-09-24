@@ -1,9 +1,7 @@
 <template name="StartSecondPhase_Board">
 	{{#if isCorrectUser.endOfQuestions}}
 		{{#unless isCorrectUser.endOfActivity}}
-			{{> ActivityText}}
-			<br> 
-			{{> ImageOfBoard}}
+			{{> UsersPlaying}}
 		{{else}}
 			{{> ShowEndOfGame}}
 		{{/unless}}
@@ -13,10 +11,22 @@
 </template>
 
 <template name="ShowEndOfGame">
-	<div>
-		Enhorabuena! Ha terminado el juego exitosamente.
-		<br>
-		La segunda parte del juego se puede resolver en 14 movimientos. Usted lo ha hecho en {{numberOfMovements}}
+	<div style="margin-top: 20px;">
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+
+			<div class="col-sm-8">
+				<div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+					Enhorabuena! Ha terminado el juego exitosamente.
+					<br> 
+					La segunda parte del juego se puede resolver en 14 movimientos. Usted lo ha hecho en {{numberOfMovements}}
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -28,16 +38,49 @@
 	</div>
 </template>
 
+<template name="UsersPlaying">
+	<div style="margin-top: 20px;">
+		<div class="row">
+			<div class="col-sm-3">
+			</div>
+
+			<div class="col-sm-6">
+				<div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+					<div id="selections">
+						<b>¡Ten cuidado, cada movimiento cuenta!</b>
+						<br>
+						Has llegado a la segunda fase del juego. A la izquierda van apareciendo los movimientos que ha ido teniendo La Monada a lo largo de los años.
+						Tras leerlo detenidamente, deberás indicar dentro del tablero a qué movimientos de caja corresponde.
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+					{{> ActivityText}}
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				{{> ImageOfBoard}}
+			</div>
+		</div>
+	</div>
+</template>
+
 <template name="ActivityText">
-	<div style="border: 1px solid black;" id="activityText">
+	<div id="activityText">
 		<!-- Here goes the activity Text. When you're correct, automatically appears the next activity -->	
 	</div>
 </template>
 
 <template name="ImageOfBoard">
 	<div id="DivOfBoard">
-		<div style="clear: both; width: 500px; height: 50px; border: 1px solid black;" id="selections"></div>
-
 		<img id="FullBoard" src="/BoardWithoutData.png" alt="Tablero del Juego" usemap="#Board" />
 		<map name="Board" id="Board">
 			<!-- Outside Part -->

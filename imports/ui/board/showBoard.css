@@ -1,10 +1,12 @@
 /* CSS declarations */
 
 #activityText {
-    width: 60%;
-    /* position: relative;
-    margin: 0 auto;
-    line-height: 1.4em; */
+    width: 100%;
+}
+
+#selections{
+    text-align: center;
+    padding: 20px;
 }
     
 /* If in mobile screen with maximum width 479px. 
