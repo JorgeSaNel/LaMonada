@@ -9,7 +9,7 @@ Template.user_loggedin.events({
         Meteor.logout(function (err) {
             if (err) {
                 //An error occured
-                Bert.alert('Error al cerrar sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-top', 'fa-remove');
+                Bert.alert('Error al cerrar sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-bottom', 'fa-remove');
             } else {
                 // your cleanup code here
                 Object.keys(Session.keys).forEach(function (key) {
@@ -19,7 +19,7 @@ Template.user_loggedin.events({
 
                 //Router.go('/');  // redirect to the home page or elsewhere using iron:router
 
-                Bert.alert('Cerrado sesión correctamente', 'success', 'fixed-top', 'fa-check');
+                Bert.alert('Cerrado sesión correctamente', 'success', 'fixed-bottom', 'fa-check');
             }
         });
     }
@@ -35,9 +35,9 @@ Template.loginButtonsBig.events({
         }, function (err) {
             if (err) {
                 Session.set('errorMessage', err.reason || 'Unknown error');
-                Bert.alert('Error al Iniciar Sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-top', 'fa-remove');
+                Bert.alert('Error al Iniciar Sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-bottom', 'fa-remove');
             } else {
-                Bert.alert('Iniciado sesión correctamente', 'success', 'fixed-top', 'fa-check');
+                Bert.alert('Iniciado sesión correctamente', 'success', 'fixed-bottom', 'fa-check');
 
                 //Router.go('/');  // redirect to the home page or elsewhere using iron:router
             }

@@ -13,3 +13,21 @@ label {
     font-weight: normal !important;
     cursor: pointer; cursor: hand;
 }
+
+#flotante
+{
+    position: absolute;
+    display:none;
+    font-family:Arial;
+    font-size:0.9em;
+    width: auto;
+    border:1px solid #808080;
+    background-color:#f1f1f1;
+    z-index: 1;
+
+    padding: 10px;
+}
+
+.Text-GotJoker{
+    padding: 10px;
+}

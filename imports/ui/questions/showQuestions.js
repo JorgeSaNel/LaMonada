@@ -42,6 +42,12 @@ Template.StartQuestions.helpers({
     }
 })
 
+Template.GotJoker.helpers({
+    UserGotJoker(){
+        return hasJoker;
+    }
+});
+
 var jokerFailed = false;
 var hasJoker = false;
 var answeredQuestions = 0;
@@ -79,20 +85,9 @@ Template.informationAboutQuestion.helpers({
     numberAnsweredQuestions: function () {
         if (answeredQuestions == 1)
             return answeredQuestions + " pregunta";
-        else if (answered >= 2)
+        else if (answeredQuestions >= 2)
             return answeredQuestions + " preguntas";
     },
-
-    locationOfQuestion: function(){
-        var idQuestion = Session.get('currentQuestion')
-        var question = Questions.findOne({ "_id": String(idQuestion) });
-
-        if(question.location.circuit)
-            return question.location.circuit;
-        else
-            return question.location;
-    }
-
 })
 
 var answered;
@@ -147,6 +142,7 @@ function AnaliseNextQuestion(rightAnswer, userAnswer) {
             if (rightAnswer.hasSecondOption) {
                 hasJoker = true;
                 nextQuestion = Number(rightAnswer._id) + 2;
+                Bert.alert('¡Has ganado un Comodín!', 'success', 'growl-top-right', 'fa-child');         
             }
             else
                 nextQuestion = Number(rightAnswer._id) + 1;
@@ -160,13 +156,16 @@ function AnaliseNextQuestion(rightAnswer, userAnswer) {
                 if (hasJoker) {
                     hasJoker = false;
                     nextQuestion = Number(rightAnswer._id) + 1;
+                    Bert.alert('Vaya.. Has perdido un comodín', 'danger', 'growl-top-right', 'fa-thumbs-down');                                                             
                 }
-                else
+                else{
                     nextQuestion = Number(rightAnswer.ifFailedGoTo);
+                    Bert.alert('Vaya.. Has fallado una pregunta comodín', 'danger', 'growl-top-right', 'fa-thumbs-down');                      
+                }    
             }
         }
     }
-    else {
+    else {                
         //Normal question - Set currentQuestion to next one
         if (rightAnswer.location.circuit == "Circuito") {
             if (rightAnswer.hasSecondOption || (rightAnswer.isUnique && jokerFailed))
@@ -179,4 +178,33 @@ function AnaliseNextQuestion(rightAnswer, userAnswer) {
     }
 
     return nextQuestion;
+}
+
+
+//On Mouse Over
+Template.JokerQuestion.events({
+    'mouseenter .js-showmessage'(event, instance) {
+        //determina un margen de pixels del div al raton
+        margin = 150;
+
+        // Modificamos el contenido de la capa
+        document.getElementById('flotante').innerHTML = GetJokerText();
+
+        // Posicionamos la capa flotante
+        document.getElementById('flotante').style.top = margin + "px";
+        document.getElementById('flotante').style.left = margin + "px";
+        document.getElementById('flotante').style.display = 'block';
+        return;
+    },
+
+    'mouseleave .js-showmessage'(event, instance) {
+        document.getElementById('flotante').style.display='none';
+    },
+});
+
+function GetJokerText(){
+    return "¡Pregunta Comodín! Si aciertas esta pregunta, ganas una banana-comodín que te salvará" +
+    " de retroceder más adelante, y podrás contiunar el circuito. Si no, te tocará retroceder " + 
+    "e ir contestando a las 2ª opciones de las preguntas de los círculos rellenos hasta llegar a la siguiente pregunta comodín" + 
+    ", pero esta vez sin posibilidad de ganar una banana"
 }

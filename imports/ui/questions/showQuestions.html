@@ -1,6 +1,17 @@
 <template name="StartQuestions">
-    {{#unless UserHasEnded.endOfQuestions}} {{#if Questions}} {{#with Questions}} {{> ShowOneQuestion}} {{/with}} {{/if}} {{else}}
-    {{#if UserHasEnded.endOfQuestions}} {{> showEndOfQuestions}} {{else}} {{> NoPermissions}} {{/if}} {{/unless}}
+    {{#unless UserHasEnded.endOfQuestions}} 
+        {{#if Questions}} 
+            {{#with Questions}} 
+                {{> ShowOneQuestion}} 
+            {{/with}} 
+        {{/if}} 
+    {{else}}
+        {{#if UserHasEnded.endOfQuestions}} 
+            {{> showEndOfQuestions}} 
+        {{else}}
+            {{> NoPermissions}} 
+        {{/if}} 
+    {{/unless}}
 </template>
 
 <template name="NoPermissions">
@@ -8,50 +19,81 @@
 </template>
 
 <template name="ShowOneQuestion">
-    <div style="margin-top: 20px">
+    <div style="margin-top: 20px;">
         <div class="row">
             <div class="col-sm-3">
-                {{> informationAboutQuestion}}
-            </div>
-            <div class="col-sm-6" style="background-color:lavender;">
-                {{#if answers}}
-                <h3>{{statement}}</h3>
-                <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>
-                <br>
-                <label><input type="radio" name="answer" value="2"> {{answers.answer_2}}</label>
-                <br>
-                <label><input type="radio" name="answer" value="3"> {{answers.answer_3}}</label>
-                <br>
-
-                <br>
-                <center>
-                    <input type="button" value="Click">
-                </center>
-                {{/if}}
-            </div>
-            <div class="col-sm-3">
-                {{#if answers.isJoker}} 
+                {{#if isJoker}} 
                     {{> JokerQuestion}} 
                 {{/if}}
+
+                {{> informationAboutQuestion}}
+            </div>
+
+            {{#if answers}}
+            <div class="col-sm-7">
+                <div class="w3-container w3-card-2 w3-white w3-round"><br>
+                    {{#if location.circuit}}
+                        <span class="w3-right w3-opacity">{{location.circuit}}</span>
+                    {{else}}
+                        <span class="w3-right w3-opacity">{{location}}</span>
+                    {{/if}}
+
+                    <br>
+                    <h3>{{statement}}</h3>
+                    <hr class="w3-clear">
+                    <label><input type="radio" name="answer" value="1"> {{answers.answer_1}}</label>
+                    <br>
+                    <label><input type="radio" name="answer" value="2"> {{answers.answer_2}}</label>
+                    <br>
+                    <label><input type="radio" name="answer" value="3"> {{answers.answer_3}}</label>
+                    <br>
+                    <br>
+                    <center>
+                        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-check-square-o"></i> Comprobar</button>
+                    </center>
+                </div>
+            </div>
+            {{/if}}
+
+            <div class="col-sm-2">
+                <div class="w3-container w3-card-2 w3-white w3-round">
+                    {{> GotJoker}}
+                </div>
             </div>
         </div>
     </div>
 </template>
 
+<template name="GotJoker">
+    {{#if UserGotJoker}}
+        <div class="w3-container w3-white w3-round">
+            <h4>¡ENHORABUENA!</h4>
+            <hr class="w3-clear">
+            <div class="Text-GotJoker">
+                Dispones de una banana-comodín por haber contestado correctamente a la última pregunta Comodín
+            </div>
+        </div>
+    {{/if}}
+</template>
+
 <template name="JokerQuestion">
-    Esta pregunta es una pregunta Comodín! Esto quiere decir que si aciertas esta pregunta, ganas una banana-comodín que te salvará
-    de retroceder más adelante, y podrás contiunar el circuito. Si no la aciertas, te tocará retroceder hasta el círculo
-    inicial e ir contestando a las 2ª opciones de las preguntas de los círculos rellenos hasta llegar de nuevo al círculo
-    banana y contestar otra pregunta comodín, pero esta vez sin posibilidad de ganar una banana
+    <div class="w3-container w3-card-2 w3-white w3-round">
+        <div id="flotante"></div>
+ 
+        <h3>Pregunta Comodín</h3>        
+        <img src="Banana_Comodin.png" width="180" height="120" style="padding: 10px;">
+        <p type="button" class="js-showmessage w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-info-circle"></i></p>                
+    </div>
 </template>
 
 <template name="informationAboutQuestion">
-    {{textAnsweredQuestions}}
-    <br>
-    <h3>{{numberAnsweredQuestions}}</h3>
-
-    <br> La pregunta a la que está contestando corresponde a <br>
-    <h3 style="text-align:center">{{locationOfQuestion}}</h3>
+    {{#if numberAnsweredQuestions}}
+        <div class="w3-container w3-card-2 w3-white w3-round w3-margin">
+            {{textAnsweredQuestions}}
+            <br>
+            <h3 style="text-align: center">{{numberAnsweredQuestions}}</h3>
+        </div>
+    {{/if}}
 </template>
 
 <template name="showEndOfQuestions">

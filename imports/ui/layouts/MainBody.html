@@ -1,10 +1,10 @@
 <template name="MainBody">
     <div class="mainBody">
         {{#if currentUser}} 
-            <div id="main">
+            <div id="main" class="MainBoydeBackground">
                 {{> menu}} 
                 {{> user_login}}
-                {{> Template.dynamic template=main}}
+                {{> Template.dynamic template=main}}    
             </div>
         {{else}}
             <div class="bgimg">
@@ -15,7 +15,7 @@
             {{> informationToStartGame}}
         {{/if}}
 
-        {{> footer}}        
+        {{> footer}}
     </div>
 </template>
 
