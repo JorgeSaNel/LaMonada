@@ -117,6 +117,7 @@ function insertAnswerOnDDBB(idQuestion, answer_User) {
 
 //Update Collections: Matches
 function insertNewMatch() {
+debugger;
     if (Matches.find().count() === 0) {
         var gameNumber = 1;
     } else {

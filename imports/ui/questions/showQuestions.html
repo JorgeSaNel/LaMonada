@@ -55,6 +55,7 @@
             </div>
             {{/if}}
 
+            <br>
             <div class="col-sm-2">
                 <div class="w3-container w3-card-2 w3-white w3-round">
                     {{> GotJoker}}
@@ -97,37 +98,96 @@
 </template>
 
 <template name="showEndOfQuestions">
-    <div class="textAfterQuestions">
-        <center>
-            <div id="congratsAfterQuestions">
-                <h3>¡ENHORABUENA!</h3>
-                <img src="MonoConFondoBlanco.png" alt="Mono" style="width:304px;height:228px;">
-                <h3>Has terminado la primera fase y hemos creado la empresa La Mónada.</h3>
-            </div>
-        </center>
-
-        <br>
-        <h4>Échale un vistazo al resúmen de las preguntas contestadas antes de empezar con la segunda fase del juego</h4>
-        <div>
-            <li>Has contestado a {{showAllQuestionsAnswered}} preguntas</li>
-            <li>Has acertado {{showAllCorrectQuestions}} preguntas</li>
-            <li>Has fallado {{showAllIncorrectQuestions}} preguntas</li>
-        </div>
-
-        <br>
+    <div class="MargiOn-Div">
         <div class="row">
-            <div class="col-sm-4" id="markText">Su nota final es</div>
-            <div class="col-sm-4" id="markText">
-                {{showMark}}
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-4">Clike en el botón para pasar a la segunda fase del juego</div>
             <div class="col-sm-4">
-                <br> <a href="/StartBoard">Clike para continuar el juego</a>
-                <!-- <input type="button" value="Continuar"> -->
+
+            </div>
+
+            <div class="col-sm-4">
+                <div class="w3-container w3-card-2 w3-white w3-round" id="congratsAfterQuestions">
+                    <h3>¡ENHORABUENA!</h3>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
             </div>
         </div>
     </div>
+
+    <div class="MargiOn-Div">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+
+            <div class="col-sm-4">
+                <div class="w3-container w3-card-2 w3-white w3-round" id="congratsAfterQuestions">
+                    <img src="MonoConFondoBlanco.png" alt="Mono" style="width:304px;height:228px;padding: 10px;">
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+
+    <div class="MargiOn-Div">
+        <div class="w3-container w3-card-2 w3-white w3-round" style="padding-bottom: 20px;">
+            <br>
+            <h4>Échale un vistazo al resúmen de las preguntas contestadas antes de empezar con la segunda fase del juego</h4>
+            <div>
+                <li>Has contestado a {{showAllQuestionsAnswered}} preguntas</li>
+
+                <p class="js-showmessageCorrect">
+                    <li>Has acertado {{showAllCorrectQuestions}} preguntas</li>
+                </p>
+                {{#if ShowTextCorrectQuestions}}
+                    {{> CorrectQuestionsAnswered}}
+                {{/if}}
+
+                <p class="js-showmessageIncorrect">
+                    <li>Has fallado {{showAllIncorrectQuestions}} preguntas</li>
+                </p>
+                {{#if ShowTextIncorrectQuestions}}
+                    {{> IncorrectQuestionsAnswered}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="MargiOn-Div">
+        <div class="w3-container w3-card-2 w3-white w3-round">
+            <div class="row" style="padding-top: 15px;">
+                <div class="col-sm-4" id="markText">Su nota final es</div>
+                <div class="col-sm-4 showMark-Text" id="markText">
+                    {{showMark}}
+                </div>
+                <div class="col-sm-4">
+                    <center>
+                        <a href="/StartBoard">
+                            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-check-square-o"></i>
+                                Clike para continuar el juego
+                            </button>
+                        </a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</template>
+
+<template name="CorrectQuestionsAnswered">
+    <p>
+        <strong>Aquí se mostrarán las preguntas acertadas</strong>
+    </p>
+</template>
+
+<template name="IncorrectQuestionsAnswered">
+    <p>
+        <strong>Aquí se mostrarán las preguntas falladas</strong>
+    </p>
 </template>

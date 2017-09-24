@@ -12,11 +12,12 @@ import './showQuestions.css';
 
 Template.StartQuestions.helpers({
     Questions() {
-        var match = Matches.find({ "user": String(Meteor.userId()) })
-        if (match.count() === 0)
+debugger;
+        var match = Matches.find({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber()})
+        if (match.count() === 0 || match === undefined)
             Meteor.call('createMatch');
 
-        match = Matches.findOne({ "user": String(Meteor.userId()) })
+        match = Matches.findOne({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
         /*if(match.endOfGame)
             //TODO - Hacer algo cuando un jugador quiera jugar más de una vez
             window.alert("Ya contestaste a todas las pregunas. Por favor, inicia la segunda fase");*/
@@ -58,7 +59,7 @@ Template.ShowOneQuestion.events({
         $(answer).prop('checked', false); //Set radio button to false
 
         if (userAnswer == undefined) {
-            Bert.alert('Contesta a una pregunta para continuar', 'default', 'fixed-top', 'fa-bell');
+            Bert.alert('Contesta a una pregunta para continuar', 'default', 'fixed-bottom', 'fa-bell');
             return new Meteor.Error('Contesta a la pregunta para continuar');
         }
 
@@ -118,7 +119,14 @@ Template.showEndOfQuestions.helpers({
     showMark: function () {
         var mark = correct * 10 / answered
         return parseFloat(Math.round(mark * 100) / 100).toFixed(2);
-    }
+    },
+
+    ShowTextCorrectQuestions() {
+        return Template.instance().CorrectQuestionsVisible.get();
+    },
+    ShowTextIncorrectQuestions() {
+        return Template.instance().IncorrectQuestionsVisible.get();
+    },
 })
 
 Template.NoPermissions.helpers({
@@ -129,7 +137,11 @@ Template.NoPermissions.helpers({
 
 function GetGameNumber() {
     var getNumber = Matches.findOne({ "user": Meteor.userId() }, { "GameNumber": 1, sort: { "GameNumber": -1 } });
-    return getNumber.GameNumber;
+    if(getNumber === undefined){
+        new Meteor.Error('Error when getting Game Number from Database');
+        return 0;
+    }
+        return getNumber.GameNumber;
 }
 
 function AnaliseNextQuestion(rightAnswer, userAnswer) {
@@ -208,3 +220,35 @@ function GetJokerText(){
     "e ir contestando a las 2ª opciones de las preguntas de los círculos rellenos hasta llegar a la siguiente pregunta comodín" + 
     ", pero esta vez sin posibilidad de ganar una banana"
 }
+
+//On Qlik to Show all questions
+Template.showEndOfQuestions.onCreated(function onCreated() {
+    this.CorrectQuestionsVisible = new ReactiveVar(false);
+    this.IncorrectQuestionsVisible = new ReactiveVar(false);
+});
+
+var isClickedShowCorrect = false
+var isClickedShowIncorrect = false
+Template.showEndOfQuestions.events({
+    'click .js-showmessageCorrect'(event, instance) {
+        if(isClickedShowCorrect){
+            isClickedShowCorrect = false;
+        }else {
+            isClickedShowCorrect = true;
+        }
+
+        instance.CorrectQuestionsVisible.set(isClickedShowCorrect);
+        
+    },
+
+    'click .js-showmessageIncorrect'(event, instance) {
+        if(isClickedShowIncorrect){
+            isClickedShowIncorrect = false;
+        }else {
+            isClickedShowIncorrect = true;
+        }
+
+        instance.IncorrectQuestionsVisible.set(isClickedShowIncorrect);
+        
+    },
+});

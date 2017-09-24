@@ -1,12 +1,14 @@
 #markText{
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
+}
+
+.showMark-Text{
+    text-align: center;
 }
 
 #congratsAfterQuestions{
     text-align: center;
-    display: table-cell;
-    vertical-align: middle;
 }
 
 label {
@@ -30,4 +32,8 @@ label {
 
 .Text-GotJoker{
     padding: 10px;
+}
+
+.MargiOn-Div{
+    margin-top: 20px;
 }
