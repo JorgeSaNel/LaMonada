@@ -43,7 +43,7 @@ debugger;
     }
 })
 
-Template.GotJoker.helpers({
+Template.ShowOneQuestion.helpers({
     UserGotJoker(){
         return hasJoker;
     }
@@ -59,7 +59,7 @@ Template.ShowOneQuestion.events({
         $(answer).prop('checked', false); //Set radio button to false
 
         if (userAnswer == undefined) {
-            Bert.alert('Contesta a una pregunta para continuar', 'default', 'fixed-bottom', 'fa-bell');
+            Bert.alert('Contesta a una pregunta para continuar', 'info', 'fixed-bottom', 'fa-bell');
             return new Meteor.Error('Contesta a la pregunta para continuar');
         }
 

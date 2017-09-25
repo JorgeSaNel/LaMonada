@@ -57,24 +57,24 @@
 
             <br>
             <div class="col-sm-2">
+                {{#if UserGotJoker}}
                 <div class="w3-container w3-card-2 w3-white w3-round">
                     {{> GotJoker}}
                 </div>
+                {{/if}}
             </div>
         </div>
     </div>
 </template>
 
 <template name="GotJoker">
-    {{#if UserGotJoker}}
-        <div class="w3-container w3-white w3-round">
-            <h4>¡ENHORABUENA!</h4>
-            <hr class="w3-clear">
-            <div class="Text-GotJoker">
-                Dispones de una banana-comodín por haber contestado correctamente a la última pregunta Comodín
-            </div>
+    <div class="w3-container w3-white w3-round">
+        <h4>¡ENHORABUENA!</h4>
+        <hr class="w3-clear">
+        <div class="Text-GotJoker">
+            Dispones de una banana-comodín por haber contestado correctamente a la última pregunta Comodín
         </div>
-    {{/if}}
+    </div>
 </template>
 
 <template name="JokerQuestion">
@@ -123,7 +123,7 @@
 
             <div class="col-sm-4">
                 <div class="w3-container w3-card-2 w3-white w3-round" id="congratsAfterQuestions">
-                    <img src="MonoConFondoBlanco.png" alt="Mono" style="width:304px;height:228px;padding: 10px;">
+                    <img src="MonoConFondoBlanco.png" alt="Mono" style="width:304px;height:350px;padding: 10px;">
                 </div>
             </div>
 

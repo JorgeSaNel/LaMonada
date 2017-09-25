@@ -19,3 +19,23 @@ The iPhone screen resolution is 320x480 px (except iPhone4, 640x960) */
     max-width: 100%;
     height: auto;
 }
+
+/* Social Media Buttons */
+#TwitterButton {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+  
+#TwitterButton:hover {
+    opacity: 0.7;
+}
+  
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}

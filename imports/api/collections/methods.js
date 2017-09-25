@@ -48,7 +48,7 @@ Meteor.methods({
         checkEndOfActivity(activityId);
 
     },
-
+    
     //TODO - QUITAR
     'resetear'() {
         // Make sure the user is logged in before inserting on DDBB

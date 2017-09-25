@@ -17,8 +17,7 @@ Template.user_loggedin.events({
                 });
                 Session.keys = {}; // remove session keys
 
-                //Router.go('/');  // redirect to the home page or elsewhere using iron:router
-
+                FlowRouter.redirect('/') //Redirect to the home page using FlowRouter
                 Bert.alert('Cerrado sesión correctamente', 'success', 'fixed-bottom', 'fa-check');
             }
         });
@@ -43,8 +42,7 @@ Template.loginButtonsBig.events({
                 Bert.alert('Error al Iniciar Sesión. Por favor, vuelva a intentarlo', 'warning', 'fixed-bottom', 'fa-remove');
             } else {
                 Bert.alert('Iniciado sesión correctamente', 'success', 'fixed-bottom', 'fa-check');
-
-                //Router.go('/');  // redirect to the home page or elsewhere using iron:router
+                FlowRouter.redirect('/') //Redirect to the home page using FlowRouter
             }
         });
     }

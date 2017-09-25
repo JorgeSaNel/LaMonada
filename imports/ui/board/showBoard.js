@@ -251,6 +251,12 @@ Template.ShowEndOfGame.helpers({
     }
 });
 
+Template.ShowEndOfGame.events({
+    'click #TwitterButton': function (event, template) {
+        Bert.alert('Pronto podrás postear tweets', 'success', 'growl-bottom-right', 'fa-check');        
+    },
+});
+
 var activityId = 1;
 var activityYear = 1;
 var activityFound = false;
