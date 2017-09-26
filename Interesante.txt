@@ -64,6 +64,10 @@ ALERTAS
         https://www.youtube.com/watch?v=0W1UiTRkIUQ -- Tutorial que se ha seguido
         https://github.com/themeteorchef/bert -- GitHub del cógido
 
+Social Media buttons
+    https://codepen.io/PageOnline/pen/eBdjl
+    Google + -> https://stackoverflow.com/questions/6676658/share-link-on-google
+
 =======================================================
 == ----------------- Base de Datos ----------------- ==
 =======================================================

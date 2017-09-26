@@ -1,7 +1,8 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-/* import { Blaze } from 'meteor/blaze'
- */
+
+import { ShareOnMedia } from '/imports/ui/structure/socialMedia/socialMedia.js';
+import { WithoutPermissions } from '/imports/ui/structure/errorPage/errorPage.js';
 import { BusinessActivity } from '/imports/api/collections/methods.js';
 import { User_ActivityHistory } from '/imports/api/collections/methods.js';
 import { Matches } from '/imports/api/collections/methods.js';
@@ -249,20 +250,6 @@ Template.ShowEndOfGame.helpers({
             "GameNumber": GetGameNumber()
         }).count()
     }
-});
-
-Template.ShareOnMedia.events({
-    'click #TwitterButton': function (event, template) {
-        Bert.alert('Redirigido a la página de Twitter para que puedas twittear', 'success', 'growl-bottom-right', 'fa-twitter');        
-    },
-
-    'click #FacebookButton': function (event, template) {
-        Bert.alert('Redirigido a la página de Facebook para que puedas compartirlo con tus seguidores', 'success', 'growl-bottom-right', 'fa-facebook');        
-    },
-
-    'click #GooglePlusButton': function (event, template) {
-        Bert.alert('Redirigido a la página de Google+ para que puedas publicarlo y compartirlo con tu círculo', 'success', 'growl-bottom-right', 'fa-google-plus');        
-    },
 });
 
 var activityId = 1;

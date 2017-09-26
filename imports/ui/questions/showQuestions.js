@@ -128,12 +128,6 @@ Template.showEndOfQuestions.helpers({
     },
 })
 
-Template.NoPermissions.helpers({
-    WithoutPermission() {
-        Bert.alert('Debe contestar a todas las preguntas para continuar el juego', 'warning', 'fixed-top', 'fa-remove');
-    }
-});
-
 function GetGameNumber() {
     var getNumber = Matches.findOne({ "user": Meteor.userId() }, { "GameNumber": 1, sort: { "GameNumber": -1 } });
     if (getNumber === undefined) {

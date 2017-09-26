@@ -20,66 +20,6 @@ The iPhone screen resolution is 320x480 px (except iPhone4, 640x960) */
     height: auto;
 }
 
-/* Social Media buttons */
-
-.social {
-/*     position: absolute;
- */    width: 100%;
-    /* top: 50%; */
-    text-align: center;
-    transform: translateY(-50%);
-}
-  
-  .social .link {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px dashed #0E0000;
-    background-clip: content-box;
-    padding: 10px;
-    transition: .5s;
-    color: #D7D0BE;
-    margin-left: 15px;
-    margin-right: 15px;
-    font-size: 50px;
-  }
-  
-  .social .link span {
-    display: block;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .social .link:hover {
-    padding: 15px;
-    color: white;
-    margin-left: -5px;
-    transform: translateX(10px) rotate(360deg);
-  }
-  
-  .social .link.google-plus {
-    background-color: tomato;
-    color: white;
-    z-index: 1;    
-  }
-  
-  .social .link.twitter {
-    background-color: #00ACEE;
-    color: white;
-    z-index: 1;    
-  }
-  
-  .social .link.facebook {
-    background-color: #3B5998;
-    color: white;
-    z-index: 1;
-  }
   
   
   
