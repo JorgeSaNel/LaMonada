@@ -6,15 +6,19 @@ La Monada is a game about businesses. Simulates the way a company is built, with
 You need to have `Meteor` installed on your computer. To do so, go to https://www.meteor.com/install and follow the steps. 
 
 ## How to run on Windows:
-First download this project and save it somewhere in your Desktop.  <br /> 
-Afterwards, in a console, go to the project's folder and run 'meteor'.   <br />
-In a browser put 'http://localhost:3000/' 
+<ol>
+  <li>First download this project and save it somewhere in your Desktop</li>
+  <li>Afterwards, in a console, go to the project's folder and run 'meteor'</li>
+  <li>In a browser put 'http://localhost:3000/'</li>
+</ol>  
 
 ### Packages
 You will need a few packages to run this web site. Meteor automatically installs some of them, others you will have to do it manually. Those packages are: 
 
-Babel Runtime -> `meteor add babel-runtime`  <br />
-Jquery-imagemapster -> `meteor npm install jquery-imagemapster`  <br />
+<ul>
+  <li>Babel Runtime -> `meteor add babel-runtime`</li>
+  <li>Jquery-imagemapster -> `meteor npm install jquery-imagemapster`</li>
+</ul>  
 
 To see the other packages that are installed automatically, go to .Meteor folder and open `packages` file 
 
