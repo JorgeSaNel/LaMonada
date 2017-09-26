@@ -242,7 +242,7 @@ Template.showEndOfQuestions.events({
 
     },
     'click #floating-button-Incorrect'(event, instance) {
-        ChangeIncorrectQuestionTemplate();
+        ChangeIncorrectQuestionTemplate(instance);
     },
 });
 

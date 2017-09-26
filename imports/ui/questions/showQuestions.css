@@ -70,6 +70,7 @@ label {
 }
 
 .accordion-titulo:hover {
+    cursor:pointer;
     background: #1abc9c;
 }
 
@@ -100,6 +101,7 @@ label {
     right: 30px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
+    z-index: 1;
 }
 
 #floating-button-Incorrect{
@@ -112,6 +114,7 @@ label {
     right: 30px;
     cursor: pointer;
     box-shadow: 0px 2px 5px #666;
+    z-index: 1;
 }
   
 .plus{

@@ -11,16 +11,15 @@
 </template>
 
 <template name="ShowEndOfGame">
-	<div style="margin-top: 20px;">
+	<div class="MargiOn-Div">
 		<div class="row">
-			<div class="col-sm-2">
+			<div class="col-sm-4">
+
 			</div>
 
-			<div class="col-sm-8">
-				<div class="w3-container w3-card-2 w3-white w3-round w3-margin">
-					Enhorabuena! Ha terminado el juego exitosamente.
-					<br> 
-					La segunda parte del juego se puede resolver en 14 movimientos. Usted lo ha hecho en {{numberOfMovements}}
+			<div class="col-sm-4">
+				<div class="w3-container w3-card-2 w3-white w3-round" id="congratsAfterQuestions">
+					<h3>¡ENHORABUENA!</h3>
 				</div>
 			</div>
 
@@ -29,7 +28,37 @@
 		</div>
 	</div>
 
-	<a id="TwitterButton" href="#" class="fa fa-twitter"></a>
+	<div class="MargiOn-Div">
+		<div class="row">
+			<div class="col-sm-4">
+
+			</div>
+
+			<div class="col-sm-4">
+				<div class="w3-container w3-card-2 w3-white w3-round" id="congratsAfterQuestions">
+					<img src="MonoConFondoBlanco.png" alt="Mono" style="width:304px;height:350px;padding: 10px;">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+			</div>
+		</div>
+	</div>
+
+	<div class="MargiOn-Div">
+		<div class="w3-container w3-card-2 w3-white w3-round">
+			<div class="row" style="padding-top: 15px;">
+				<div class="col-sm-12" id="markText">La segunda parte del juego se puede resolver en 14 movimientos. Tú lo has hecho en {{numberOfMovements}}</div>
+			</div>
+		</div>
+		<br>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	{{> ShareOnMedia}}
 </template>
 
 <template name="WithoutPermissions">
@@ -139,5 +168,27 @@
 
 	<div id="EmptyDiv">
 
+	</div>
+</template>
+
+<template name="ShareOnMedia">
+	<div style="margin-top: 20px;">
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+
+			<div class="col-sm-8">
+				<div class="social">
+					<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.google.es/" id="FacebookButton" class="link facebook" target="_blank"><span class="fa fa-facebook-square"></span></a>
+					<a href="https://twitter.com/?status=He terminado el juego La Monada exitosamente! Pruébalo en URL" id="TwitterButton" class="link twitter"
+					 target="_blank"><span class="fa fa-twitter"></span></a>
+					<a href="https://plusone.google.com/_/+1/confirm?hl=es&url=https://www.google.es/&title=Google" id="GooglePlusButton" class="link google-plus"
+					 target="_blank"><span class="fa fa-google-plus-square"></span></a>
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+			</div>
+		</div>
 	</div>
 </template>
