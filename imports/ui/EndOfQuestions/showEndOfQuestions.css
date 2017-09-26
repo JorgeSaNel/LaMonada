@@ -1,0 +1,111 @@
+#markText{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.showMark-Text{
+    text-align: center;
+}
+
+#congratsAfterQuestions{
+    text-align: center;
+}
+
+.CorrectAnswerText{
+    color: #35C535;
+}
+
+.IncorrectAnswerText{
+    color: red;
+}
+
+/* Desplegable */
+.accordion-titulo-withoutclick {
+    position: relative;
+    display: block;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    background: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+}
+
+.accordion-titulo {
+    position: relative;
+    display: block;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    background: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+}
+
+.accordion-titulo:hover {
+    cursor:pointer;
+    background: #1abc9c;
+}
+
+.accordion-titulo span.toggle-icon:before {
+    content:"+";
+}
+
+.accordion-titulo.open span.toggle-icon:before {
+    content:"-";
+}
+
+.accordion-titulo span.toggle-icon {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 38px;
+    font-weight:bold;
+}
+
+/* Floating Button */
+#floating-button-Correct{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #2c3e50;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+    z-index: 1;
+}
+
+#floating-button-Incorrect{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #2c3e50;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+    z-index: 1;
+}
+  
+.plus{
+    color: white;
+    position: absolute;
+    top: -5px;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 55px;
+    font-size: 38px;
+    font-weight:bold;
+    font-family: 'Roboto';
+    font-weight: 300;
+    animation: plus-out 0.3s;
+    transition: all 0.3s;
+}

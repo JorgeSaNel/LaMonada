@@ -1,0 +1,167 @@
+<template name="showEndOfQuestions">
+    <div class="MargiOn-Div">
+       <div class="row">
+            <div class="col-sm-4">
+    
+            </div>
+    
+            <div class="col-sm-4">
+                <div class="w3-container w3-card-2 w3-white w3-round" id="congratsAfterQuestions">
+                    <h3>¡ENHORABUENA!</h3>
+                </div>
+            </div>
+    
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+    
+    <div class="MargiOn-Div">
+        <div class="row">
+            <div class="col-sm-4">
+    
+            </div>
+    
+            <div class="col-sm-4">
+                <div class="w3-container w3-card-2 w3-white w3-round" id="congratsAfterQuestions">
+                    <img src="MonoConFondoBlanco.png" alt="Mono" style="width:304px;height:350px;padding: 10px;">
+                </div>
+            </div>
+    
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+    
+    <div class="MargiOn-Div">
+        <div class="w3-container w3-card-2 w3-white w3-round" style="padding-bottom: 20px;">
+            <br>
+            <h4>Échale un vistazo al resúmen de las preguntas contestadas antes de empezar con la segunda fase del juego</h4>
+            <div>
+                <p class="accordion-titulo-withoutclick">
+                    Has contestado a {{showAllQuestionsAnswered}} preguntas
+                </p>
+    
+                <p class="js-showmessageCorrect">
+                    <p class="accordion-titulo">Has acertado {{showAllCorrectQuestions}} preguntas
+                        <span class="toggle-icon"></span>
+                    </p>                        
+                </p>
+                {{#if ShowTextCorrectQuestions}}
+                    {{> CorrectQuestionsAnswered}}
+                    <div id="floating-button-Correct" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+                        <p class="plus">-</p>
+                    </div>
+                {{/if}}
+    
+                <p class="js-showmessageIncorrect">
+                    <p class="accordion-titulo">Has fallado {{showAllIncorrectQuestions}} preguntas
+                        <span class="toggle-icon"></span>
+                    </p>
+                </p>
+                {{#if ShowTextIncorrectQuestions}}
+                    {{> IncorrectQuestionsAnswered}}
+                    <div id="floating-button-Incorrect" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+                        <p class="plus">-</p>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    
+    <br>
+    
+    <div class="MargiOn-Div">
+        <div class="w3-container w3-card-2 w3-white w3-round">
+            <div class="row" style="padding-top: 15px;">
+                <div class="col-sm-4" id="markText">Su nota final es</div>
+                <div class="col-sm-4 showMark-Text" id="markText">
+                    {{showMark}}
+                </div>
+                <div class="col-sm-4">
+                    <center>
+                        <a href="/StartBoard">
+                            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-check-square-o"></i>
+                                Pinche para continuar
+                            </button>
+                        </a>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {{> ShareOnMedia}}            
+        
+</template>
+    
+<template name="CorrectQuestionsAnswered">
+    {{#each CorrectQuestions}}
+        <strong>{{this.statement}}</strong>
+        <ul>
+            {{#if equals this.corectAnswer 1}}
+                <li class="CorrectAnswerText" >{{this.answer1}}</li>
+            {{else}}
+                <li>{{this.answer1}}</li>                
+            {{/if}}
+    
+            {{#if equals this.corectAnswer 2}}
+                <li class="CorrectAnswerText" >{{this.answer2}}</li>
+            {{else}}
+                <li>{{this.answer2}}</li>                
+            {{/if}}
+    
+            {{#if equals this.corectAnswer 3}}
+                <li class="CorrectAnswerText" >{{this.answer3}}</li>
+            {{else}}
+                <li>{{this.answer3}}</li>                
+            {{/if}}  
+                
+            <hr class="w3-clear">
+        </ul>
+    {{/each}}
+</template>
+    
+<template name="IncorrectQuestionsAnswered">
+    {{#each IncorrectQuestions}}
+        <strong>{{this.statement}}</strong>
+        <ul>
+            {{#if equals this.corectAnswer 1}}
+                <li class="CorrectAnswerText" >{{this.answer1}}</li>
+            {{else}}
+                {{#if equals this.wrongAnswer 1}}
+                    <li class="IncorrectAnswerText" >{{this.answer1}}</li>                
+                {{else}}
+                    <li>{{this.answer1}}</li>
+                {{/if}}                
+            {{/if}}
+    
+            {{#if equals this.corectAnswer 2}}
+                <li class="CorrectAnswerText" >{{this.answer2}}</li>
+            {{else}}
+                {{#if equals this.wrongAnswer 2}}
+                    <li class="IncorrectAnswerText" >{{this.answer2}}</li>                
+                {{else}}
+                    <li>{{this.answer2}}</li>
+                {{/if}}                
+            {{/if}}
+    
+            {{#if equals this.corectAnswer 3}}
+                <li class="CorrectAnswerText" >{{this.answer3}}</li>
+            {{else}}
+                {{#if equals this.wrongAnswer 3}}
+                    <li class="IncorrectAnswerText" >{{this.answer3}}</li>                
+                {{else}}
+                    <li>{{this.answer3}}</li>
+                {{/if}}                
+            {{/if}}
+                
+            <hr class="w3-clear">
+        </ul>
+    {{/each}}
+</template>
