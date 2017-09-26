@@ -137,20 +137,32 @@
             <br>
             <h4>Échale un vistazo al resúmen de las preguntas contestadas antes de empezar con la segunda fase del juego</h4>
             <div>
-                <li>Has contestado a {{showAllQuestionsAnswered}} preguntas</li>
+                <p class="accordion-titulo-withoutclick">
+                    Has contestado a {{showAllQuestionsAnswered}} preguntas
+                </p>
 
                 <p class="js-showmessageCorrect">
-                    <li>Has acertado {{showAllCorrectQuestions}} preguntas</li>
+                    <p class="accordion-titulo">Has acertado {{showAllCorrectQuestions}} preguntas
+                        <span class="toggle-icon"></span>
+                    </p>                        
                 </p>
                 {{#if ShowTextCorrectQuestions}}
                     {{> CorrectQuestionsAnswered}}
+                    <div id="floating-button-Correct" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+                        <p class="plus">-</p>
+                    </div>
                 {{/if}}
 
                 <p class="js-showmessageIncorrect">
-                    <li>Has fallado {{showAllIncorrectQuestions}} preguntas</li>
+                    <p class="accordion-titulo">Has fallado {{showAllIncorrectQuestions}} preguntas
+                        <span class="toggle-icon"></span>
+                    </p>
                 </p>
                 {{#if ShowTextIncorrectQuestions}}
                     {{> IncorrectQuestionsAnswered}}
+                    <div id="floating-button-Incorrect" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+                            <p class="plus">-</p>
+                    </div>
                 {{/if}}
             </div>
         </div>
@@ -169,7 +181,7 @@
                     <center>
                         <a href="/StartBoard">
                             <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-check-square-o"></i>
-                                Clike para continuar el juego
+                                Pinche para continuar el juego
                             </button>
                         </a>
                     </center>
@@ -181,13 +193,67 @@
 </template>
 
 <template name="CorrectQuestionsAnswered">
-    <p>
-        <strong>Aquí se mostrarán las preguntas acertadas</strong>
-    </p>
+    {{#each CorrectQuestions}}
+        <strong>{{this.statement}}</strong>
+        <ul>
+            {{#if equals this.corectAnswer 1}}
+                <li class="CorrectAnswerText" >{{this.answer1}}</li>
+            {{else}}
+                <li>{{this.answer1}}</li>                
+            {{/if}}
+
+            {{#if equals this.corectAnswer 2}}
+                <li class="CorrectAnswerText" >{{this.answer2}}</li>
+           {{else}}
+                <li>{{this.answer2}}</li>                
+            {{/if}}
+
+            {{#if equals this.corectAnswer 3}}
+                <li class="CorrectAnswerText" >{{this.answer3}}</li>
+            {{else}}
+                <li>{{this.answer3}}</li>                
+            {{/if}}  
+            
+            <hr class="w3-clear">
+        </ul>
+    {{/each}}
 </template>
 
 <template name="IncorrectQuestionsAnswered">
-    <p>
-        <strong>Aquí se mostrarán las preguntas falladas</strong>
-    </p>
+    {{#each IncorrectQuestions}}
+        <strong>{{this.statement}}</strong>
+        <ul>
+            {{#if equals this.corectAnswer 1}}
+                <li class="CorrectAnswerText" >{{this.answer1}}</li>
+            {{else}}
+                {{#if equals this.wrongAnswer 1}}
+                    <li class="IncorrectAnswerText" >{{this.answer1}}</li>                
+                {{else}}
+                    <li>{{this.answer1}}</li>
+                {{/if}}                
+            {{/if}}
+
+            {{#if equals this.corectAnswer 2}}
+                <li class="CorrectAnswerText" >{{this.answer2}}</li>
+            {{else}}
+                {{#if equals this.wrongAnswer 2}}
+                    <li class="IncorrectAnswerText" >{{this.answer2}}</li>                
+                {{else}}
+                    <li>{{this.answer2}}</li>
+                {{/if}}                
+            {{/if}}
+
+            {{#if equals this.corectAnswer 3}}
+                <li class="CorrectAnswerText" >{{this.answer3}}</li>
+            {{else}}
+                {{#if equals this.wrongAnswer 3}}
+                    <li class="IncorrectAnswerText" >{{this.answer3}}</li>                
+                {{else}}
+                    <li>{{this.answer3}}</li>
+                {{/if}}                
+            {{/if}}
+            
+            <hr class="w3-clear">
+        </ul>
+    {{/each}}
 </template>

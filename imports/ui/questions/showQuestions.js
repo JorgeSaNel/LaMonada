@@ -12,9 +12,8 @@ import './showQuestions.css';
 
 Template.StartQuestions.helpers({
     Questions() {
-debugger;
-        var match = Matches.find({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber()})
-        if (match.count() === 0 || match === undefined)
+        var match = Matches.find({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
+        if (match.count() == 0 || match === undefined)
             Meteor.call('createMatch');
 
         match = Matches.findOne({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
@@ -44,7 +43,7 @@ debugger;
 })
 
 Template.ShowOneQuestion.helpers({
-    UserGotJoker(){
+    UserGotJoker() {
         return hasJoker;
     }
 });
@@ -137,11 +136,11 @@ Template.NoPermissions.helpers({
 
 function GetGameNumber() {
     var getNumber = Matches.findOne({ "user": Meteor.userId() }, { "GameNumber": 1, sort: { "GameNumber": -1 } });
-    if(getNumber === undefined){
+    if (getNumber === undefined) {
         new Meteor.Error('Error when getting Game Number from Database');
         return 0;
     }
-        return getNumber.GameNumber;
+    return getNumber.GameNumber;
 }
 
 function AnaliseNextQuestion(rightAnswer, userAnswer) {
@@ -154,7 +153,7 @@ function AnaliseNextQuestion(rightAnswer, userAnswer) {
             if (rightAnswer.hasSecondOption) {
                 hasJoker = true;
                 nextQuestion = Number(rightAnswer._id) + 2;
-                Bert.alert('¡Has ganado un Comodín!', 'success', 'growl-top-right', 'fa-child');         
+                Bert.alert('¡Has ganado un Comodín!', 'success', 'growl-top-right', 'fa-child');
             }
             else
                 nextQuestion = Number(rightAnswer._id) + 1;
@@ -168,18 +167,18 @@ function AnaliseNextQuestion(rightAnswer, userAnswer) {
                 if (hasJoker) {
                     hasJoker = false;
                     nextQuestion = Number(rightAnswer._id) + 1;
-                    Bert.alert('Vaya.. Has perdido un comodín', 'danger', 'growl-top-right', 'fa-thumbs-down');                                                             
+                    Bert.alert('Vaya.. Has perdido un comodín', 'danger', 'growl-top-right', 'fa-thumbs-down');
                 }
-                else{
+                else {
                     nextQuestion = Number(rightAnswer.ifFailedGoTo);
-                    Bert.alert('Vaya.. Has fallado una pregunta comodín', 'danger', 'growl-top-right', 'fa-thumbs-down');                      
-                }    
+                    Bert.alert('Vaya.. Has fallado una pregunta comodín', 'danger', 'growl-top-right', 'fa-thumbs-down');
+                }
             }
         }
     }
-    else {                
+    else {
         //Normal question - Set currentQuestion to next one
-        if (rightAnswer.location.circuit == "Circuito") {
+        if (rightAnswer.location.circuit == "Balance") {
             if (rightAnswer.hasSecondOption || (rightAnswer.isUnique && jokerFailed))
                 nextQuestion = Number(rightAnswer._id) + 2;
             else
@@ -210,15 +209,15 @@ Template.JokerQuestion.events({
     },
 
     'mouseleave .js-showmessage'(event, instance) {
-        document.getElementById('flotante').style.display='none';
+        document.getElementById('flotante').style.display = 'none';
     },
 });
 
-function GetJokerText(){
+function GetJokerText() {
     return "¡Pregunta Comodín! Si aciertas esta pregunta, ganas una banana-comodín que te salvará" +
-    " de retroceder más adelante, y podrás contiunar el circuito. Si no, te tocará retroceder " + 
-    "e ir contestando a las 2ª opciones de las preguntas de los círculos rellenos hasta llegar a la siguiente pregunta comodín" + 
-    ", pero esta vez sin posibilidad de ganar una banana"
+        " de retroceder más adelante, y podrás contiunar el circuito. Si no, te tocará retroceder " +
+        "e ir contestando a las 2ª opciones de las preguntas de los círculos rellenos hasta llegar a la siguiente pregunta comodín" +
+        ", pero esta vez sin posibilidad de ganar una banana"
 }
 
 //On Qlik to Show all questions
@@ -231,24 +230,109 @@ var isClickedShowCorrect = false
 var isClickedShowIncorrect = false
 Template.showEndOfQuestions.events({
     'click .js-showmessageCorrect'(event, instance) {
-        if(isClickedShowCorrect){
-            isClickedShowCorrect = false;
-        }else {
-            isClickedShowCorrect = true;
-        }
+        ChangeCorrectQuestionTemplate(instance);
+    },
 
-        instance.CorrectQuestionsVisible.set(isClickedShowCorrect);
-        
+    'click #floating-button-Correct'(event, instance) {
+        ChangeCorrectQuestionTemplate(instance);
     },
 
     'click .js-showmessageIncorrect'(event, instance) {
-        if(isClickedShowIncorrect){
-            isClickedShowIncorrect = false;
-        }else {
-            isClickedShowIncorrect = true;
-        }
+        ChangeIncorrectQuestionTemplate(instance);
 
-        instance.IncorrectQuestionsVisible.set(isClickedShowIncorrect);
-        
+    },
+    'click #floating-button-Incorrect'(event, instance) {
+        ChangeIncorrectQuestionTemplate();
     },
 });
+
+Template.registerHelper('equals', function (a, b) {
+    return a === b;
+});
+
+Template.CorrectQuestionsAnswered.helpers({
+    CorrectQuestions() {
+        var id = 1;
+        var idOfUserQuestion = 0;
+        var arrayOfQuestions = new Array(correct);;
+
+        while (id != 127) {
+            var oneQuestion = User_QuestionsAnswered.findOne({
+                "user": String(Meteor.userId()), "GameNumber": GetGameNumber(),
+                "question": id, "correctAnswer": true
+            });
+
+            if (oneQuestion != undefined) {
+                var oneQuestion = Questions.findOne({ "_id": String(oneQuestion.question) });
+                if (oneQuestion != undefined) {
+                    var arrayOfAnswers = new Array(5);
+                    arrayOfAnswers["statement"] = oneQuestion.statement;
+                    arrayOfAnswers["answer1"] = oneQuestion.answers.answer_1;
+                    arrayOfAnswers["answer2"] = oneQuestion.answers.answer_2;
+                    arrayOfAnswers["answer3"] = oneQuestion.answers.answer_3;
+                    arrayOfAnswers["corectAnswer"] = oneQuestion.correctAnswer;
+
+                    arrayOfQuestions[idOfUserQuestion] = arrayOfAnswers;
+                    idOfUserQuestion = idOfUserQuestion + 1;
+                }
+            }
+
+            id += 1;
+        }
+        return arrayOfQuestions;
+    }
+});
+
+Template.IncorrectQuestionsAnswered.helpers({
+    IncorrectQuestions() {
+        var id = 1;
+        var idOfUserQuestion = 0;
+        var arrayOfQuestions = new Array(answered - correct);;
+
+        while (id != 127) {
+            var UserQuestion = User_QuestionsAnswered.findOne({
+                "user": String(Meteor.userId()), "GameNumber": GetGameNumber(),
+                "question": id, "correctAnswer": false
+            });
+
+            if (UserQuestion != undefined) {
+                var oneQuestion = Questions.findOne({ "_id": String(UserQuestion.question) });
+                if (oneQuestion != undefined) {
+                    var arrayOfAnswers = new Array(6);
+                    arrayOfAnswers["statement"] = oneQuestion.statement;
+                    arrayOfAnswers["answer1"] = oneQuestion.answers.answer_1;
+                    arrayOfAnswers["answer2"] = oneQuestion.answers.answer_2;
+                    arrayOfAnswers["answer3"] = oneQuestion.answers.answer_3;
+                    arrayOfAnswers["corectAnswer"] = oneQuestion.correctAnswer;
+                    arrayOfAnswers["wrongAnswer"] = UserQuestion.userAnswerWas;
+
+                    arrayOfQuestions[idOfUserQuestion] = arrayOfAnswers;
+                    idOfUserQuestion = idOfUserQuestion + 1;
+                }
+            }
+
+            id += 1;
+        }
+        return arrayOfQuestions;
+    }
+});
+
+function ChangeCorrectQuestionTemplate(instance) {
+    if (isClickedShowCorrect) {
+        isClickedShowCorrect = false;
+    }
+    else {
+        isClickedShowCorrect = true;
+    }
+    instance.CorrectQuestionsVisible.set(isClickedShowCorrect);
+}
+function ChangeIncorrectQuestionTemplate(instance) {
+    if (isClickedShowIncorrect) {
+        isClickedShowIncorrect = false;
+    }
+    else {
+        isClickedShowIncorrect = true;
+    }
+    instance.IncorrectQuestionsVisible.set(isClickedShowIncorrect);
+}
+
