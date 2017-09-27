@@ -35,8 +35,7 @@ Template.loginButtonsBig.events({
 
         Meteor.loginWithGoogle({
             //Show what information is needed from the user
-            //requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/spreadsheets'] //To manage spreadsheets
-            requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/userinfo.profile']
+            requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/spreadsheets']
         }, function (err) {
             if (err) {
                 Session.set('errorMessage', err.reason || 'Unknown error');

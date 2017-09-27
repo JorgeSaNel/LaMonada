@@ -33,7 +33,7 @@ accounts-ui@1.1.9
 google-config-ui@1.0.0
 useraccounts:bootstrap
 twbs:bootstrap
-service-configuration@1.0.11
+#accounts-ui-unstyled
 
 # security
 dynamic-import@0.1.3
@@ -44,10 +44,13 @@ themeteorchef:bert
 # routing
 kadira:flow-router
 kadira:blaze-layout
+#zimme:active-route
+#arillo:flow-router-helpers
 
 # testing
 shell-server@0.2.4            # Server-side component of the `meteor shell` command
 
 # others
+service-configuration@1.0.11
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 sunkay:easy-side-menu
