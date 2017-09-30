@@ -120,7 +120,7 @@ function insertNewMatch() {
     if (Matches.find().count() === 0) {
         var gameNumber = 1;
     } else {
-        var matchNumber = Matches.findOne({}, { sort: { _id: -1 } });
+        var matchNumber = Matches.findOne({}, { "GameNumber": 1, sort: { "GameNumber": -1 } }); 
         var gameNumber = matchNumber.GameNumber + 1;
     }
 

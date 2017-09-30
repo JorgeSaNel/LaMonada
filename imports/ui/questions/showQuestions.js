@@ -15,7 +15,7 @@ import './showQuestions.css';
 
 Template.StartQuestions.helpers({
     Questions() {
-        var match = Matches.find({ "user": String(Meteor.userId()), "GameNumber": GetGameNumber() })
+        var match = Matches.find({ "user": String(Meteor.userId()) })
         if (match.count() == 0 || match === undefined)
             Meteor.call('createMatch');
 

@@ -2,6 +2,8 @@
 This game is a replica of the game called La Monada, done by Iciar Jimenez, teacher at URJC from Madrid, Spain.
 La Monada is a game about businesses. Simulates the way a company is built, with its starting capital and its cash flows. 
 
+You can see a Demo of the Game here -> https://lamonada.now.sh/
+
 ## Programs required
 You need to have `Meteor` installed on your computer. To do so, go to https://www.meteor.com/install and follow the steps. 
 
