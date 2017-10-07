@@ -1,15 +1,15 @@
 <template name="StartQuestions">
-    {{#unless UserHasEnded.endOfQuestions}} 
+     {{#unless UserHasEnded.endOfQuestions}} <!-- Si el usuario no ha terminado las preguntas, muestra una -->
         {{#if Questions}} 
             {{#with Questions}} 
                 {{> ShowOneQuestion}} 
             {{/with}} 
         {{/if}} 
-    {{else}}
+    {{else}}                         <!-- Si ha terminado, muestra el resúmen -->
         {{#if UserHasEnded.endOfQuestions}} 
             {{> showEndOfQuestions}} 
         {{else}}
-            {{> WithoutPermissions}} 
+            {{> WithoutPermissions}} <!-- Si ha terminado, muestra la pantalla de error -->
         {{/if}} 
     {{/unless}}
 </template>
