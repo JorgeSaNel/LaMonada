@@ -218,14 +218,6 @@ Template.ImageOfBoard.events({
                 activityId += 1;
                 changeActivityText();
             }
-/* debugger;
-            if(!activity.endOfActivities){
-                $('#FullBoard').mapster('unbind');
-                $("#EmptyDiv").html($("#DivOfBoard").find("img"));
-                //image_x.parentNode.removeChild(image_x);
-
-                Blaze.remove(Blaze.currentView);
-            } */
         }
     },
 });
