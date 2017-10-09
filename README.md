@@ -10,16 +10,16 @@ You need to have `Meteor` installed on your computer. To do so, go to https://ww
 ## How to run on Windows:
 <ol>
   <li>First download this project and save it somewhere in your Desktop</li>
-  <li>Afterwards, in a console, go to the project's folder and run 'meteor'</li>
-  <li>In a browser put 'http://localhost:3000/'</li>
+  <li>Afterwards, in a console, go to the project's folder and run `meteor` </li>
+  <li>In a browser put `http://localhost:3000/` </li>
 </ol>  
 
 ### Packages
 You will need a few packages to run this web site. Meteor automatically installs some of them, others you will have to do it manually. Those packages are: 
 
 <ul>
-  <li>Babel Runtime -> `meteor add babel-runtime`</li>
-  <li>Jquery-imagemapster -> `meteor npm install jquery-imagemapster`</li>
+  <li>Babel Runtime -> `meteor add babel-runtime` </li>
+  <li>Jquery-imagemapster -> `meteor npm install jquery-imagemapster` </li>
 </ul>  
 
 To see the other packages that are installed automatically, go to .Meteor folder and open `packages` file 
