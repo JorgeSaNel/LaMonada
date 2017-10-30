@@ -6,7 +6,7 @@
 
 # Meteor Libraries
 meteor-base@1.1.0       # Packages every Meteor app needs to have
-ecmascript@0.8.2        # Enable ECMAScript2015+ syntax in app code
+ecmascript@0.8.3        # Enable ECMAScript2015+ syntax in app code
 es5-shim@4.6.15         # ECMAScript 5 compatibility for older browsers.
 check@1.2.5
 session@1.1.7
