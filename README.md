@@ -25,5 +25,5 @@ You will need a few packages to run this web site. Meteor automatically installs
 To see the other packages that are installed automatically, go to .Meteor folder and open `packages` file 
 
 ## Author
-Done by Jorge Santos Neila  <br />
-email: `jorgesantosneila@hotmail.com`
+Done by Jorge Santos Neila  & Iciar Carmen Jiménez Barandalla<br />
+email: `jorgesantosneila@hotmail.com` & `iciar.jimenez@urjc.es`
